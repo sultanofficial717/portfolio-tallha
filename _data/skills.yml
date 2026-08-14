@@ -1,33 +1,47 @@
-languages:
-  - item: JavaScript (ES6)
-  - item: TypeScript
-  - item: HTML
-  - item: CSS/Sass
-  - item: Python
-  - item: SQL
-  - item: R
+agentic_ai:
+  - item: LangGraph & LangChain
+  - item: RAG Architectures
+  - item: pgvector & Embeddings
+  - item: Ollama & OpenHermes
+  - item: Prompt Engineering
+  - item: Local LLM Orchestration
 
-frameworks:
-  - item: Ember & Glimmer
-  - item: React
-  - item: Jekyll
-  - item: Node
-  - item: D3
-  - item: Wordpress
-  - item: Timber
+backend:
+  - item: FastAPI & Python
+  - item: PostgreSQL
+  - item: Redis & Celery
+  - item: AsyncIO & REST APIs
+  - item: Microservices
+  - item: Linux / Bash
 
-tools:
-  - item: Bash
-  - item: Git & Github
-  - item: Gulp & Grunt
-  - item: Chrome DevTools
-  - item: Postman
-  - item: MongoDB
+frontend:
+  - item: Next.js & React
+  - item: TypeScript & JavaScript
+  - item: HTML5 & CSS3
+  - item: Responsive UI Design
+  - item: Tailwind & Modern CSS
+  - item: Web APIs
 
-design:
-  - item: Sketch
-  - item: InDesign
-  - item: InVision
-  - item: Prototyping
-  - item: Wireframing
-  - item: User Testing
+cryptography_security:
+  - item: Formal Security Proofs
+  - item: Random Oracle Model
+  - item: HKDF & Key Derivation
+  - item: Domain Separation
+  - item: Password Cryptography
+  - item: Vulnerability Remediation
+
+research_writing:
+  - item: IEEE Access Standards
+  - item: ML Security Benchmarking
+  - item: Peer Review Revisions
+  - item: Malware Detection Surveys
+  - item: Technical Documentation
+  - item: Academic Writing
+
+go_to_market:
+  - item: Cold Outreach Systems
+  - item: Lead Generation
+  - item: Personalization Frameworks
+  - item: WhatsApp & Calendly Funnels
+  - item: Client Acquisition Strategy
+  - item: Market Segmentation

@@ -1,0 +1,28 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="43.3333" height="26.6667" viewBox="0 0 43.3333 26.6667" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo" clip-path="url(#clip0_0_10)">
+<g id="Vector" filter="url(#filter0_ii_0_10)">
+<path d="M10.6164 26.6667C7.00275 17.6858 3.50137 8.99151 0 0.29724C0.102081 0.201699 0.204162 0.0955414 0.296035 0C9.92226 5.42463 19.5485 10.8493 29.1849 16.2739C29.2462 16.1677 29.3176 16.0722 29.3789 15.966C27.5516 14.3737 25.7142 12.7707 23.6215 10.9554C30.2159 7.2293 36.596 3.61996 42.9761 0.0212314C43.0986 0.106157 43.2108 0.191083 43.3333 0.265393C39.832 8.98089 36.3204 17.6964 32.7169 26.6561C26.2144 21.3588 19.8956 16.2208 13.587 11.0722C13.4951 11.1783 13.4134 11.2739 13.3216 11.38C15.5367 13.9384 17.7621 16.4862 20.161 19.2463C16.9863 21.7198 13.9238 24.0977 10.6164 26.6667Z" fill="#8B47EB"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_ii_0_10" x="0" y="0" width="43.3333" height="31.6667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="5"/>
+<feGaussianBlur stdDeviation="3"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.658824 0 0 0 0 0.458824 0 0 0 0 0.941176 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_10"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="0.5"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.658824 0 0 0 0 0.458824 0 0 0 0 0.941176 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect1_innerShadow_0_10" result="effect2_innerShadow_0_10"/>
+</filter>
+<clipPath id="clip0_0_10">
+<rect width="43.3333" height="26.6667" fill="white"/>
+</clipPath>
+</defs>
+</svg>

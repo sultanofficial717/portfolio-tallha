@@ -1,0 +1,6 @@
+/* cta-02 — waitlist pinboard CTA (draggable sticky notes) */
+
+@theme {
+  /* Source uses font-hedvig-serif; shared theme exposes font-hedvig. */
+  --font-hedvig-serif: "Hedvig Letters Serif", Georgia, ui-serif, serif;
+}

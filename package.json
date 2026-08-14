@@ -1,28 +1,19 @@
 {
-  "name": "brittanychiang.com",
-  "version": "0.0.0",
-  "description": "Design-minded front-end software engineer focused on building beautiful interfaces and experiences",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bchiang7/bchiang7.github.io"
-  },
-  "homepage": "https://github.com/bchiang7/bchiang7.github.io",
-  "main": "gulpfile.js",
+  "name": "talharehman-portfolio",
+  "version": "1.0.0",
+  "description": "Talha Rehman — AI & ML Engineer Portfolio with Personal AI Agent",
+  "main": "server.js",
   "scripts": {
-    "start": "gulp serve --watch",
-    "build": "gulp build"
+    "start": "node server.js",
+    "serve": "node server.js",
+    "dev": "node server.js"
   },
-  "author": "Brittany Chiang",
-  "license": "ISC",
-  "devDependencies": {
-    "@nuscout/eslint-config": "^0.2.1",
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^7.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-eslint": "^6.0.0",
-    "gulp-imagemin": "6.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-uglify": "3.0.2"
+  "author": "Talha Rehman",
+  "license": "MIT",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "motion": "^13.1.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3"
   }
 }

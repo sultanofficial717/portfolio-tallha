@@ -1,44 +1,17 @@
-- company: Upstatement
-  url: https://www.upstatement.com/
-  time: May 2018 - Present
-  position: Engineer
+- company: HAT Technologies
+  url: https://www.hattechnologies.tech
+  time: 2023 - Present
+  position: Business Development Manager & AI Solutions Lead
+  description: Leading outreach and client acquisition across local Pakistani markets (F&B) and international markets (US/Europe health & wellness). Architecting bespoke agentic workflows, cold outreach automation, and AI chatbots.
 
-- company: Scout
-  url: https://web.northeastern.edu/scout/
-  time: Jan - June 2018
-  position: Studio Developer
+- company: Bahria University, Islamabad
+  url: https://www.bahria.edu.pk/
+  time: 2023 - Present
+  position: Academic Research Co-Author
+  description: Co-authoring cryptographic protocols (DSPD: Device-Seeded Password Derivation) with formal security proofs under the random oracle model, and comprehensive ML ransomware detection surveys targeting Q1 venues (IEEE Access) through multiple peer review cycles.
 
-- company: Apple Music
-  url: https://www.apple.com/music/
-  time: July - Dec 2017
-  position: UI Engineer Co-op
-
-- company: Scout
-  url: https://web.northeastern.edu/scout/
-  time: Jan - June 2017
-  position: Studio Developer
-
-- company: Starry
-  url: https://starry.com/
-  time: July - Dec 2016
-  position: Software Engineer Co-op
-
-- company: Northeastern University
-  url: http://www.ccis.northeastern.edu/
-  time: Jan - May 2016
-  position: HCI Teaching Assistant
-
-- company: NU Women in Tech
-  url: http://nuwit.ccs.neu.edu/
-  time: Jan 2016 - May 2017
-  position: President & Web Chair
-
-- company: MullenLowe U.S.
-  url: https://us.mullenlowe.com/
-  time: July - Dec 2015
-  position: Creative Technologist Co-op
-
-- company: Northeastern University
-  url: http://www.ccis.northeastern.edu/
-  time: Mar - May 2015
-  position: HCI Research Assistant
+- company: Independent AI Systems Engineering
+  url: https://github.com/talharehman
+  time: 2022 - Present
+  position: Full-Stack & Applied AI Engineer
+  description: Designing self-hosted AI agency platforms, RAG architectures with pgvector & FastAPI, local LLM orchestration with Ollama & LangGraph, and full-stack web applications.
