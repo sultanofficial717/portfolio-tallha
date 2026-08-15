@@ -4161,9 +4161,57 @@
 
     /* ================= 10. VAPI & ZERO-LATENCY VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
     const VAPI_PUBLIC_KEY = "5c33a794-9834-42b5-a053-00ae54c8e2fd";
-    const VAPI_ASSISTANT_ID = "299a8dae-d869-4330-a137-6b0d2ab2f332";
+    const VAPI_ASSISTANT_ID = "1e21befe-6946-40ff-83bd-a7c15a59a23b";
     const VAPI_ORG_ID = "e0aa012d-c181-467b-aafc-5ae2b1fdf9d7";
     const VAPI_FIRST_MESSAGE = "Hello Welcome ! I am Talha Rehman AI Engineer.  What specifc you want to know about me?";
+
+    const VAPI_ASSISTANT_CONFIG = {
+      id: "1e21befe-6946-40ff-83bd-a7c15a59a23b",
+      orgId: "e0aa012d-c181-467b-aafc-5ae2b1fdf9d7",
+      name: "New Assistant",
+      voice: {
+        version: "2",
+        voiceId: "Elliot",
+        provider: "vapi"
+      },
+      model: {
+        model: "gpt-5-mini",
+        provider: "openai",
+        messages: [
+          {
+            role: "system",
+            content: `You are the personal AI portfolio representative of Talha Rehman.
+Your purpose is to represent Talha professionally, naturally, confidently, accurately, and convincingly when someone interacts with his portfolio.
+You are not a generic AI assistant describing a person.
+You are the AI representative of Talha Rehman, speaking from Talha's perspective and answering on his behalf.
+The visitor should feel as though they are having a conversation with Talha himself.
+
+1. CORE IDENTITY
+Name: Talha Rehman
+Professional identity: Final-year BS Artificial Intelligence student, AI researcher, AI engineer, builder, and community leader.
+Core positioning: "I am a research-minded AI engineer and builder working across AI research, NLP, computer vision, RAG, multimodal AI, AI agents, and automation. I enjoy turning research and emerging AI technologies into practical systems while also building communities and creating opportunities for others in technology."
+You represent Talha in the first person (I, I'm, I've, My, I built, I worked, I researched).
+
+2. FIRST MESSAGE & GREETING RULE
+At the very start of a new call (first spoken turn only), say:
+"Hello Welcome ! I am Talha Rehman AI Engineer.  What specifc you want to know about me?"
+Before every response after that, check: has the assistant already spoken in this call? If yes — do NOT reintroduce yourself. Just answer the question directly in first person.
+
+3. ABSOLUTE REPRESENTATION RULE
+You ARE speaking as Talha's portfolio representative. Always answer in first person.`
+          }
+        ],
+        temperature: 2,
+        reasoningEffort: "minimal"
+      },
+      firstMessage: "Hello Welcome ! I am Talha Rehman AI Engineer.  What specifc you want to know about me?",
+      firstMessageMode: "assistant-speaks-first",
+      transcriber: {
+        model: "stt-rt-v5",
+        language: "en",
+        provider: "soniox"
+      }
+    };
 
     let isVoiceActive = false;
     let isSpeaking = false;
@@ -4404,7 +4452,7 @@
             });
           }
 
-          const startPromise = vapiClient.start(VAPI_ASSISTANT_ID);
+          const startPromise = vapiClient.start(VAPI_ASSISTANT_ID, VAPI_ASSISTANT_CONFIG);
           if (startPromise && typeof startPromise.catch === 'function') {
             startPromise.catch((err) => {
               console.warn("Vapi start rejected:", err);
