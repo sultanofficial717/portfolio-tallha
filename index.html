@@ -4344,18 +4344,38 @@
       speakText(answer);
     }
 
-    function startVoiceCall() {
+    async function startVoiceCall() {
       if (isVoiceActive) return;
+      isVoiceActive = true;
       unlockAudioContext();
 
-      const VapiClass = window.Vapi || (window.vapiSDK && window.vapiSDK.Vapi);
+      // Update UI Controls immediately
+      if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
+      if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "End Voice Call";
+      if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
+      if (heroVoiceHint) heroVoiceHint.textContent = "Connecting to Talha's Voice AI (Elliot · Live Voice)...";
+      updateVoiceStatus("Connecting Voice...", true, true);
 
-      if (typeof VapiClass === 'function') {
+      // Explicitly request microphone access if possible
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        try {
+          await navigator.mediaDevices.getUserMedia({ audio: true });
+        } catch(e) {
+          console.log("Mic prompt handled:", e);
+        }
+      }
+
+      const VapiClass = (typeof window.Vapi === 'function') ? window.Vapi : (window.Vapi && typeof window.Vapi.default === 'function') ? window.Vapi.default : null;
+
+      let vapiConnected = false;
+
+      if (VapiClass) {
         try {
           if (!vapiClient) {
             vapiClient = new VapiClass(VAPI_PUBLIC_KEY);
 
             vapiClient.on('call-start', () => {
+              vapiConnected = true;
               isVoiceActive = true;
               updateVoiceStatus("Connected · Elliot Live Voice", true, true);
               if (heroVoiceHint) heroVoiceHint.textContent = "Voice call active with Talha's AI representative. Click 'End Voice Call' to hang up.";
@@ -4375,7 +4395,7 @@
               if (heroWaveBars) {
                 const bars = heroWaveBars.querySelectorAll('.voice-wave-bar');
                 bars.forEach((bar, idx) => {
-                  const h = Math.max(4, Math.min(22, vol * 28 * (1 + (idx % 3) * 0.25)));
+                  const h = Math.max(4, Math.min(22, vol * 30 * (1 + (idx % 3) * 0.25)));
                   bar.style.height = `${h}px`;
                 });
               }
@@ -4386,48 +4406,41 @@
             });
 
             vapiClient.on('error', (err) => {
-              console.warn("Vapi WebRTC event:", err);
+              console.warn("Vapi WebRTC event/error:", err);
+              if (!vapiConnected) {
+                fallbackToSpeechEngine();
+              }
             });
           }
 
-          isVoiceActive = true;
-          if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
-          if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "End Voice Call";
-          if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
-          if (heroVoiceHint) heroVoiceHint.textContent = "Connecting to Talha's Voice AI (Elliot · WebRTC)...";
-          updateVoiceStatus("Connecting to Vapi...", true, true);
+          const startPromise = vapiClient.start(VAPI_ASSISTANT_ID);
+          if (startPromise && typeof startPromise.catch === 'function') {
+            startPromise.catch((err) => {
+              console.warn("Vapi start rejected:", err);
+              fallbackToSpeechEngine();
+            });
+          }
 
-          vapiClient.start(VAPI_ASSISTANT_ID);
+          // Safety Watchdog: If Vapi WebRTC hasn't connected in 2.5 seconds, start speaking via speech engine
+          setTimeout(() => {
+            if (isVoiceActive && !vapiConnected && !isSpeaking) {
+              console.log("Vapi taking time to connect, activating instant voice engine");
+              fallbackToSpeechEngine();
+            }
+          }, 2500);
+
           return;
         } catch(e) {
-          console.warn("Vapi WebRTC start fallback:", e);
+          console.warn("Vapi UMD error:", e);
         }
       }
 
-      if (window.vapiSDK && typeof window.vapiSDK.run === 'function') {
-        try {
-          isVoiceActive = true;
-          if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
-          if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "End Voice Call";
-          if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
-          if (heroVoiceHint) heroVoiceHint.textContent = "Connecting to Talha's Voice AI (Elliot · WebRTC)...";
-          updateVoiceStatus("Connecting to Vapi...", true, true);
+      // If no Vapi SDK or initialization failed, immediately speak via instant speech engine
+      fallbackToSpeechEngine();
+    }
 
-          vapiClient = window.vapiSDK.run({
-            apiKey: VAPI_PUBLIC_KEY,
-            assistant: VAPI_ASSISTANT_ID
-          });
-          return;
-        } catch(e) {
-          console.warn("window.vapiSDK.run fallback:", e);
-        }
-      }
-
-      // Fast synchronous speech turn with zero latency as fallback
-      isVoiceActive = true;
-      if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
-      if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "End Voice Call";
-      if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
+    function fallbackToSpeechEngine() {
+      if (!isVoiceActive) return;
       if (heroVoiceHint) heroVoiceHint.textContent = "Voice call active with Talha's AI representative. Click 'End Voice Call' to hang up.";
       speakText(VAPI_FIRST_MESSAGE);
     }
