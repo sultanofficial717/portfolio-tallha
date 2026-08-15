@@ -1,10 +1,93 @@
----
-layout: not_found
-title: 404
-permalink: /404.html
----
-{% include switch.html %}
-<div class="name">Brittany Chiang</div>
-<img src="{{site.baseurl}}/img/emojis/thinking-face.png" alt="">
-<h1>Hmmm...</h1>
-<h2>Looks like there's nothing here.<br>Maybe you should go back <a href="{{site.url}}">home</a>.</h2>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Page Not Found | Talha Rehman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d12;
+      --bg-surface: #10161f;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --text-dim: #94a3b8;
+      --verify: #5eead4;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 48px 32px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .code {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--verify);
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    p {
+      color: var(--text-dim);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--verify);
+      color: #090d12;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn:hover {
+      background: #7ef2de;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(94, 234, 212, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="code">// 404_PAGE_NOT_FOUND</div>
+    <h1>404</h1>
+    <p>The page or resource you were looking for doesn't exist or has been relocated.</p>
+    <a href="/" class="btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Return to Home
+    </a>
+  </div>
+</body>
+</html>

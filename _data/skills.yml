@@ -1,47 +1,40 @@
-agentic_ai:
-  - item: LangGraph & LangChain
-  - item: RAG Architectures
-  - item: pgvector & Embeddings
-  - item: Ollama & OpenHermes
-  - item: Prompt Engineering
-  - item: Local LLM Orchestration
+expert:
+  - item: Python
+  - item: RAG Systems (LangChain, Pinecone)
+  - item: Computer Vision (OpenCV, Medical Imaging)
+  - item: Git / GitHub Workflows
+  - item: SQL Databases
 
-backend:
-  - item: FastAPI & Python
-  - item: PostgreSQL
-  - item: Redis & Celery
-  - item: AsyncIO & REST APIs
-  - item: Microservices
-  - item: Linux / Bash
+proficient:
+  - item: Machine Learning (scikit-learn, TF-IDF, UMAP)
+  - item: FastAPI & Flask
+  - item: Streamlit & Dashboards
+  - item: MongoDB
+  - item: C++
 
-frontend:
-  - item: Next.js & React
+familiar:
+  - item: NLP (Semantic Search, Embeddings)
   - item: TypeScript & JavaScript
-  - item: HTML5 & CSS3
-  - item: Responsive UI Design
-  - item: Tailwind & Modern CSS
-  - item: Web APIs
+  - item: HTML5 & Modern CSS
+  - item: Generative AI APIs (Gemini, Claude, GPT)
 
-cryptography_security:
-  - item: Formal Security Proofs
-  - item: Random Oracle Model
-  - item: HKDF & Key Derivation
-  - item: Domain Separation
-  - item: Password Cryptography
-  - item: Vulnerability Remediation
+frameworks_libraries:
+  - item: LangChain & LangGraph
+  - item: OpenCV & Image Processing
+  - item: Pinecone & ChromaDB
+  - item: Sentence-BERT
+  - item: pandas & NumPy
+  - item: Argos Translate & langdetect
+  - item: FinBERT & NLLB
 
-research_writing:
-  - item: IEEE Access Standards
-  - item: ML Security Benchmarking
-  - item: Peer Review Revisions
-  - item: Malware Detection Surveys
-  - item: Technical Documentation
-  - item: Academic Writing
+cybersecurity_cryptography:
+  - item: Argon2id & HKDF-SHA256
+  - item: Device-Bound Stateless Password Derivation (DSPD)
+  - item: Random Oracle Model Proofs
+  - item: Domain-Separation Analysis
 
-go_to_market:
-  - item: Cold Outreach Systems
-  - item: Lead Generation
-  - item: Personalization Frameworks
-  - item: WhatsApp & Calendly Funnels
-  - item: Client Acquisition Strategy
-  - item: Market Segmentation
+leadership_community:
+  - item: Tech Fusion & AI Club Leadership (50+ Team)
+  - item: Tech Event Organization (350+ Attendees)
+  - item: Sponsorship Acquisition
+  - item: AI/ML Student Workshops

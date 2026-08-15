@@ -1,59 +1,84 @@
-- name: DSPD Proof Engine & Reference Implementation
-  url: https://github.com/talharehman/dspd-kdf
-  code: https://github.com/talharehman/dspd-kdf
-  description: Python reference implementation of the Device-Seeded Password Derivation scheme with formal security proof verification vectors and domain-separated HKDF.
+- name: AutismLens — Multimodal Autism Assessment AI
+  url: https://github.com/sultanofficial717
+  code: https://github.com/sultanofficial717
+  description: Final Year Project (FYP) multimodal intake & interpretation system extracting item-level scores from psychological evaluation sheets and generating manual-grounded RAG reports using Sentence-BERT & ChromaDB.
+  used:
+    - thing: FastAPI
+    - thing: LangChain
+    - thing: Sentence-BERT
+    - thing: ChromaDB
+    - thing: OpenCV
+    - thing: Next.js
+
+- name: EDU360 / EducationGate 360°
+  url: https://github.com/sultanofficial717
+  code: https://github.com/sultanofficial717
+  description: Semantic talent and scholarship opportunity-matching platform pairing students with global study programs and funding using embedding similarity.
+  used:
+    - thing: Sentence-BERT
+    - thing: ChromaDB
+    - thing: FastAPI
+    - thing: Next.js
+    - thing: TypeScript
+
+- name: DSPD — Device-Bound Password Derivation Scheme
+  url: https://github.com/sultanofficial717
+  code: https://github.com/sultanofficial717
+  description: Cryptographic key derivation scheme with Argon2id and HKDF-SHA256, formal security proofs under Random Oracle Model, and a published PyPI benchmarking package.
   used:
     - thing: Python
-    - thing: Cryptography
-    - thing: HKDF
+    - thing: Argon2id
+    - thing: HKDF-SHA256
+    - thing: PyPI Package
     - thing: Security Proofs
 
-- name: Autonomous Lead Outreach Graph
-  url: https://github.com/talharehman/outreach-agent-graph
-  code: https://github.com/talharehman/outreach-agent-graph
-  description: A stateful agentic workflow built with LangGraph to orchestrate multi-channel cold outreach, pain-point research, and dynamic CTA routing (WhatsApp vs. Calendly).
-  used:
-    - thing: LangGraph
-    - thing: LangChain
-    - thing: Ollama
-    - thing: FastAPI
-
-- name: pgvector Hybrid RAG Boilerplate
-  url: https://github.com/talharehman/pgvector-fastapi-rag
-  code: https://github.com/talharehman/pgvector-fastapi-rag
-  description: Ultra-low latency retrieval-augmented generation engine combining dense vector search and sparse keyword matching for enterprise knowledge bases.
-  used:
-    - thing: FastAPI
-    - thing: pgvector
-    - thing: PostgreSQL
-    - thing: Redis
-
-- name: ML Ransomware Detection Benchmarking Suite
-  url: https://github.com/talharehman/ransomware-detection-benchmark
-  code: https://github.com/talharehman/ransomware-detection-benchmark
-  description: Comparative evaluation framework benchmarking static, dynamic, and hybrid machine learning models on public ransomware dataset corpuses.
+- name: RAG Pipeline with LangChain & Pinecone
+  url: https://github.com/sultanofficial717
+  code: https://github.com/sultanofficial717
+  description: End-to-end production RAG system with document chunking, embeddings, and semantic search over 1,000+ chunks with sub-300ms query latency.
   used:
     - thing: Python
-    - thing: Scikit-learn
-    - thing: PyTorch
-    - thing: IEEE Access
+    - thing: LangChain
+    - thing: Pinecone
+    - thing: FastAPI
+    - earthly: Streamlit
 
-- name: Ollama Local Agent Runner
-  url: https://github.com/talharehman/ollama-agent-daemon
-  code: https://github.com/talharehman/ollama-agent-daemon
-  description: Lightweight local agent runner allowing privacy-conscious agencies to run local reasoning models (OpenHermes) without transmitting client data externally.
+- name: SmartNews Analytics
+  url: https://github.com/sultanofficial717
+  code: https://github.com/sultanofficial717
+  description: Unsupervised NLP clustering pipeline combining TF-IDF and UMAP dimensionality reduction across 5,000+ news articles, achieving a 0.61 silhouette score.
   used:
-    - thing: Ollama
-    - thing: OpenHermes
-    - thing: Docker
-    - thing: Celery
+    - thing: Python
+    - thing: NLP
+    - thing: scikit-learn
+    - thing: UMAP
 
-- name: Verifiable AI Portfolio & Retrieval Agent
-  url: https://github.com/talharehman/portfolio
-  code: https://github.com/talharehman/portfolio
-  description: Modern, responsive portfolio featuring an integrated client-side verified retrieval agent, live bash verification engine, and zero-hallucination guarantee.
+- name: EduHire — German Course Finder
+  url: https://github.com/sultanofficial717
+  code: https://github.com/sultanofficial717
+  description: Full-stack web platform for searching and filtering 200+ German university academic programs with authentication and administrative dashboard.
+  used:
+    - thing: Flask
+    - thing: SQL
+    - thing: HTML/CSS
+    - thing: REST APIs
+
+- name: Whitelabel AI Agency OS
+  url: https://github.com/sultanofficial717
+  code: https://github.com/sultanofficial717
+  description: Internal agent and workflow orchestration platform for HAT Technologies built with LangGraph and Temporal for multi-tenant business operations.
+  used:
+    - thing: LangGraph
+    - thing: Temporal
+    - thing: FastAPI
+    - thing: AI Agents
+
+- name: Verifiable AI Portfolio Agent
+  url: https://github.com/sultanofficial717/portfolio-tallha
+  code: https://github.com/sultanofficial717/portfolio-tallha
+  description: Modern interactive portfolio with an embedded zero-hallucination factual knowledge retrieval engine, terminal verification log, and dual themes.
   used:
     - thing: JavaScript
-    - thing: CSS3
-    - thing: Semantic Search
-    - thing: Responsive UI
+    - thing: Client RAG
+    - thing: Modern CSS
+    - thing: Zero Hallucination

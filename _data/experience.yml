@@ -1,17 +1,35 @@
+- company: Cradle Labs
+  url: https://github.com/sultanofficial717
+  time: Jun 2025 - Present
+  position: Co-author & Volunteer Research Assistant — Multimodal RAG
+  description: Investigating multimodal document ingestion and cross-modal retrieval for LLM response grounding; surveyed 30+ recent papers to establish literature foundation; responsible for experiment design and empirical benchmarking (research manuscript under review).
+
+- company: Center of Excellence in Artificial Intelligence (CEAI)
+  url: https://github.com/sultanofficial717
+  time: Sep 2024 - Nov 2024
+  position: AI Research Intern
+  description: Built computer vision pipelines for medical foot image diagnosis; processed and verified 500+ annotated medical samples, enhancing dataset quality to support iterative model training cycles.
+
+- company: FAST-NUCES Islamabad
+  url: https://github.com/sultanofficial717
+  time: 2024 - 2025
+  position: AI Research Intern — NLP & Energy-Market Analytics
+  description: Engineered end-to-end NLP and translation pipeline analyzing ~30,350 Brazilian energy & weather documents for a 45-day CMO-PLD price-gap forecasting horizon; implemented GPU-accelerated translation (NLLB & Argos Translate), language detection (langdetect), LLM topic labeling (Gemini), and FinBERT financial sentiment scoring.
+
 - company: HAT Technologies
   url: https://www.hattechnologies.tech
   time: 2023 - Present
-  position: Business Development Manager & AI Solutions Lead
-  description: Leading outreach and client acquisition across local Pakistani markets (F&B) and international markets (US/Europe health & wellness). Architecting bespoke agentic workflows, cold outreach automation, and AI chatbots.
+  position: Founder & Applied AI Solutions Lead
+  description: Founded applied AI software agency specializing in workflow automation, sales-flow automation, and practical intelligent business systems; designed multi-tenant Whitelabel AI Agency OS with LangGraph and Temporal.
 
-- company: Bahria University, Islamabad
-  url: https://www.bahria.edu.pk/
-  time: 2023 - Present
-  position: Academic Research Co-Author
-  description: Co-authoring cryptographic protocols (DSPD: Device-Seeded Password Derivation) with formal security proofs under the random oracle model, and comprehensive ML ransomware detection surveys targeting Q1 venues (IEEE Access) through multiple peer review cycles.
+- company: Tech Fusion / AI Club — Bahria University
+  url: https://github.com/sultanofficial717
+  time: 2025 - Present
+  position: Lead & Founder
+  description: Founded campus technology event brand and lead 50+ volunteers across workshops and events; organized flagship events hosting 350+ participants; secured external corporate sponsorships for consecutive events; conducted hands-on AI/ML workshops for students.
 
-- company: Independent AI Systems Engineering
-  url: https://github.com/talharehman
-  time: 2022 - Present
-  position: Full-Stack & Applied AI Engineer
-  description: Designing self-hosted AI agency platforms, RAG architectures with pgvector & FastAPI, local LLM orchestration with Ollama & LangGraph, and full-stack web applications.
+- company: U-Capacity
+  url: https://github.com/sultanofficial717
+  time: Aug 2024 - Nov 2024
+  position: Social Media & Analytics Intern
+  description: Managed LinkedIn content strategy and applied analytics-driven scheduling to optimize organic engagement reach.

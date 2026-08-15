@@ -1,3 +1,4 @@
 User-agent: *
-Disallow:
-Sitemap: https://bchiang7.github.io/sitemap.xml
+Allow: /
+Sitemap: https://sultanofficial717.github.io/sitemap.xml
+

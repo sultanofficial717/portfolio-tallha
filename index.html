@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Talha Rehman — AI & ML Engineer</title>
-  <meta name="description" content="Portfolio of Talha Rehman: AI & ML Engineer, Applied Cryptography Researcher, and Business Development Manager at HAT Technologies. Interactive portfolio with built-in verified AI Agent.">
-  <meta name="keywords" content="Talha Rehman, AI and ML Engineer, Machine Learning Engineer, AI Engineer, LangGraph, FastAPI, Cryptography, DSPD, Ransomware Detection, HAT Technologies, Bahria University, Portfolio, AI Agent">
+  <title>Talha Rehman — AI &amp; ML Engineer | Research &amp; Systems</title>
+  <meta name="description" content="Portfolio of Talha Rehman: Final-year BS AI student at Bahria University Islamabad, AI engineer, and community leader specializing in Multimodal RAG, computer vision, AI agents, and cryptographic protocols.">
+  <meta name="keywords" content="Talha Rehman, AI Engineer, Machine Learning Engineer, Multimodal RAG, Computer Vision, AutismLens, DSPD, Cradle Labs, CEAI, FAST-NUCES, Bahria University, Tech Fusion, HAT Technologies, Portfolio, AI Agent">
   <meta name="author" content="Talha Rehman">
 
   <!-- Open Graph / Meta -->
-  <meta property="og:title" content="Talha Rehman — AI & ML Engineer">
-  <meta property="og:description" content="I build practical AI applications and machine learning systems that turn real-world problems into working prototypes.">
+  <meta property="og:title" content="Talha Rehman — AI &amp; ML Engineer | Research &amp; Systems">
+  <meta property="og:description" content="Research-minded AI engineer, builder and community leader focused on turning AI research and ideas into practical intelligent systems.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sultanofficial717.github.io/portfolio-tallha/">
   <meta property="og:image" content="https://sultanofficial717.github.io/portfolio-tallha/img/og.png">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Talha Rehman — AI &amp; ML Engineer | Research &amp; Systems">
+  <meta name="twitter:description" content="Research-minded AI engineer, builder and community leader focused on turning AI research and ideas into practical intelligent systems.">
+  <meta name="twitter:image" content="https://sultanofficial717.github.io/portfolio-tallha/img/og.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo/logo1.png">
+  <link rel="apple-touch-icon" href="img/logo/logo1.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1872,6 +1882,605 @@
       transform: translateY(-3px);
       box-shadow: var(--shadow-hover);
     }
+
+    /* ==========================================================================
+       4-STAGE AI WORKFLOW PHILOSOPHY STYLES
+       ========================================================================== */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 860px) {
+      .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .workflow-card {
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-rule-subtle);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      position: relative;
+      transition: var(--transition-base);
+    }
+
+    .workflow-card:hover {
+      border-color: var(--verify);
+      transform: translateY(-2px);
+    }
+
+    .workflow-step-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--verify);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .workflow-title {
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-bone);
+      margin-bottom: 6px;
+    }
+
+    .workflow-desc {
+      font-size: 12.5px;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       PROFICIENCY TIERS (CV Self-Rated Reference)
+       ========================================================================== */
+    .prof-tiers-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 860px) {
+      .prof-tiers-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .prof-tier-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-rule);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: var(--transition-base);
+    }
+
+    .prof-tier-card:hover {
+      border-color: rgba(94, 234, 212, 0.5);
+      box-shadow: var(--shadow-card);
+    }
+
+    .prof-tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+    }
+
+    .tier-expert .prof-tier-badge {
+      background: var(--verify-dim);
+      color: var(--verify);
+      border: 1px solid rgba(94, 234, 212, 0.3);
+    }
+
+    .tier-proficient .prof-tier-badge {
+      background: var(--accent-amber-dim);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .tier-familiar .prof-tier-badge {
+      background: rgba(96, 165, 250, 0.12);
+      color: var(--accent-blue);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+    }
+
+    .prof-tier-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .prof-tier-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-rule-subtle);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ==========================================================================
+       CERTIFICATIONS & COMMUNITY IMPACT STYLES
+       ========================================================================== */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cert-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-rule);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-base);
+    }
+
+    .cert-card:hover {
+      border-color: var(--verify);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .cert-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .cert-issuer {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--verify);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cert-status-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      background: var(--verify-dim);
+      color: var(--verify);
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(94, 234, 212, 0.2);
+    }
+
+    .cert-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text-bone);
+      margin-bottom: 8px;
+    }
+
+    .cert-desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.55;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .cert-link-btn {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-dim);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-base);
+    }
+
+    .cert-link-btn:hover {
+      color: var(--verify);
+    }
+
+    /* Community Highlights Grid */
+    .community-impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 880px) {
+      .community-impact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .community-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-rule);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: var(--transition-base);
+    }
+
+    .community-card:hover {
+      border-color: rgba(94, 234, 212, 0.5);
+      box-shadow: var(--shadow-card);
+    }
+
+    .community-card-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .community-card-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-bone);
+      margin-bottom: 8px;
+    }
+
+    .community-card-desc {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .community-stats {
+      display: flex;
+      gap: 16px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-rule);
+    }
+
+    .community-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .community-stat-val {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--verify);
+    }
+
+    .community-stat-lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dimmer);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Research Integrity Banner */
+    .research-integrity-banner {
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-rule);
+      border-left: 3px solid var(--verify);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .research-integrity-banner .icon {
+      color: var(--verify);
+      flex-shrink: 0;
+    }
+
+    .research-integrity-banner p {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .research-integrity-banner p strong {
+      color: var(--text-bone);
+    }
+
+    /* ==========================================================================
+       VOICE AGENT (VAPI + NATIVE AUDIO ENGINE) STYLES
+       ========================================================================== */
+    .btn-voice-hero {
+      background: linear-gradient(135deg, rgba(94, 234, 212, 0.15), rgba(13, 148, 136, 0.25));
+      border: 1px solid var(--verify);
+      color: var(--verify);
+      box-shadow: 0 0 16px rgba(94, 234, 212, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-voice-hero:hover {
+      background: linear-gradient(135deg, rgba(94, 234, 212, 0.25), rgba(13, 148, 136, 0.4));
+      border-color: var(--verify);
+      color: var(--text-bone);
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px rgba(94, 234, 212, 0.3);
+    }
+
+    .voice-pulse-icon {
+      display: inline-block;
+      animation: pulseMic 1.8s infinite ease-in-out;
+      margin-right: 6px;
+    }
+
+    @keyframes pulseMic {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--verify)); }
+      50% { transform: scale(1.2); filter: drop-shadow(0 0 8px var(--verify)); }
+    }
+
+    /* Floating Voice Capsule / Orb */
+    .voice-floating-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      pointer-events: none;
+    }
+
+    .voice-welcome-toast {
+      pointer-events: auto;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--verify);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 16px rgba(94, 234, 212, 0.2);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: slideInToast 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    @keyframes slideInToast {
+      from { opacity: 0; transform: translateY(20px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .voice-toast-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .voice-toast-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--verify);
+      font-family: var(--font-mono);
+    }
+
+    .voice-toast-close {
+      background: transparent;
+      border: none;
+      color: var(--text-dimmer);
+      cursor: pointer;
+      font-size: 14px;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .voice-toast-close:hover {
+      color: var(--text-bone);
+      background: var(--bg-surface);
+    }
+
+    .voice-toast-body {
+      font-size: 12.5px;
+      color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    .voice-toast-btn {
+      background: var(--verify);
+      color: #0d1217;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition-base);
+    }
+
+    .voice-toast-btn:hover {
+      background: #7ef2de;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(94, 234, 212, 0.4);
+    }
+
+    .voice-orb-btn {
+      pointer-events: auto;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #132220, #0d1615);
+      border: 1.5px solid var(--verify);
+      color: var(--verify);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(94, 234, 212, 0.25);
+      transition: var(--transition-base);
+      position: relative;
+    }
+
+    .voice-orb-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 24px rgba(94, 234, 212, 0.45);
+      border-color: #a7f3d0;
+    }
+
+    .voice-orb-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid var(--verify);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .voice-orb-btn.is-active .voice-orb-ring {
+      animation: orbRipple 2s cubic-bezier(0.1, 0.2, 0.3, 1) infinite;
+    }
+
+    @keyframes orbRipple {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* Live Equalizer Wave Bars */
+    .voice-wave-bars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 18px;
+    }
+
+    .voice-wave-bar {
+      width: 3px;
+      background: var(--verify);
+      border-radius: 2px;
+      height: 4px;
+      transition: height 0.15s ease;
+    }
+
+    .voice-wave-bars.active .voice-wave-bar:nth-child(1) { animation: soundWave 0.7s infinite ease-in-out alternate; }
+    .voice-wave-bars.active .voice-wave-bar:nth-child(2) { animation: soundWave 0.5s infinite ease-in-out alternate 0.15s; }
+    .voice-wave-bars.active .voice-wave-bar:nth-child(3) { animation: soundWave 0.8s infinite ease-in-out alternate 0.3s; }
+    .voice-wave-bars.active .voice-wave-bar:nth-child(4) { animation: soundWave 0.6s infinite ease-in-out alternate 0.2s; }
+    .voice-wave-bars.active .voice-wave-bar:nth-child(5) { animation: soundWave 0.9s infinite ease-in-out alternate 0.4s; }
+
+    @keyframes soundWave {
+      0% { height: 4px; opacity: 0.4; }
+      100% { height: 18px; opacity: 1; }
+    }
+
+    /* Voice Call Modal / Expanded Controls in #agent */
+    .agent-voice-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: var(--bg-surface-2);
+      border-bottom: 1px solid var(--border-rule);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      gap: 12px;
+    }
+
+    .agent-voice-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+    }
+
+    .voice-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-dimmer);
+    }
+
+    .voice-live-dot.active {
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: blinkDot 1.4s infinite;
+    }
+
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .agent-voice-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-call-action {
+      background: rgba(94, 234, 212, 0.12);
+      border: 1px solid var(--verify);
+      color: var(--verify);
+      border-radius: var(--radius-sm);
+      padding: 5px 12px;
+      font-size: 11.5px;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-base);
+    }
+
+    .btn-call-action:hover {
+      background: var(--verify);
+      color: #0d1217;
+    }
+
+    .btn-call-action.is-in-call {
+      background: rgba(239, 68, 68, 0.15);
+      border-color: #ef4444;
+      color: #f87171;
+    }
+
+    .btn-call-action.is-in-call:hover {
+      background: #ef4444;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -1898,9 +2507,11 @@
         <li><a href="#about"><span class="nav-num">01.</span> About</a></li>
         <li><a href="#skills"><span class="nav-num">02.</span> Skills</a></li>
         <li><a href="#experience"><span class="nav-num">03.</span> Experience</a></li>
-        <li><a href="#projects"><span class="nav-num">04.</span> Projects</a></li>
-        <li><a href="#agent"><span class="nav-num">05.</span> AI Agent</a></li>
-        <li><a href="#contact"><span class="nav-num">06.</span> Contact</a></li>
+        <li><a href="#work"><span class="nav-num">04.</span> Research</a></li>
+        <li><a href="#projects"><span class="nav-num">05.</span> Projects</a></li>
+        <li><a href="#community"><span class="nav-num">06.</span> Community</a></li>
+        <li><a href="#agent"><span class="nav-num">07.</span> AI Agent</a></li>
+        <li><a href="#contact"><span class="nav-num">08.</span> Contact</a></li>
       </ul>
 
       <!-- Right Action Cluster -->
@@ -1944,9 +2555,11 @@
       <li><a href="#about" class="mobile-link"><span class="nav-num">01.</span> About</a></li>
       <li><a href="#skills" class="mobile-link"><span class="nav-num">02.</span> Skills</a></li>
       <li><a href="#experience" class="mobile-link"><span class="nav-num">03.</span> Experience</a></li>
-      <li><a href="#projects" class="mobile-link"><span class="nav-num">04.</span> Projects</a></li>
-      <li><a href="#agent" class="mobile-link"><span class="nav-num">05.</span> Ask the Agent</a></li>
-      <li><a href="#contact" class="mobile-link"><span class="nav-num">06.</span> Contact</a></li>
+      <li><a href="#work" class="mobile-link"><span class="nav-num">04.</span> Research</a></li>
+      <li><a href="#projects" class="mobile-link"><span class="nav-num">05.</span> Projects</a></li>
+      <li><a href="#community" class="mobile-link"><span class="nav-num">06.</span> Community</a></li>
+      <li><a href="#agent" class="mobile-link"><span class="nav-num">07.</span> Ask the Agent</a></li>
+      <li><a href="#contact" class="mobile-link"><span class="nav-num">08.</span> Contact</a></li>
     </ul>
     <div style="display:flex; gap:12px; margin-top:12px; padding-top:12px; border-top:1px solid var(--border-rule-subtle);">
       <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-pill" style="flex:1;">View Resume PDF</a>
@@ -1971,7 +2584,7 @@
           <div class="eyebrow-container">
             <div class="eyebrow">
               <span class="eyebrow-dot"></span>
-              Available for AI &amp; ML Engineering Engagements
+              Available for AI Engineering &amp; Research Roles
             </div>
           </div>
           
@@ -1982,11 +2595,11 @@
           </div>
 
           <h1 class="claim">
-            I build practical AI &amp; ML applications that turn real-world problems into <span class="accent">working prototypes.</span>
+            Turning AI research and ideas into <span class="accent">practical intelligent systems.</span>
           </h1>
 
           <p class="subclaim">
-            I am an AI &amp; ML Engineer working across machine learning models, agentic systems, cryptographic architectures, and full-stack engineering — turning complex ideas into production-ready software.
+            Final-year BS Artificial Intelligence undergraduate at Bahria University Islamabad. Research-minded AI engineer and community builder specializing in Multimodal RAG, computer vision, AI agents, and cryptographic protocol design.
           </p>
 
           <div class="hero-cta">
@@ -1994,8 +2607,11 @@
               Let's Work Together
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="#projects" class="btn btn-ghost">See Projects</a>
-            <a href="#agent" class="btn btn-ghost">Ask My AI Agent</a>
+            <button id="heroVoiceBtn" class="btn btn-voice-hero" title="Start live voice conversation with Talha's AI">
+              <span class="voice-pulse-icon">🎙️</span> Talk to Talha (Voice AI)
+            </button>
+            <a href="#work" class="btn btn-ghost">View Research</a>
+            <a href="#projects" class="btn btn-ghost">Explore Projects</a>
           </div>
         </div>
 
@@ -2006,19 +2622,20 @@
               <img src="img/talha.jpeg" alt="Talha Rehman — AI &amp; ML Engineer" class="hero-portrait-img" onerror="this.onerror=null; this.src='Talha .jpeg';">
               <div class="hero-portrait-badge">
                 <span class="pulse-dot"></span>
-                <span>Online · Available</span>
+                <span>Online · Open to Roles</span>
               </div>
             </div>
             <div class="hero-portrait-footer">
               <div class="hero-portrait-name">
                 <span>Talha Rehman</span>
-                <span class="hero-portrait-role">AI &amp; ML Engineer</span>
+                <span class="hero-portrait-role">AI Engineer &amp; Community Lead</span>
               </div>
               <div class="hero-portrait-tags">
-                <span class="mini-tag">LangGraph</span>
-                <span class="mini-tag">PyTorch</span>
+                <span class="mini-tag">Multimodal RAG</span>
+                <span class="mini-tag">Computer Vision</span>
+                <span class="mini-tag">AI Agents</span>
                 <span class="mini-tag">FastAPI</span>
-                <span class="mini-tag">Applied Crypto</span>
+                <span class="mini-tag">DSPD Crypto</span>
               </div>
             </div>
           </div>
@@ -2052,34 +2669,56 @@
 
   <!-- ==========================================================================
        ABOUT & BACKGROUND
-       ========================================================================== -->
-  <section id="about">
+       ===============================================================  <section id="about">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-label">// 01. Background</div>
+          <div class="sec-label">// 01. Background &amp; Philosophy</div>
           <h2 class="sec-title">About Me</h2>
         </div>
-        <p class="sec-desc">Research rigor meets shipped engineering — bridging formal mathematical proofs and production software.</p>
+        <p class="sec-desc">Research-minded AI engineer, builder, and community leader focused on turning AI research and ideas into practical intelligent systems.</p>
       </div>
 
       <div class="about-grid">
         <div class="about-copy">
           <p>
-            <strong>I am an AI &amp; ML Engineer who sits at the intersection of research rigor and shipped products.</strong> My background spans applied machine learning, agentic AI systems, cryptography, and full-stack engineering. I spend as much time ensuring a system is mathematically sound as I do making sure it scales in production.
+            <strong>I am Talha Rehman</strong>, a final-year BS Artificial Intelligence undergraduate at <strong>Bahria University Islamabad (E-8 Campus)</strong>. My work spans Natural Language Processing, computer vision, Retrieval-Augmented Generation (RAG), multimodal AI, AI agents, and workflow automation.
           </p>
           <p>
-            As Business Development Manager at <strong>HAT Technologies</strong>, a boutique AI development and digital marketing firm in Islamabad, I lead outreach and client acquisition across both local Pakistani markets (F&amp;B sector) and international (US &amp; Europe) health and wellness markets. That means I design the agentic systems I also bring to market.
+            My research experience spans multimodal document retrieval at <strong>Cradle Labs</strong>, computer vision pipelines for medical foot image diagnosis at the <strong>Center of Excellence in Artificial Intelligence (CEAI)</strong>, and large-scale NLP analysis of Brazilian energy news datasets at <strong>FAST-NUCES Islamabad</strong> for market price-gap forecasting.
           </p>
           <p>
-            Alongside that, I co-author academic research at <strong>Bahria University, Islamabad</strong>, spanning cryptographic protocol design (DSPD) and ML-based ransomware security research — work that has undergone rigorous peer-review and journal revision cycles rather than remaining an unverified draft.
+            Alongside research, I am the founder of <strong>HAT Technologies</strong> (an applied AI software agency) and the Lead &amp; Founder of <strong>Tech Fusion / AI Club</strong> at Bahria University Islamabad — where I lead a team of 50+ volunteers, have organized events hosting 350+ participants, secured corporate sponsorships, and led hands-on student workshops on machine learning. I am also an <strong>OpenAI Ambassador</strong> and an active member of <strong>Google Developer Groups (GDG) Islamabad</strong>.
           </p>
           <div class="highlight-box">
-            <strong>Core Philosophy:</strong> I don't ship claims; I ship <em>evidence</em> — formal proofs, peer-reviewed manuscripts, and tested AI/ML architectures.
+            <strong>Core Identity:</strong> Research-minded AI engineer + builder + community leader. I don't treat research and software engineering as separate silos — I combine academic depth and empirical rigor with deployable, production-ready prototypes.
           </div>
-          <p>
-            <strong>When I'm not in front of a terminal</strong>, I'm analyzing emerging agentic orchestration patterns, evaluating ML model architectures, reading cryptography literature, or exploring go-to-market strategies for early-stage tech ventures.
-          </p>
+          
+          <h3 style="font-family:var(--font-display); font-size:18px; color:var(--text-bone); margin-top:28px; margin-bottom:12px;">The 4-Stage AI Workflow Philosophy</h3>
+          <p style="font-size:14px; margin-bottom:12px;">I believe AI should empower the complete engineering lifecycle rather than being restricted to one isolated feature:</p>
+          
+          <div class="workflow-grid">
+            <div class="workflow-card">
+              <div class="workflow-step-num">STAGE 01</div>
+              <div class="workflow-title">Research</div>
+              <div class="workflow-desc">Concrete problem framing, literature surveying (30+ papers), baseline analysis, and dataset curation.</div>
+            </div>
+            <div class="workflow-card">
+              <div class="workflow-step-num">STAGE 02</div>
+              <div class="workflow-title">Planning</div>
+              <div class="workflow-desc">System architecture, data normalization pipelines, vector indexing, and zero-hallucination guardrail design.</div>
+            </div>
+            <div class="workflow-card">
+              <div class="workflow-step-num">STAGE 03</div>
+              <div class="workflow-title">Construction</div>
+              <div class="workflow-desc">Clean implementation using FastAPI, LangChain/LangGraph, Sentence-BERT, OpenCV, and Next.js interfaces.</div>
+            </div>
+            <div class="workflow-card">
+              <div class="workflow-step-num">STAGE 04</div>
+              <div class="workflow-title">Evaluation</div>
+              <div class="workflow-desc">Empirical benchmarking, silhouette scoring, latency optimization, and formal peer review validation.</div>
+            </div>
+          </div>
         </div>
 
         <div class="facts-card">
@@ -2088,141 +2727,200 @@
             Quick Profile
           </h3>
           <div class="fact-item">
+            <span class="label">Academic Degree</span>
+            <span class="value">BS Artificial Intelligence (BS AI) · Bahria University Islamabad (E-8)</span>
+          </div>
+          <div class="fact-item">
+            <span class="label">Timeline &amp; CGPA</span>
+            <span class="value">Sep 2023 – Expected Jul 2027 · CGPA 3.09 / 4.0</span>
+          </div>
+          <div class="fact-item">
             <span class="label">Current Roles</span>
-            <span class="value">AI &amp; ML Engineer · BDM @ HAT Technologies · Researcher @ Bahria Univ</span>
+            <span class="value">AI Undergraduate Researcher · Founder @ HAT Technologies · Lead &amp; Founder @ Tech Fusion</span>
+          </div>
+          <div class="fact-item">
+            <span class="label">Ecosystem Affiliations</span>
+            <span class="value">Cradle Labs · CEAI · FAST-NUCES · OpenAI Ambassador · GDG Islamabad</span>
           </div>
           <div class="fact-item">
             <span class="label">Location</span>
-            <span class="value">Islamabad, Pakistan (Available for Global Remote)</span>
+            <span class="value">Islamabad, Pakistan (Available for Global Remote &amp; Relocation)</span>
           </div>
           <div class="fact-item">
             <span class="label">Core Domains</span>
-            <span class="value">AI &amp; Machine Learning · Cryptography · Backend Systems · GTM</span>
+            <span class="value">Multimodal RAG · Computer Vision · AI Agents · Cryptography · NLP</span>
+          </div>
+          <div class="fact-item">
+            <span class="label">Languages</span>
+            <span class="value">Urdu (Native) · English (Professional, B2)</span>
           </div>
           <div class="fact-item">
             <span class="label">Verification Standard</span>
-            <span class="value">Zero-Hallucination &amp; Formal Peer Review</span>
-          </div>
-          <div class="fact-item">
-            <span class="label">Primary Stack</span>
-            <span class="value">LangGraph, FastAPI, pgvector, Next.js, Python</span>
+            <span class="value">Zero-Hallucination &amp; Documented Research Integrity</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
   <!-- ==========================================================================
-       SKILLS MATRIX
-       ========================================================================== */
-  -->
+       SKILLS MATRIX & PROFICIENCY TIERS
+       ========================================================================== -->
   <section id="skills">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-label">// 02. Capabilities</div>
-          <h2 class="sec-title">Technical Stack &amp; Skills</h2>
+          <div class="sec-label">// 02. Capabilities &amp; Stack</div>
+          <h2 class="sec-title">Technical Skills &amp; Stack</h2>
         </div>
-        <p class="sec-desc">A structured overview of the frameworks, protocols, and tooling I use across research and production.</p>
+        <p class="sec-desc">A structured overview of my verified technical competencies, rated according to CV proficiency tiers and applied domains.</p>
+      </div>
+
+      <!-- CV Self-Rated Proficiency Tiers -->
+      <div class="prof-tiers-container">
+        <div class="prof-tier-card tier-expert">
+          <span class="prof-tier-badge">⚡ Expert Level</span>
+          <div class="prof-tier-list">
+            <span class="prof-tier-pill">Python</span>
+            <span class="prof-tier-pill">RAG Systems</span>
+            <span class="prof-tier-pill">LangChain</span>
+            <span class="prof-tier-pill">Pinecone</span>
+            <span class="prof-tier-pill">Computer Vision (OpenCV)</span>
+            <span class="prof-tier-pill">Medical Imaging</span>
+            <span class="prof-tier-pill">Git / GitHub</span>
+            <span class="prof-tier-pill">SQL</span>
+          </div>
+        </div>
+
+        <div class="prof-tier-card tier-proficient">
+          <span class="prof-tier-badge">🛠️ Proficient Level</span>
+          <div class="prof-tier-list">
+            <span class="prof-tier-pill">Machine Learning</span>
+            <span class="prof-tier-pill">scikit-learn</span>
+            <span class="prof-tier-pill">TF-IDF &amp; UMAP</span>
+            <span class="prof-tier-pill">FastAPI</span>
+            <span class="prof-tier-pill">Flask</span>
+            <span class="prof-tier-pill">Streamlit</span>
+            <span class="prof-tier-pill">MongoDB</span>
+            <span class="prof-tier-pill">C++</span>
+          </div>
+        </div>
+
+        <div class="prof-tier-card tier-familiar">
+          <span class="prof-tier-badge">🔍 Familiar Level</span>
+          <div class="prof-tier-list">
+            <span class="prof-tier-pill">NLP &amp; Embeddings</span>
+            <span class="prof-tier-pill">Semantic Search</span>
+            <span class="prof-tier-pill">TypeScript</span>
+            <span class="prof-tier-pill">HTML5 / Modern CSS</span>
+            <span class="prof-tier-pill">Generative AI APIs</span>
+            <span class="prof-tier-pill">Next.js &amp; React</span>
+          </div>
+        </div>
       </div>
 
       <div class="skills-grid">
-        <!-- 01: Agentic & Applied AI -->
+        <!-- 01: RAG & Agentic AI -->
         <div class="skill-card">
           <div class="skill-card-head">
             <span class="skill-card-icon">⚡</span>
-            <div class="skill-card-title">Agentic &amp; Applied AI</div>
+            <div class="skill-card-title">RAG &amp; Agentic AI</div>
           </div>
           <div class="skill-tags">
-            <span class="skill-pill">LangGraph</span>
             <span class="skill-pill">LangChain</span>
-            <span class="skill-pill">RAG Pipelines</span>
-            <span class="skill-pill">pgvector</span>
-            <span class="skill-pill">Ollama</span>
-            <span class="skill-pill">OpenHermes</span>
-            <span class="skill-pill">Llama-3</span>
-            <span class="skill-pill">Vector Embeddings</span>
+            <span class="skill-pill">LangGraph</span>
+            <span class="skill-pill">Multimodal RAG</span>
+            <span class="skill-pill">Pinecone</span>
+            <span class="skill-pill">ChromaDB</span>
+            <span class="skill-pill">Sentence-BERT</span>
+            <span class="skill-pill">Vector Search</span>
+            <span class="skill-pill">Agentic Workflows</span>
           </div>
         </div>
 
-        <!-- 02: Backend & Distributed -->
+        <!-- 02: Computer Vision & ML -->
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-card-icon">👁️</span>
+            <div class="skill-card-title">Computer Vision &amp; ML</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-pill">OpenCV</span>
+            <span class="skill-pill">Medical Foot Image CV</span>
+            <span class="skill-pill">scikit-learn</span>
+            <span class="skill-pill">TF-IDF &amp; Clustering</span>
+            <span class="skill-pill">UMAP</span>
+            <span class="skill-pill">PyTorch</span>
+            <span class="skill-pill">pandas</span>
+            <span class="skill-pill">Image Preprocessing</span>
+          </div>
+        </div>
+
+        <!-- 03: NLP & LLM Applications -->
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-card-icon">🧠</span>
+            <div class="skill-card-title">NLP &amp; LLM Systems</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-pill">Semantic Search</span>
+            <span class="skill-pill">FinBERT</span>
+            <span class="skill-pill">NLLB &amp; Argos Translate</span>
+            <span class="skill-pill">langdetect</span>
+            <span class="skill-pill">Google AI Studio</span>
+            <span class="skill-pill">Gemini APIs</span>
+            <span class="skill-pill">Claude API</span>
+            <span class="skill-pill">Ollama &amp; Qwen</span>
+          </div>
+        </div>
+
+        <!-- 04: Backend & Cloud Infrastructure -->
         <div class="skill-card">
           <div class="skill-card-head">
             <span class="skill-card-icon">🛠️</span>
-            <div class="skill-card-title">Backend &amp; Data</div>
+            <div class="skill-card-title">Backend &amp; Infrastructure</div>
           </div>
           <div class="skill-tags">
             <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Flask</span>
             <span class="skill-pill">Python (AsyncIO)</span>
-            <span class="skill-pill">PostgreSQL</span>
-            <span class="skill-pill">Redis</span>
-            <span class="skill-pill">Celery</span>
-            <span class="skill-pill">REST APIs</span>
+            <span class="skill-pill">Streamlit</span>
+            <span class="skill-pill">MongoDB</span>
+            <span class="skill-pill">PostgreSQL / SQL</span>
             <span class="skill-pill">Docker</span>
-            <span class="skill-pill">Linux / Bash</span>
+            <span class="skill-pill">Google Cloud &amp; GCS</span>
           </div>
         </div>
 
-        <!-- 03: Frontend & Interfaces -->
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <span class="skill-card-icon">💻</span>
-            <div class="skill-card-title">Frontend &amp; UI</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-pill">Next.js</span>
-            <span class="skill-pill">React</span>
-            <span class="skill-pill">TypeScript</span>
-            <span class="skill-pill">HTML5 &amp; Modern CSS</span>
-            <span class="skill-pill">Responsive Design</span>
-            <span class="skill-pill">Component Architecture</span>
-          </div>
-        </div>
-
-        <!-- 04: Cryptography & Security -->
+        <!-- 05: Cybersecurity & Cryptography -->
         <div class="skill-card">
           <div class="skill-card-head">
             <span class="skill-card-icon">🔐</span>
-            <div class="skill-card-title">Cryptography &amp; Security</div>
+            <div class="skill-card-title">Cybersecurity &amp; Crypto</div>
           </div>
           <div class="skill-tags">
-            <span class="skill-pill">Formal Security Proofs</span>
-            <span class="skill-pill">Random Oracle Model</span>
-            <span class="skill-pill">HKDF Key Derivation</span>
+            <span class="skill-pill">Argon2id</span>
+            <span class="skill-pill">HKDF-SHA256</span>
             <span class="skill-pill">DSPD Scheme</span>
-            <span class="skill-pill">Domain Separation</span>
-            <span class="skill-pill">Vulnerability Analysis</span>
+            <span class="skill-pill">Stateless Password Derivation</span>
+            <span class="skill-pill">Random Oracle Model</span>
+            <span class="skill-pill">Formal Security Proofs</span>
+            <span class="skill-pill">PyPI Package</span>
           </div>
         </div>
 
-        <!-- 05: Research & Academic -->
+        <!-- 06: Community & Leadership -->
         <div class="skill-card">
           <div class="skill-card-head">
-            <span class="skill-card-icon">📑</span>
-            <div class="skill-card-title">Research &amp; Publications</div>
+            <span class="skill-card-icon">🌟</span>
+            <div class="skill-card-title">Leadership &amp; Community</div>
           </div>
           <div class="skill-tags">
-            <span class="skill-pill">IEEE Access Venue</span>
-            <span class="skill-pill">Malware &amp; Ransomware</span>
-            <span class="skill-pill">Peer Review Cycles</span>
-            <span class="skill-pill">ML Benchmarking</span>
-            <span class="skill-pill">Literature Surveys</span>
-            <span class="skill-pill">Technical Writing</span>
-          </div>
-        </div>
-
-        <!-- 06: GTM & Systems -->
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <span class="skill-card-icon">📈</span>
-            <div class="skill-card-title">Go-to-Market &amp; Growth</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-pill">Cold Outreach Systems</span>
-            <span class="skill-pill">Lead Generation</span>
-            <span class="skill-pill">Campaign Personalization</span>
-            <span class="skill-pill">WhatsApp &amp; Calendly Funnels</span>
-            <span class="skill-pill">Client Acquisition</span>
+            <span class="skill-pill">Tech Fusion / AI Club Lead</span>
+            <span class="skill-pill">50+ Volunteer Leadership</span>
+            <span class="skill-pill">350+ Participant Events</span>
+            <span class="skill-pill">Sponsorship Acquisition</span>
+            <span class="skill-pill">Student AI Workshops</span>
+            <span class="skill-pill">OpenAI Ambassador</span>
+            <span class="skill-pill">GDG Islamabad Member</span>
           </div>
         </div>
       </div>
@@ -2230,24 +2928,105 @@
   </section>
 
   <!-- ==========================================================================
-       EXPERIENCE SECTION
+       EXPERIENCE & RESEARCH TRACK RECORD
        ========================================================================== -->
   <section id="experience">
     <div class="wrap">
       <div class="sec-head">
         <div>
           <div class="sec-label">// 03. Track Record</div>
-          <h2 class="sec-title">Work Experience</h2>
+          <h2 class="sec-title">Professional &amp; Research Experience</h2>
         </div>
-        <p class="sec-desc">Where I've applied engineering, lead acquisition, and academic research in practice.</p>
+        <p class="sec-desc">Where I have applied research experimentation, computer vision, NLP pipelines, and community leadership.</p>
       </div>
 
       <div class="experience-list">
-        <!-- Role 1: HAT Technologies -->
+        <!-- Role 1: Cradle Labs -->
         <div class="exp-card">
           <div class="exp-header">
             <div>
-              <div class="exp-role-title">Business Development Manager &amp; AI Solutions Lead</div>
+              <div class="exp-role-title">Co-author &amp; Volunteer Research Assistant (Multimodal RAG)</div>
+              <span class="exp-company">
+                Cradle Labs · Islamabad
+              </span>
+            </div>
+            <span class="exp-time">Jun 2025 — Present · Research Lab</span>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-points">
+              <li>Investigating multimodal document ingestion and cross-modal retrieval to enhance LLM response grounding across complex documents containing tables, charts, and text.</li>
+              <li>Surveyed 30+ recent academic papers to establish the literature foundation, baseline architectures, and empirical benchmarking strategy.</li>
+              <li>Responsible for experiment design, cross-modal retrieval evaluation, and results analysis for a research manuscript currently under review.</li>
+            </ul>
+          </div>
+          <div class="exp-footer">
+            <span class="tag">Multimodal RAG</span>
+            <span class="tag">Cross-Modal Retrieval</span>
+            <span class="tag">LLM Grounding</span>
+            <span class="tag">Benchmarking</span>
+            <span class="tag">Under Review</span>
+          </div>
+        </div>
+
+        <!-- Role 2: Center of Excellence in Artificial Intelligence (CEAI) -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role-title">AI Research Intern (Computer Vision &amp; Medical Imaging)</div>
+              <span class="exp-company">
+                Center of Excellence in Artificial Intelligence (CEAI) · E-8 Islamabad
+              </span>
+            </div>
+            <span class="exp-time">Sep 2024 — Nov 2024</span>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-points">
+              <li>Built computer vision pipelines for medical foot image diagnosis and anomaly detection.</li>
+              <li>Processed and verified 500+ annotated medical image samples to ensure rigorous data quality.</li>
+              <li>Enhanced dataset quality through systematic annotation standards, directly supporting downstream model training and validation cycles.</li>
+            </ul>
+          </div>
+          <div class="exp-footer">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Medical Foot Diagnosis</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Dataset Annotation</span>
+            <span class="tag">Model Training</span>
+          </div>
+        </div>
+
+        <!-- Role 3: FAST-NUCES Islamabad -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role-title">AI Research Intern (NLP &amp; Energy Market Analytics)</div>
+              <span class="exp-company">
+                FAST-NUCES Islamabad · Research Environment
+              </span>
+            </div>
+            <span class="exp-time">2024 — 2025</span>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-points">
+              <li>Engineered end-to-end NLP and translation pipeline processing ~30,350 working documents (filtered from ~490k raw scraped news articles) to study Brazilian energy market dynamics.</li>
+              <li>Investigated whether news signals help explain/predict the gap between CMO (marginal operating cost) and actual PLD settlement prices over a 45-day forecasting window.</li>
+              <li>Deployed GPU-accelerated translation workflows (NLLB &amp; Argos Translate), language detection (<code>langdetect</code>), Gemini LLM topic classification across 12 hydrology/market topics (flood, drought, El Niño, curtailment), and FinBERT sentiment scoring.</li>
+            </ul>
+          </div>
+          <div class="exp-footer">
+            <span class="tag">NLP</span>
+            <span class="tag">Gemini Topic Labeling</span>
+            <span class="tag">FinBERT Sentiment</span>
+            <span class="tag">NLLB / Argos Translate</span>
+            <span class="tag">CMO-PLD Analytics</span>
+          </div>
+        </div>
+
+        <!-- Role 4: HAT Technologies -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role-title">Founder &amp; Applied AI Solutions Lead</div>
               <a href="https://www.hattechnologies.tech" target="_blank" rel="noopener" class="exp-company">
                 HAT Technologies
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -2257,69 +3036,68 @@
           </div>
           <div class="exp-body">
             <ul class="exp-points">
-              <li>Lead client acquisition and AI solution design across Pakistani local markets (F&amp;B sector) and international markets (US and Europe health and wellness sector).</li>
-              <li>Architected and executed hyper-personalized outreach campaigns utilizing pain-point-led messaging, channel-specific CTAs (WhatsApp for local, Calendly for international leads), and automated research graphs.</li>
-              <li>Designed and specified a self-hosted whitelabel AI marketing platform using FastAPI, LangGraph, Ollama (OpenHermes), and pgvector so client data remains strictly on-premises.</li>
+              <li>Founded applied AI software and automation agency delivering custom business workflow automation and practical intelligent applications.</li>
+              <li>Architected Whitelabel AI Agency OS utilizing LangGraph and Temporal for robust multi-tenant agent orchestration and background job dispatch.</li>
+              <li>Designed automated outreach pipelines, customer engagement chatbots, and bespoke full-stack AI integrations.</li>
             </ul>
           </div>
           <div class="exp-footer">
-            <span class="tag">AI Outreach</span>
+            <span class="tag">Applied AI Agency</span>
             <span class="tag">LangGraph</span>
+            <span class="tag">Temporal</span>
             <span class="tag">FastAPI</span>
-            <span class="tag">pgvector</span>
-            <span class="tag">GTM Strategy</span>
+            <span class="tag">Workflow Automation</span>
           </div>
         </div>
 
-        <!-- Role 2: Bahria University -->
+        <!-- Role 5: Tech Fusion / AI Club — Bahria University -->
         <div class="exp-card">
           <div class="exp-header">
             <div>
-              <div class="exp-role-title">Academic Research Co-Author</div>
-              <a href="https://www.bahria.edu.pk/" target="_blank" rel="noopener" class="exp-company">
-                Bahria University, Islamabad
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
+              <div class="exp-role-title">Lead &amp; Founder — Tech Fusion / AI Club</div>
+              <span class="exp-company">
+                Bahria University, Islamabad Campus
+              </span>
             </div>
-            <span class="exp-time">2023 — Present · Islamabad, Pakistan</span>
+            <span class="exp-time">2025 — Present</span>
           </div>
           <div class="exp-body">
             <ul class="exp-points">
-              <li>Co-authoring formal cryptographic research on DSPD (Device-Seeded Password Derivation) with Adil Khan; structured proofs under the Random Oracle Model and resolved domain-separation vulnerabilities in HKDF input-keying-material.</li>
-              <li>Co-authored a comprehensive ransomware detection survey targeting Q1 venue IEEE Access; successfully navigated two senior-editor-style peer review iterations resolving citation gaps, competing survey analyses, and benchmark accuracy.</li>
+              <li>Founded the campus technology event brand and led a cross-functional team of 50+ student volunteers across event production and technical logistics.</li>
+              <li>Organized campus technology events hosting 350+ participants, fostering student engagement with emerging AI tools and developer platforms.</li>
+              <li>Secured external corporate sponsorships for two consecutive events and delivered hands-on AI/ML workshops covering machine learning fundamentals and real-world project building.</li>
             </ul>
           </div>
           <div class="exp-footer">
-            <span class="tag">Formal Security Proofs</span>
-            <span class="tag">Random Oracle Model</span>
-            <span class="tag">IEEE Access</span>
-            <span class="tag">HKDF</span>
-            <span class="tag">Malware ML</span>
+            <span class="tag">Community Founder</span>
+            <span class="tag">50+ Volunteer Leadership</span>
+            <span class="tag">350+ Participants</span>
+            <span class="tag">Sponsorship Outreach</span>
+            <span class="tag">AI/ML Workshops</span>
           </div>
         </div>
 
-        <!-- Role 3: Independent AI & ML Systems Engineering -->
+        <!-- Role 6: U-Capacity -->
         <div class="exp-card">
           <div class="exp-header">
             <div>
-              <div class="exp-role-title">AI &amp; ML Systems Engineer (Full-Stack)</div>
-              <span class="exp-company">Independent / Systems Projects</span>
+              <div class="exp-role-title">Social Media &amp; Analytics Intern</div>
+              <span class="exp-company">
+                U-Capacity · Rawalpindi, Pakistan
+              </span>
             </div>
-            <span class="exp-time">2022 — Present</span>
+            <span class="exp-time">Aug 2024 — Nov 2024</span>
           </div>
           <div class="exp-body">
             <ul class="exp-points">
-              <li>Built local ML and LLM orchestration pipelines using Ollama, Redis, and Celery for privacy-compliant enterprise text analysis.</li>
-              <li>Developed hybrid search RAG architectures pairing dense vector embeddings (pgvector) with sparse BM25 indexing for low-latency domain retrieval.</li>
-              <li>Constructed client-side verifiable web agents and interactive machine learning evaluation suites with zero-hallucination guardrails.</li>
+              <li>Managed LinkedIn content strategy and campaign tracking for organizational brand growth.</li>
+              <li>Applied an analytics-driven posting and scheduling framework to systematically improve organic reach and audience engagement metrics.</li>
             </ul>
           </div>
           <div class="exp-footer">
-            <span class="tag">Python</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Redis</span>
-            <span class="tag">RAG</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Audience Analytics</span>
+            <span class="tag">Data-Driven Growth</span>
           </div>
         </div>
       </div>
@@ -2334,16 +3112,16 @@
   </section>
 
   <!-- ==========================================================================
-       SELECTED CASE STUDIES (Deep Evidence)
+       FEATURED RESEARCH & CASE STUDIES (Deep Evidence)
        ========================================================================== -->
   <section id="work">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-label">// Featured Evidence · Case Studies</div>
-          <h2 class="sec-title">Selected Case Studies</h2>
+          <div class="sec-label">// 04. Featured Research &amp; Deep Evidence</div>
+          <h2 class="sec-title">Selected Research &amp; Case Studies</h2>
         </div>
-        <p class="sec-desc">Three projects across three different layers: cryptographic research, applied ML security, and shipped agentic systems.</p>
+        <p class="sec-desc">Four in-depth case studies across cryptographic protocols, multimodal AI intake, market-scale NLP analytics, and cross-modal retrieval.</p>
       </div>
 
       <div class="case-list">
@@ -2351,264 +3129,538 @@
         <article class="case" id="case-dspd">
           <div class="case-top">
             <div>
-              <div class="case-id">CASE 01 — CRYPTOGRAPHIC RESEARCH</div>
-              <h3>DSPD: Device-Seeded Password Derivation</h3>
+              <div class="case-id">CASE 01 — CRYPTOGRAPHIC PROTOCOL RESEARCH</div>
+              <h3>DSPD: Device-Bound Stateless Password Derivation Scheme</h3>
             </div>
             <div class="case-tags">
-              <span class="tag">Cryptography</span>
-              <span class="tag">Formal Proofs</span>
+              <span class="tag">Argon2id</span>
+              <span class="tag">HKDF-SHA256</span>
+              <span class="tag">Random Oracle Model</span>
               <span class="tag">Security Proofs</span>
-              <span class="tag">HKDF</span>
+              <span class="tag">PyPI Package</span>
             </div>
           </div>
           <div class="case-grid">
             <div class="case-field">
-              <div class="k">Problem</div>
-              <div class="v">Password-derived keys are only as strong as the password itself, and standard KDFs don't bind key material to the physical device generating it — leaving schemes vulnerable if a password is breached elsewhere.</div>
+              <div class="k">Research Problem</div>
+              <div class="v">Standard password-derived keys are only as secure as the password string itself; a breach on one service exposes identical credentials elsewhere. Conventional key derivation functions (KDFs) do not cryptographically bind derived key material to the physical device generating it.</div>
             </div>
             <div class="case-field">
-              <div class="k">Approach</div>
-              <div class="v">Designed a device-seeded derivation scheme and formalised its security under the <strong>random oracle model</strong>, developing a rigorous proof structure across multiple theorems covering key indistinguishability and derivation soundness.</div>
+              <div class="k">Theoretical Approach</div>
+              <div class="v">Co-authored a device-bound stateless password derivation scheme with research supervisor Adil Khan. Formulated rigorous mathematical proofs under the <strong>Random Oracle Model</strong> across key indistinguishability and derivation soundness theorems.</div>
             </div>
             <div class="case-field">
-              <div class="k">What I Built</div>
-              <div class="v">A cryptographic construction plus a written security proof, developed through iterative peer review — including identifying and closing a <strong>domain-separation vulnerability</strong> in the HKDF input-keying-material construction prior to submission.</div>
+              <div class="k">What I Engineered</div>
+              <div class="v">Identified and closed a critical <strong>domain-separation vulnerability</strong> in the HKDF input-keying-material construction prior to submission. Engineered and published a companion Python package and CLI with cross-hardware benchmark suites to PyPI.</div>
             </div>
             <div class="case-field">
-              <div class="k">Verified Result</div>
-              <div class="v">Journal revision addressing formal security proofs, comparative analysis, and technical depth flagged in earlier editor feedback — solidifying the scheme's mathematical credibility.</div>
+              <div class="k">Verified Status</div>
+              <div class="v">Research manuscript submitted to an Elsevier journal venue, currently at <strong>Major Revision</strong> stage addressing formal security proofs and comparative baseline analysis (Under peer review — not yet formally published).</div>
             </div>
           </div>
           <div class="case-status">
-            <span class="case-status-badge">✓ Proof structure reviewed · Domain-separation issue resolved</span>
-            <span style="color:var(--text-dimmer); font-size:11px;">Target: Cryptographic Journal Revision</span>
+            <span class="case-status-badge">✓ Security proofs reviewed · Domain separation resolved · PyPI package published</span>
+            <span style="color:var(--text-dimmer); font-size:11px;">Status: Under Peer Review (Major Revision)</span>
           </div>
         </article>
 
-        <!-- CASE 02: Ransomware Survey -->
-        <article class="case" id="case-ransomware">
+        <!-- CASE 02: AutismLens FYP -->
+        <article class="case" id="case-autismlens">
           <div class="case-top">
             <div>
-              <div class="case-id">CASE 02 — SECURITY / ML RESEARCH</div>
-              <h3>Ransomware Detection: A Survey of the Landscape</h3>
+              <div class="case-id">CASE 02 — MULTIMODAL AI &amp; HEALTHCARE SYSTEMS (FYP)</div>
+              <h3>AutismLens: Multimodal Manual-Grounded Autism Assessment AI</h3>
             </div>
             <div class="case-tags">
-              <span class="tag">Machine Learning</span>
-              <span class="tag">Security Research</span>
-              <span class="tag">IEEE Access</span>
-              <span class="tag">Benchmarking</span>
-            </div>
-          </div>
-          <div class="case-grid">
-            <div class="case-field">
-              <div class="k">Problem</div>
-              <div class="v">Ransomware detection literature is fragmented across static, dynamic, and hybrid ML approaches, lacking a clean systematic map of what works, what has been tested, and where the remaining research gaps are.</div>
-            </div>
-            <div class="case-field">
-              <div class="k">Approach</div>
-              <div class="v">Co-authored a structured survey manuscript for a Q1 target venue (IEEE Access), categorising detection approaches and benchmarking studies, then put it through an exhaustive <strong>senior-editor-style peer review</strong>.</div>
-            </div>
-            <div class="case-field">
-              <div class="k">What I Built</div>
-              <div class="v">Two full manuscript revisions, each independently scored — feedback surfaced issues from a missing competing survey to internal benchmark-count inconsistencies and reference attribution errors, all rigorously resolved in revision.</div>
-            </div>
-            <div class="case-field">
-              <div class="k">Verified Result</div>
-              <div class="v">A hardened manuscript with corrected benchmark figures, closed citation gaps, and comprehensive prior-art coverage — currently in the Major Revision stage ahead of final resubmission.</div>
-            </div>
-          </div>
-          <div class="case-status">
-            <span class="case-status-badge">✓ Two review cycles complete · Revision in progress</span>
-            <span style="color:var(--text-dimmer); font-size:11px;">Target: IEEE Access (Q1 Venue)</span>
-          </div>
-        </article>
-
-        <!-- CASE 03: Whitelabel AI Platform -->
-        <article class="case" id="case-platform">
-          <div class="case-top">
-            <div>
-              <div class="case-id">CASE 03 — APPLIED AI SYSTEMS</div>
-              <h3>Self-Hosted Whitelabel AI Marketing Platform</h3>
-            </div>
-            <div class="case-tags">
-              <span class="tag">LangGraph</span>
               <span class="tag">FastAPI</span>
-              <span class="tag">RAG</span>
-              <span class="tag">pgvector</span>
-              <span class="tag">Ollama</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">Sentence-BERT</span>
+              <span class="tag">ChromaDB</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Next.js</span>
             </div>
           </div>
           <div class="case-grid">
             <div class="case-field">
-              <div class="k">Problem</div>
-              <div class="v">Running cold outreach and client acquisition at HAT Technologies meant repeating manual research, drafting, and personalization for every campaign — an operational bottleneck that did not scale with headcount.</div>
+              <div class="k">Problem Formulation</div>
+              <div class="v">Standardized autism screening instruments (e.g. Vineland-3) capture rich behavioral item data, but manually cross-referencing evaluation sheets against printed scoring manuals is slow, inconsistent across staff experience levels, and error-prone in under-resourced clinics lacking specialist staff.</div>
             </div>
             <div class="case-field">
-              <div class="k">Approach</div>
-              <div class="v">Designed a fully local, self-hosted architecture built around specialized AI agent "employees", using <strong>OpenHermes via Ollama</strong> for local reasoning so client and lead data never leaves the local environment.</div>
+              <div class="k">5-Layer Architecture</div>
+              <div class="v">Designed an incremental 5-layer pipeline: (1) Multimodal Intake (Form/PDF/Photo) &rarr; (2) CV &amp; OCR Mark Extraction &rarr; (3) Digitized Manual Vector Store (Sentence-BERT + ChromaDB) &rarr; (4) Passage-Grounded LLM Interpretation &rarr; (5) Downloadable Structured Clinical PDF Report.</div>
             </div>
             <div class="case-field">
-              <div class="k">What I Built</div>
-              <div class="v">A multi-service build spec covering <strong>FastAPI, LangGraph, PostgreSQL with pgvector, Redis, Celery, and Next.js</strong> — plus live outreach campaigns across Pakistani F&amp;B and international health/wellness prospects with distinct messaging frameworks.</div>
+              <div class="k">Zero-Hallucination Guardrails</div>
+              <div class="v">To prevent diagnostic hallucinations, the LLM module is strictly prompted to ground every substantive statement in a retrieved passage cited from the digitized scoring manual, normalizing extracted item-level score vectors before synthesis.</div>
             </div>
             <div class="case-field">
-              <div class="k">Verified Result</div>
-              <div class="v">A reusable architecture for agentic marketing workflows, and active outreach campaigns using pain-point-led personalization, channel-specific CTAs (WhatsApp for local, Calendly for international), yielding measurable response gains.</div>
+              <div class="k">Project Context &amp; Status</div>
+              <div class="v">Final Year Project (FYP-I) at Bahria University, Islamabad, supervised by Dr. Faryal Nosheen, in collaboration with Abdul Rehman. Evaluated on synthetic de-identified assessment sheets (Proposal stage &amp; active incremental development).</div>
             </div>
           </div>
           <div class="case-status">
-            <span class="case-status-badge">✓ Architecture specified · Applied in live campaigns</span>
-            <span style="color:var(--text-dimmer); font-size:11px;">Deployed @ HAT Technologies</span>
+            <span class="case-status-badge">✓ 5-Layer pipeline designed · Sentence-BERT + ChromaDB manual retrieval · Zero-hallucination citations</span>
+            <span style="color:var(--text-dimmer); font-size:11px;">Bahria University CS Dept · FYP-I</span>
           </div>
         </article>
+
+        <!-- CASE 03: FAST-NUCES Energy News NLP -->
+        <article class="case" id="case-energy">
+          <div class="case-top">
+            <div>
+              <div class="case-id">CASE 03 — LARGE-SCALE NLP &amp; MARKET PREDICTION RESEARCH</div>
+              <h3>Brazilian Energy News NLP &amp; CMO-PLD Price-Gap Analytics</h3>
+            </div>
+            <div class="case-tags">
+              <span class="tag">NLP Pipeline</span>
+              <span class="tag">Gemini Topic Labeling</span>
+              <span class="tag">FinBERT</span>
+              <span class="tag">NLLB / Argos Translate</span>
+              <span class="tag">Energy Market</span>
+            </div>
+          </div>
+          <div class="case-grid">
+            <div class="case-field">
+              <div class="k">Research Question</div>
+              <div class="v">Evaluating whether Brazilian energy, weather, and hydrology news signals can explain or forecast the price deviation between CMO (marginal operating cost) and actual PLD settlement prices over a 45-day predictive window.</div>
+            </div>
+            <div class="case-field">
+              <div class="k">Data Engineering (~30,350 Docs)</div>
+              <div class="v">Filtered and preprocessed ~30,350 working documents from a ~490,000 raw scraped article corpus spanning 7 Brazilian regulatory, meteorological, and news agencies across 5 geographic regions.</div>
+            </div>
+            <div class="case-field">
+              <div class="k">AI &amp; Translation Pipelines</div>
+              <div class="v">Engineered GPU-accelerated translation workflows using NLLB and Argos Translate with <code>langdetect</code>, categorized documents using Gemini across 12 hydrology/market topics (flood: 2,593, drought: 988, El Niño: 959), and generated domain sentiment features via FinBERT.</div>
+            </div>
+            <div class="case-field">
+              <div class="k">Key Findings &amp; Status</div>
+              <div class="v">Surfaced key distribution characteristics: hydrological supply narratives heavily dominate market coverage, while operational factors represent a fraction. Methodology and feature engineering complete; predictive modeling in progress.</div>
+            </div>
+          </div>
+          <div class="case-status">
+            <span class="case-status-badge">✓ ~30,350 docs translated &amp; labeled · 12 topic categories mapped · FinBERT sentiment integrated</span>
+            <span style="color:var(--text-dimmer); font-size:11px;">FAST-NUCES AI Research Lab</span>
+          </div>
+        </article>
+
+        <!-- CASE 04: Cradle Labs Multimodal RAG -->
+        <article class="case" id="case-cradle">
+          <div class="case-top">
+            <div>
+              <div class="case-id">CASE 04 — MULTIMODAL RETRIEVAL RESEARCH</div>
+              <h3>Multimodal Retrieval-Augmented Generation (Multimodal RAG)</h3>
+            </div>
+            <div class="case-tags">
+              <span class="tag">Multimodal AI</span>
+              <span class="tag">Cross-Modal Retrieval</span>
+              <span class="tag">LLM Grounding</span>
+              <span class="tag">Empirical Benchmarking</span>
+              <span class="tag">Cradle Labs</span>
+            </div>
+          </div>
+          <div class="case-grid">
+            <div class="case-field">
+              <div class="k">Research Objective</div>
+              <div class="v">Overcoming traditional text-only RAG limitations by enabling AI systems to ingest, cross-index, and retrieve across heterogeneous modalities — including technical schematics, statistical tables, charts, and unstructured text.</div>
+            </div>
+            <div class="case-field">
+              <div class="k">Literature Survey &amp; Baselines</div>
+              <div class="v">Conducted an exhaustive survey of 30+ recent multimodal RAG papers to identify grounding gaps, benchmark limitations, and cross-modal embedding alignment strategies.</div>
+            </div>
+            <div class="case-field">
+              <div class="k">Experimentation &amp; Benchmarks</div>
+              <div class="v">Co-authoring the research study; responsible for experimental design, empirical benchmarking against existing baselines, and quantitative retrieval precision analysis.</div>
+            </div>
+            <div class="case-field">
+              <div class="k">Publication Status Policy</div>
+              <div class="v">Research manuscript is currently <strong>Under Review</strong> at Cradle Labs, Islamabad. In accordance with zero-hallucination standards, this is documented as an in-progress submission rather than a published paper.</div>
+            </div>
+          </div>
+          <div class="case-status">
+            <span class="case-status-badge">✓ 30+ literature baselines surveyed · Experiment design complete · Empirical benchmarking active</span>
+            <span style="color:var(--text-dimmer); font-size:11px;">Cradle Labs · Under Review</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Publication Policy & Transparency Banner -->
+      <div class="research-integrity-banner">
+        <div class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        </div>
+        <p>
+          <strong>Research Integrity &amp; Publication Policy:</strong> This portfolio distinguishes active research manuscripts from completed software projects and formal publications. No manuscript (including DSPD, Multimodal RAG, and the Ransomware Survey) is represented as formally published until journal acceptance and confirmed DOI assignment.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       OTHER PROJECTS & PROTOTYPES (Merged Grid)
+       OTHER PROJECTS & SYSTEMS (Grid)
        ========================================================================== -->
   <section id="projects">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-label">// 04. Projects &amp; Systems</div>
-          <h2 class="sec-title">Other Projects &amp; Prototypes</h2>
+          <div class="sec-label">// 05. Projects &amp; Systems</div>
+          <h2 class="sec-title">Featured Projects &amp; Prototypes</h2>
         </div>
-        <p class="sec-desc">Additional prototypes, open-source implementations, and tooling built across AI and cryptography.</p>
+        <p class="sec-desc">Additional prototypes, open-source repositories, and intelligent applications built across AI, NLP, and full-stack systems.</p>
       </div>
 
       <div class="other-projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1: AutismLens -->
         <div class="project-card">
           <div class="project-card-top">
             <div class="project-folder-icon">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
             </div>
             <div class="project-links">
-              <a href="https://github.com/talharehman/dspd-kdf" target="_blank" rel="noopener" title="GitHub Repository">
+              <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub Repository">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
             </div>
           </div>
-          <h4 class="project-name">DSPD Proof Engine &amp; Ref Implementation</h4>
-          <p class="project-desc">Python reference implementation of the Device-Seeded Password Derivation scheme with formal security proof verification test vectors and domain-separated HKDF.</p>
+          <h4 class="project-name">AutismLens (FYP Intake &amp; RAG)</h4>
+          <p class="project-desc">Multimodal AI system extracting item-level scores from assessment sheets (via form, PDF, or photo) and generating manual-grounded reports via Sentence-BERT and ChromaDB.</p>
           <ul class="project-tech-list">
-            <li class="project-tech-item">Python</li>
-            <li class="project-tech-item">Cryptography</li>
-            <li class="project-tech-item">HKDF</li>
-            <li class="project-tech-item">Security Proofs</li>
+            <li class="project-tech-item">FastAPI</li>
+            <li class="project-tech-item">LangChain</li>
+            <li class="project-tech-item">Sentence-BERT</li>
+            <li class="project-tech-item">ChromaDB</li>
+            <li class="project-tech-item">OpenCV</li>
           </ul>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2: EDU360 / EducationGate -->
         <div class="project-card">
           <div class="project-card-top">
             <div class="project-folder-icon">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
             </div>
             <div class="project-links">
-              <a href="https://github.com/talharehman/outreach-agent-graph" target="_blank" rel="noopener" title="GitHub Repository">
+              <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub Repository">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
             </div>
           </div>
-          <h4 class="project-name">Autonomous Lead Outreach Graph</h4>
-          <p class="project-desc">A stateful agentic workflow built with LangGraph to orchestrate multi-channel cold outreach, pain-point research, and dynamic CTA routing (WhatsApp vs. Calendly).</p>
+          <h4 class="project-name">EDU360 / EducationGate 360°</h4>
+          <p class="project-desc">Semantic opportunity and scholarship matching platform connecting students with global study programs and funding via dense vector embeddings.</p>
+          <ul class="project-tech-list">
+            <li class="project-tech-item">Sentence-BERT</li>
+            <li class="project-tech-item">ChromaDB</li>
+            <li class="project-tech-item">FastAPI</li>
+            <li class="project-tech-item">Next.js</li>
+            <li class="project-tech-item">TypeScript</li>
+          </ul>
+        </div>
+
+        <!-- Project 3: DSPD PyPI Package -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <div class="project-folder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub Repository">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+          <h4 class="project-name">DSPD Engine &amp; PyPI Package</h4>
+          <p class="project-desc">Published Python library on PyPI implementing the Device-Bound Stateless Password Derivation scheme with Argon2id, HKDF-SHA256, and cross-hardware benchmark suites.</p>
+          <ul class="project-tech-list">
+            <li class="project-tech-item">Python</li>
+            <li class="project-tech-item">Argon2id</li>
+            <li class="project-tech-item">HKDF-SHA256</li>
+            <li class="project-tech-item">PyPI Package</li>
+          </ul>
+        </div>
+
+        <!-- Project 4: RAG Pipeline with LangChain & Pinecone -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <div class="project-folder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub Repository">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+          <h4 class="project-name">LangChain &amp; Pinecone RAG</h4>
+          <p class="project-desc">End-to-end RAG pipeline featuring document ingestion, chunking, embedding, and semantic search over 1,000+ chunks with sub-300ms average query latency.</p>
+          <ul class="project-tech-list">
+            <li class="project-tech-item">LangChain</li>
+            <li class="project-tech-item">Pinecone</li>
+            <li class="project-tech-item">FastAPI</li>
+            <li class="project-tech-item">Streamlit</li>
+          </ul>
+        </div>
+
+        <!-- Project 5: SmartNews Analytics -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <div class="project-folder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub Repository">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+          <h4 class="project-name">SmartNews Analytics</h4>
+          <p class="project-desc">Unsupervised NLP clustering pipeline combining TF-IDF and UMAP dimensionality reduction across 5,000+ news articles, achieving a 0.61 silhouette score.</p>
+          <ul class="project-tech-list">
+            <li class="project-tech-item">Python</li>
+            <li class="project-tech-item">NLP</li>
+            <li class="project-tech-item">scikit-learn</li>
+            <li class="project-tech-item">UMAP</li>
+          </ul>
+        </div>
+
+        <!-- Project 6: EduHire German Course Finder -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <div class="project-folder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub Repository">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+          <h4 class="project-name">EduHire — German Program Finder</h4>
+          <p class="project-desc">Full-stack web application for filtering and evaluating 200+ German university academic programs, complete with user authentication and an administrative panel.</p>
+          <ul class="project-tech-list">
+            <li class="project-tech-item">Flask</li>
+            <li class="project-tech-item">SQL</li>
+            <li class="project-tech-item">HTML/CSS</li>
+            <li class="project-tech-item">REST APIs</li>
+          </ul>
+        </div>
+
+        <!-- Project 7: Whitelabel AI Agency OS -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <div class="project-folder-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://www.hattechnologies.tech" target="_blank" rel="noopener" title="HAT Technologies">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </a>
+            </div>
+          </div>
+          <h4 class="project-name">Whitelabel AI Agency OS</h4>
+          <p class="project-desc">Internal agent and workflow orchestration platform for HAT Technologies built with LangGraph and Temporal for multi-tenant business operations.</p>
           <ul class="project-tech-list">
             <li class="project-tech-item">LangGraph</li>
-            <li class="project-tech-item">LangChain</li>
+            <li class="project-tech-item">Temporal</li>
             <li class="project-tech-item">FastAPI</li>
-            <li class="project-tech-item">Ollama</li>
+            <li class="project-tech-item">Multi-Tenant</li>
           </ul>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Project 8: Ransomware Survey Manuscript -->
         <div class="project-card">
           <div class="project-card-top">
             <div class="project-folder-icon">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
             </div>
             <div class="project-links">
-              <a href="https://github.com/talharehman/pgvector-fastapi-rag" target="_blank" rel="noopener" title="GitHub Repository">
+              <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
             </div>
           </div>
-          <h4 class="project-name">pgvector Hybrid RAG Boilerplate</h4>
-          <p class="project-desc">Ultra-low latency retrieval-augmented generation engine combining dense vector search and sparse keyword matching for enterprise knowledge bases.</p>
+          <h4 class="project-name">Ransomware &amp; Security Survey</h4>
+          <p class="project-desc">Comprehensive survey on ransomware detection literature and ML benchmarking co-authored with supervisor Adil Khan (targeting Q1 venue, in preparation / under peer review).</p>
           <ul class="project-tech-list">
-            <li class="project-tech-item">FastAPI</li>
-            <li class="project-tech-item">pgvector</li>
-            <li class="project-tech-item">PostgreSQL</li>
-            <li class="project-tech-item">Redis</li>
+            <li class="project-tech-item">Malware ML</li>
+            <li class="project-tech-item">Benchmarking</li>
+            <li class="project-tech-item">LaTeX / TikZ</li>
+            <li class="project-tech-item">Q1 Venue Target</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Project 4 -->
-        <div class="project-card">
-          <div class="project-card-top">
-            <div class="project-folder-icon">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+  <!-- ==========================================================================
+       CERTIFICATIONS & COMMUNITY LEADERSHIP SECTION
+       ========================================================================== -->
+  <section id="community">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-label">// 06. Leadership &amp; Credentials</div>
+          <h2 class="sec-title">Certifications &amp; Community Impact</h2>
+        </div>
+        <p class="sec-desc">Confirmed technical credentials, hackathons, and university community leadership across Pakistan's AI ecosystem.</p>
+      </div>
+
+      <!-- Certifications Grid -->
+      <div class="cert-grid">
+        <!-- Cert 1: Anthropic AI Fluency -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-head">
+              <span class="cert-issuer">Anthropic</span>
+              <span class="cert-status-tag">✓ Confirmed</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/talharehman/ransomware-detection-benchmark" target="_blank" rel="noopener" title="GitHub Repository">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </a>
-            </div>
+            <h4 class="cert-title">AI Fluency: Framework &amp; Foundations</h4>
+            <p class="cert-desc">Certificate of Completion in AI foundations, framework mechanics, and applied generative models (associated with UCC, King's College context, Higher Education Authority, National Forum).</p>
           </div>
-          <h4 class="project-name">ML Ransomware Benchmarker</h4>
-          <p class="project-desc">Comparative evaluation pipeline benchmarking static, dynamic, and hybrid machine learning models on public ransomware dataset corpuses.</p>
-          <ul class="project-tech-list">
-            <li class="project-tech-item">Python</li>
-            <li class="project-tech-item">Scikit-learn</li>
-            <li class="project-tech-item">PyTorch</li>
-            <li class="project-tech-item">IEEE Format</li>
-          </ul>
+          <span class="cert-link-btn" style="color:var(--verify);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Verified Anthropic Credential
+          </span>
         </div>
 
-        <!-- Project 5 -->
-        <div class="project-card">
-          <div class="project-card-top">
-            <div class="project-folder-icon">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+        <!-- Cert 2: Google AI Essentials -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-head">
+              <span class="cert-issuer">Google / Coursera</span>
+              <span class="cert-status-tag">✓ Credly Badge</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/talharehman/ollama-agent-daemon" target="_blank" rel="noopener" title="GitHub Repository">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </a>
-            </div>
+            <h4 class="cert-title">Google AI Essentials</h4>
+            <p class="cert-desc">Covers core AI concepts, machine learning workflows, natural language processing, prompt design, and ethical AI implementation practices via GDSC Bahria.</p>
           </div>
-          <h4 class="project-name">Ollama Local Agent Daemon</h4>
-          <p class="project-desc">Lightweight local agent daemon running OpenHermes for private agency data processing without sending sensitive information outside the local network.</p>
-          <ul class="project-tech-list">
-            <li class="project-tech-item">Ollama</li>
-            <li class="project-tech-item">OpenHermes</li>
-            <li class="project-tech-item">Docker</li>
-            <li class="project-tech-item">Celery</li>
-          </ul>
+          <a href="https://www.credly.com/badges/c238a043-8c69-44b7-b408-4f88dd04a0c9/public_url" target="_blank" rel="noopener" class="cert-link-btn">
+            View Credly Badge
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
         </div>
 
-        <!-- Project 6 -->
-        <div class="project-card">
-          <div class="project-card-top">
-            <div class="project-folder-icon">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+        <!-- Cert 3: Object-Oriented Design -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-head">
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-status-tag">✓ Verified</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/talharehman/portfolio" target="_blank" rel="noopener" title="GitHub Repository">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </a>
+            <h4 class="cert-title">Object-Oriented Design</h4>
+            <p class="cert-desc">Comprehensive course by Olivia Stone and Barron Stone covering OOP design patterns, inheritance hierarchies, encapsulation, and clean software architecture.</p>
+          </div>
+          <a href="https://www.linkedin.com/learning/certificates/dd11ede8c17c8748cd857ba684f1d3be22f05c85d635f1892f636a248ea0badd" target="_blank" rel="noopener" class="cert-link-btn">
+            View Certificate
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Cert 4: Generative AI -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-head">
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-status-tag">✓ Verified</span>
+            </div>
+            <h4 class="cert-title">Generative AI Essentials</h4>
+            <p class="cert-desc">Foundational training in modern generative architectures, multimodal models, prompt engineering patterns, and generative AI ecosystem workflows.</p>
+          </div>
+          <a href="https://www.linkedin.com/learning/certificates/f837e524005ab0f7ea44e5f5541a0bac1d2ffb3fdac63dbbf3f5b80ad8c8782c" target="_blank" rel="noopener" class="cert-link-btn">
+            View Certificate
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Cert 5: Web Dev Workshop Organizing -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-head">
+              <span class="cert-issuer">Bahria Innovation Center</span>
+              <span class="cert-status-tag">Organizer &amp; Host</span>
+            </div>
+            <h4 class="cert-title">Web Development Deep Dive</h4>
+            <p class="cert-desc">Organized and hosted technical workshop in collaboration with Shaheen-e-Iqbal and Dot World Media covering Java, React Native, Node.js, and MongoDB.</p>
+          </div>
+          <span class="cert-link-btn" style="color:var(--text-dim);">
+            Active Organizer &amp; Technical Host
+          </span>
+        </div>
+
+        <!-- Cert 6: Power Automate Low-Code -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-head">
+              <span class="cert-issuer">MLSA Session</span>
+              <span class="cert-status-tag">Completed</span>
+            </div>
+            <h4 class="cert-title">Effortless Automation with Power Automate</h4>
+            <p class="cert-desc">Hands-on technical session on automating enterprise workflows and cloud business processes using Microsoft Power Automate capabilities.</p>
+          </div>
+          <span class="cert-link-btn" style="color:var(--text-dim);">
+            Microsoft Learn Student Ambassador Session
+          </span>
+        </div>
+      </div>
+
+      <!-- Community Leadership Highlights Grid -->
+      <div class="community-impact-grid">
+        <!-- Impact 1: Tech Fusion -->
+        <div class="community-card">
+          <span class="community-card-icon">🚀</span>
+          <h4 class="community-card-title">Tech Fusion / AI Club Leadership</h4>
+          <p class="community-card-desc">
+            Founded the campus tech event brand at Bahria University Islamabad. Lead a 50+ volunteer team, organized flagship events hosting 350+ attendees, secured corporate sponsorships, and delivered student workshops on practical machine learning.
+          </p>
+          <div class="community-stats">
+            <div class="community-stat-item">
+              <span class="community-stat-val">50+</span>
+              <span class="community-stat-lbl">Volunteers</span>
+            </div>
+            <div class="community-stat-item">
+              <span class="community-stat-val">350+</span>
+              <span class="community-stat-lbl">Attendees</span>
+            </div>
+            <div class="community-stat-item">
+              <span class="community-stat-val">2x</span>
+              <span class="community-stat-lbl">Sponsorships</span>
             </div>
           </div>
-          <h4 class="project-name">Verifiable AI Portfolio Agent</h4>
-          <p class="project-desc">Modern portfolio with an embedded zero-hallucination retrieval engine, dual theme support, live terminal animation, and responsive design.</p>
-          <ul class="project-tech-list">
-            <li class="project-tech-item">JavaScript</li>
-            <li class="project-tech-item">Modern CSS</li>
-            <li class="project-tech-item">Client RAG</li>
-            <li class="project-tech-item">Verification UI</li>
-          </ul>
+        </div>
+
+        <!-- Impact 2: Tech Fusion 2026 -->
+        <div class="community-card">
+          <span class="community-card-icon">⚡</span>
+          <h4 class="community-card-title">Tech Fusion 2026: "AI Without The Humans"</h4>
+          <p class="community-card-desc">
+            Organizing Bahria University's flagship tech festival themed "AI Without The Humans", in partnership with Google Developer Groups (GDG) Islamabad, Society Circle, and student clubs to showcase autonomous agent workflows.
+          </p>
+          <div class="community-stats">
+            <div class="community-stat-item">
+              <span class="community-stat-val">GDG</span>
+              <span class="community-stat-lbl">Partner</span>
+            </div>
+            <div class="community-stat-item">
+              <span class="community-stat-val">Flagship</span>
+              <span class="community-stat-lbl">Tech Fest</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact 3: AISeekho & Hackathons -->
+        <div class="community-card">
+          <span class="community-card-icon">🏆</span>
+          <h4 class="community-card-title">AISeekho Builders Day &amp; Panels</h4>
+          <p class="community-card-desc">
+            Shortlisted for Round 2 at the AISeekho Builders Day / GDG Islamabad Hackathon (Google AI Studio &amp; Gemini APIs). Organized "The Two AI" interdisciplinary panel connecting international AI researchers with philosophers.
+          </p>
+          <div class="community-stats">
+            <div class="community-stat-item">
+              <span class="community-stat-val">Round 2</span>
+              <span class="community-stat-lbl">GDG Shortlist</span>
+            </div>
+            <div class="community-stat-item">
+              <span class="community-stat-val">OpenAI</span>
+              <span class="community-stat-lbl">Ambassador</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2621,10 +3673,10 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-label">// 05. Interactive Chat</div>
+          <div class="sec-label">// 07. Interactive Chat</div>
           <h2 class="sec-title">Ask the Portfolio Agent</h2>
         </div>
-        <p class="sec-desc">Retrieval-only AI agent with zero fabrication. Ask any question or select one of the suggested prompts below.</p>
+        <p class="sec-desc">A zero-hallucination factual knowledge retrieval agent. Ask any question about my education, research, projects, skills, or community work.</p>
       </div>
 
       <div class="agent-wrap">
@@ -2639,18 +3691,39 @@
           </div>
         </div>
 
+        <!-- Live Voice AI Toolbar -->
+        <div class="agent-voice-toolbar">
+          <div class="agent-voice-status">
+            <span class="voice-live-dot" id="voiceLiveDot"></span>
+            <span id="voiceStatusText">Voice Agent Ready (Elliot · Vapi)</span>
+            <div class="voice-wave-bars" id="agentWaveBars">
+              <span class="voice-wave-bar"></span>
+              <span class="voice-wave-bar"></span>
+              <span class="voice-wave-bar"></span>
+              <span class="voice-wave-bar"></span>
+              <span class="voice-wave-bar"></span>
+            </div>
+          </div>
+          <div class="agent-voice-actions">
+            <button id="agentVoiceToggleBtn" class="btn-call-action" title="Start voice call with Talha's AI">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+              <span id="agentVoiceBtnText">Start Voice Call</span>
+            </button>
+          </div>
+        </div>
+
         <div class="agent-body" id="agentBody"></div>
         <div class="agent-suggest" id="agentSuggest"></div>
 
         <div class="agent-input-container">
-          <input type="text" id="agentInput" placeholder="Ask about Talha's projects, cryptographic research, or tech stack…" autocomplete="off">
+          <input type="text" id="agentInput" placeholder="Ask about AutismLens, DSPD research, Cradle Labs, tech stack, or certifications…" autocomplete="off">
           <button id="agentSend">
             Ask
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
           </button>
         </div>
         <p class="agent-note">
-          🔒 <strong>Zero-Hallucination Policy:</strong> This agent strictly retrieves answers from Talha Rehman's verified project and research corpus. If data is unavailable, it declines to fabricate answers.
+          🔒 <strong>Zero-Hallucination Guardrail:</strong> This agent speaks in first person as Talha Rehman, answering strictly from documented factual records. Research manuscripts are identified as under review or in development rather than fabricated publications.
         </p>
       </div>
     </div>
@@ -2664,14 +3737,14 @@
       <div class="contact-box">
         <div class="contact-inner">
           <div>
-            <div class="sec-label">// 06. What's Next?</div>
+            <div class="sec-label">// 08. What's Next?</div>
             <h2>Let's Work Together</h2>
             <p>
-              Have an AI idea, agentic workflow, or cryptographic system that needs to become a verified, working prototype? That's exactly the kind of challenge I take on.
+              I am actively seeking AI engineering and research roles, freelance machine learning opportunities, and academic collaborations. Whether you need a production RAG system, computer vision pipeline, or AI agent workflow, feel free to reach out.
             </p>
             <a href="mailto:talharehman717@gmail.com" class="btn">
               Say Hello
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </a>
           </div>
 
@@ -2681,8 +3754,18 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
               <div class="details">
-                <span class="type">Direct / Primary Email</span>
+                <span class="type">Primary Email</span>
                 <span class="val">talharehman717@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="tel:+923130822421" class="contact-item">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="details">
+                <span class="type">Direct Phone / WhatsApp</span>
+                <span class="val">+92 313-082-2421</span>
               </div>
             </a>
 
@@ -2691,28 +3774,28 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
               </div>
               <div class="details">
-                <span class="type">Freelance &amp; AI Engagements</span>
+                <span class="type">Freelance &amp; AI Inquiries</span>
                 <span class="val">freelanceai.tr@gmail.com</span>
               </div>
             </a>
 
-            <a href="https://linkedin.com/in/talharehman-ai" target="_blank" rel="noopener" class="contact-item">
+            <a href="https://linkedin.com/in/talha-rehman-ai" target="_blank" rel="noopener" class="contact-item">
               <div class="icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </div>
               <div class="details">
                 <span class="type">LinkedIn Profile</span>
-                <span class="val">linkedin.com/in/talharehman-ai</span>
+                <span class="val">linkedin.com/in/talha-rehman-ai</span>
               </div>
             </a>
 
-            <a href="https://github.com/talharehman" target="_blank" rel="noopener" class="contact-item">
+            <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" class="contact-item">
               <div class="icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </div>
               <div class="details">
                 <span class="type">GitHub</span>
-                <span class="val">github.com/talharehman</span>
+                <span class="val">github.com/sultanofficial717</span>
               </div>
             </a>
 
@@ -2721,7 +3804,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
               </div>
               <div class="details">
-                <span class="type">Company</span>
+                <span class="type">Agency Website</span>
                 <span class="val">hattechnologies.tech</span>
               </div>
             </a>
@@ -2737,19 +3820,19 @@
   <footer>
     <div class="wrap">
       <div class="footer-left">
-        <span>© 2026 Talha Rehman. Built and verified, not just written.</span>
-        <span style="font-size:11px; color:var(--text-dimmer);">AI &amp; ML Engineer · Applied Cryptography · Verified Systems.</span>
+        <span>© 2026 Talha Rehman. Built with factual integrity, verified evidence, and zero fabrication.</span>
+        <span style="font-size:11px; color:var(--text-dimmer);">BS AI (Bahria Univ Islamabad) · Research-Minded AI Engineer · Community Lead.</span>
       </div>
       <div class="footer-links">
-        <a href="https://github.com/talharehman" target="_blank" rel="noopener" title="GitHub">GitHub</a>
+        <a href="https://github.com/sultanofficial717" target="_blank" rel="noopener" title="GitHub">GitHub</a>
         <span>·</span>
-        <a href="https://linkedin.com/in/talharehman-ai" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a>
+        <a href="https://linkedin.com/in/talha-rehman-ai" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a>
         <span>·</span>
         <a href="https://www.hattechnologies.tech" target="_blank" rel="noopener" title="HAT Technologies">HAT Tech</a>
         <span>·</span>
         <a href="mailto:talharehman717@gmail.com" title="Primary Email">talharehman717@gmail.com</a>
         <span>·</span>
-        <a href="mailto:freelanceai.tr@gmail.com" title="Freelance Email">freelanceai.tr@gmail.com</a>
+        <a href="tel:+923130822421" title="Direct Phone">+92 313-082-2421</a>
       </div>
     </div>
   </footer>
@@ -2758,6 +3841,39 @@
   <button id="topButton" aria-label="Scroll back to top" title="Scroll to top">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
+
+  <!-- Floating Voice Agent Capsule & Auto-Greeting Banner -->
+  <div class="voice-floating-bar" id="voiceFloatingBar">
+    <div class="voice-welcome-toast" id="voiceWelcomeToast">
+      <div class="voice-toast-header">
+        <div class="voice-toast-title">
+          <span class="voice-pulse-icon">🎙️</span>
+          <span>Talha's Voice AI</span>
+        </div>
+        <button class="voice-toast-close" id="voiceToastClose" title="Dismiss greeting">×</button>
+      </div>
+      <div class="voice-toast-body">
+        "Hello! I am Talha Rehman, AI Engineer. What specifically would you like to know about me?"
+      </div>
+      <button class="voice-toast-btn" id="voiceToastStartBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Talk to Talha (Live Voice)
+      </button>
+    </div>
+
+    <button class="voice-orb-btn" id="voiceOrbBtn" title="Toggle Talha Voice AI" aria-label="Toggle Voice AI Assistant">
+      <div class="voice-orb-ring"></div>
+      <svg id="voiceOrbMicIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+      <div class="voice-wave-bars" id="orbWaveBars" style="display:none;">
+        <span class="voice-wave-bar"></span>
+        <span class="voice-wave-bar"></span>
+        <span class="voice-wave-bar"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Vapi Official Web SDK -->
+  <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" defer></script>
 
   <!-- ==========================================================================
        CLIENT SCRIPTS & AGENT LOGIC
@@ -2835,13 +3951,14 @@
 
     /* ================= 5. TERMINAL VERIFICATION LOG ================= */
     const vlogLines = [
-      "$ verify --claim \"practical-ai-applications\"",
-      "checking proof_statement.......... OK",
-      "checking case_study_01 (DSPD)...... OK",
-      "checking case_study_02 (ransomware) OK",
-      "checking case_study_03 (agentic-ai) OK",
-      "checking peer_review_cycles........ 2 passed",
-      "claim status: VERIFIED"
+      "$ verify --profile \"talha-rehman\"",
+      "checking academic_degree (BS AI · Bahria Univ E-8)..... OK [CGPA 3.09]",
+      "checking research_manuscript (DSPD Scheme)............. OK [Major Revision · Under Review]",
+      "checking fyp (AutismLens Multimodal RAG)............... OK [Proposal / Active Dev]",
+      "checking cv_internship (CEAI Medical Foot Diagnosis)... OK [500+ Annotated Samples]",
+      "checking nlp_research (FAST-NUCES Energy Analytics).... OK [30,350 Processed Docs]",
+      "checking community_leadership (Tech Fusion / AI Club).. OK [50+ Volunteers · 350+ Attendees]",
+      "verification status: 100% FACTUAL · ZERO FABRICATION"
     ];
 
     const vlogBody = document.getElementById('vlogBody');
@@ -2868,85 +3985,115 @@
         el.appendChild(status);
         el.appendChild(txt);
         vlogBody.appendChild(el);
-        vlogDelay += 240;
+        vlogDelay += 200;
       });
     }
 
     renderVerificationLog();
     vlogReplayBtn.addEventListener('click', renderVerificationLog);
 
-    /* ================= 6. AGENT KNOWLEDGE BASE & RETRIEVAL ================= */
+    /* ================= 6. AGENT KNOWLEDGE BASE & FACT RETRIEVAL ================= */
     const knowledgeBase = [
       {
         id: "identity",
-        keywords: ["who", "talha", "introduce", "background", "yourself", "about", "bio", "overview", "engineer", "title"],
-        answer: "Talha Rehman is an AI & ML Engineer working across artificial intelligence, machine learning systems, applied cryptography, and full-stack engineering. He is the Business Development Manager at HAT Technologies, an AI development firm in Islamabad, and co-authors formal academic research at Bahria University alongside Adil Khan.",
-        citation: "Source: Verified Profile & Background"
+        keywords: ["who", "talha", "introduce", "background", "yourself", "about", "bio", "overview", "engineer", "title", "position"],
+        answer: "I am Talha Rehman, a final-year BS Artificial Intelligence student at Bahria University Islamabad (E-8 Campus) and a research-minded AI engineer and builder. My work spans NLP, computer vision, RAG, multimodal AI, AI agents, and automation, with research experience across Multimodal RAG at Cradle Labs, medical image CV at CEAI, cybersecurity protocols (DSPD), and Brazilian energy-market analytics at FAST-NUCES. I also founded HAT Technologies and lead a 50+ member university AI community.",
+        citation: "Source: Verified Profile & Bio (Section 1, 17, 22)"
       },
       {
-        id: "hat-technologies",
-        keywords: ["hat", "technologies", "company", "work", "job", "role", "business", "development", "manager", "agency"],
-        answer: "Talha serves as Business Development Manager & AI Solutions Lead at HAT Technologies (hattechnologies.tech) in Islamabad. He leads client acquisition across Pakistani F&B markets and international (US/Europe) health and wellness sectors, designing and deploying personalized outreach systems.",
-        citation: "Source: Experience · HAT Technologies"
+        id: "education",
+        keywords: ["education", "degree", "university", "bahria", "cgpa", "gpa", "courses", "coursework", "grades", "academic", "study", "graduate"],
+        answer: "I am pursuing a BS in Artificial Intelligence (BS AI) at Bahria University, Islamabad Campus (E-8 Campus), with enrollment from Sep 2023 to expected graduation in Jul 2027 (Enrollment: 01-136232-048). My current CGPA is 3.09 / 4.0. Relevant coursework includes Reinforcement Learning (Grade B), Robotics & Robotics Lab (Grade A/A), Deep Learning & Deep Learning Lab (Grade B/A-), Operating Systems & Lab (Grade B+/B+), Machine Learning, Computer Vision, NLP, Databases, Statistics, and Data Structures.",
+        citation: "Source: Academic Background (Section 2)"
+      },
+      {
+        id: "autismlens",
+        keywords: ["autismlens", "autism", "fyp", "final year project", "faryal nosheen", "abdul rehman", "screening", "vineland", "intake"],
+        answer: "For my Final Year Project (FYP-I), my teammate Abdul Rehman and I are building 'AutismLens: A Multimodal AI System for Manual-Grounded Interpretation of Autism Screening Assessments', supervised by Dr. Faryal Nosheen at Bahria University. It features a 5-layer incremental pipeline: (1) Multimodal intake via form/PDF/photo, (2) OCR & OpenCV mark extraction normalized into score vectors, (3) Digitized scoring manual embedded with Sentence-BERT in ChromaDB, (4) LLM interpretation strictly grounded in manual citations to prevent hallucination, and (5) Downloadable structured clinical PDF reports. It is currently at the proposal / active development stage.",
+        citation: "Source: Major Projects · AutismLens FYP (Section 7)"
       },
       {
         id: "dspd",
-        keywords: ["dspd", "cryptography", "crypto", "password", "derivation", "security", "proof", "hkdf", "encryption", "key", "theorem", "oracle"],
-        answer: "Talha designed DSPD (Device-Seeded Password Derivation), a cryptographic key-derivation scheme formalised under the random oracle model. He established formal proofs across multiple theorems and identified and resolved a critical domain-separation vulnerability in the HKDF input-keying-material construction during journal revision.",
-        citation: "Source: Case Study 01 · Cryptographic Research"
+        keywords: ["dspd", "cryptography", "crypto", "password", "derivation", "stateless", "argon2id", "hkdf", "adil khan", "security proof", "oracle", "pypi"],
+        answer: "I co-authored a research manuscript titled 'Device-Bound Stateless Password Derivation Scheme (DSPD)' with my research supervisor Adil Khan. DSPD binds cryptographic key material to physical hardware using Argon2id and HKDF-SHA256, formalised under the Random Oracle Model. During revision, I identified and resolved a critical domain-separation vulnerability in HKDF input-keying-material. The paper is currently under peer review at an Elsevier journal (Major Revision stage). I also engineered and published a companion DSPD benchmarking package to PyPI.",
+        citation: "Source: Research Manuscripts · DSPD Scheme (Section 6A)"
       },
       {
-        id: "ransomware",
-        keywords: ["ransomware", "survey", "ieee", "paper", "manuscript", "detection", "malware", "publication", "research", "peer review", "ml"],
-        answer: "Talha co-authored a structured ransomware detection survey manuscript targeting the IEEE Access Q1 venue. It underwent two senior-editor-style peer-review cycles, resolving citation gaps, comparative survey analyses, and benchmark-count inconsistencies ahead of final resubmission.",
-        citation: "Source: Case Study 02 · IEEE Access Survey"
+        id: "cradle-labs",
+        keywords: ["cradle", "cradle labs", "multimodal rag", "cross-modal", "multimodal", "retrieval", "grounding", "assistant", "paper under review"],
+        answer: "At Cradle Labs in Islamabad (Jun 2025 – Present), I work as a Co-author and Volunteer Research Assistant investigating Multimodal Retrieval-Augmented Generation (Multimodal RAG) systems. My research explores multimodal document ingestion and cross-modal retrieval to ground LLM responses in complex visual documents containing tables, diagrams, and text. I surveyed 30+ recent papers to establish the literature foundation and benchmark baselines for a manuscript currently under review.",
+        citation: "Source: Professional / Research Experience · Cradle Labs (Section 3, 6B)"
       },
       {
-        id: "ai-platform",
-        keywords: ["agent", "agentic", "langgraph", "langchain", "rag", "platform", "marketing", "ai system", "architecture", "automation", "ollama", "openhermes", "pgvector"],
-        answer: "Talha designed a self-hosted whitelabel AI marketing platform built around specialised AI agent 'employees'. The stack uses FastAPI, LangGraph, PostgreSQL with pgvector, Redis, Celery, and Next.js, running OpenHermes locally via Ollama so client data stays on-premises.",
-        citation: "Source: Case Study 03 · Applied AI Systems"
+        id: "ceai",
+        keywords: ["ceai", "center of excellence", "foot", "medical", "foot image", "diagnosis", "cv intern", "annotation"],
+        answer: "From Sep 2024 to Nov 2024, I served as an AI Research Intern at the Center of Excellence in Artificial Intelligence (CEAI, E-8 Islamabad). I built computer vision pipelines for medical foot image diagnosis, processed and verified 500+ annotated medical image samples, and enhanced dataset quality through systematic annotation standards to support iterative model training cycles.",
+        citation: "Source: Professional Experience · CEAI (Section 3)"
       },
       {
-        id: "outreach",
-        keywords: ["outreach", "cold email", "campaign", "leads", "lead generation", "clients", "sales", "prospecting", "whatsapp", "calendly"],
-        answer: "Talha runs hyper-personalized cold outreach campaigns at HAT Technologies — pitching Pakistani F&B businesses on modern web and AI chatbots (via WhatsApp CTAs) and international health and wellness businesses on AI automation (via Calendly CTAs), using pain-point-led messaging frameworks.",
-        citation: "Source: Experience · GTM Systems"
+        id: "fast-nuces",
+        keywords: ["fast", "nuces", "energy", "brazilian", "cmo", "pld", "market", "news", "argos", "nllb", "finbert", "price gap", "translation"],
+        answer: "At FAST-NUCES Islamabad, I worked in a research environment developing an NLP and translation pipeline analyzing ~30,350 processed documents (filtered from ~490k raw scraped articles) to investigate whether Brazilian energy and weather news signals can explain or predict the gap between CMO (marginal operating cost) and actual PLD settlement prices over a 45-day window. The pipeline used GPU-accelerated NLLB & Argos Translate, langdetect, Gemini LLM topic labeling (across 12 categories including flood, drought, El Niño), and FinBERT financial sentiment scoring.",
+        citation: "Source: Research Projects · Brazilian Energy NLP (Section 6C)"
       },
       {
-        id: "research-academic",
-        keywords: ["bahria", "university", "academic", "adil khan", "co-author", "publish", "proofs", "formal"],
-        answer: "Talha co-authors formal academic research at Bahria University, Islamabad, alongside Adil Khan — spanning device-seeded cryptographic protocol design (DSPD) and ML-based ransomware detection literature.",
-        citation: "Source: Background · Bahria University"
+        id: "hat-technologies",
+        keywords: ["hat", "technologies", "hat technologies", "agency", "founder", "agency os", "langgraph", "temporal", "automation", "solutions"],
+        answer: "I am the founder of HAT Technologies (hattechnologies.tech), an applied AI software and automation agency. I lead client acquisition and solution architecture, building workflow automations and developing an internal Whitelabel AI Agency OS with LangGraph and Temporal for multi-tenant agent orchestration.",
+        citation: "Source: Professional Experience · HAT Technologies (Section 3, 7)"
       },
       {
-        id: "skills-stack",
-        keywords: ["skills", "stack", "technologies", "tools", "tech stack", "programming", "languages", "experience with", "python", "fastapi", "react", "next.js", "machine learning"],
-        answer: "Talha's stack spans AI & ML Engineering (LangGraph, LangChain, RAG, pgvector, Ollama, ML benchmarking), Backend (FastAPI, Python AsyncIO, PostgreSQL, Redis, Celery), Frontend (Next.js, React, TypeScript, CSS), and Cryptography (formal security proofs, Random Oracle Model, HKDF).",
-        citation: "Source: Technical Capabilities & Stack"
+        id: "edu360",
+        keywords: ["edu360", "educationgate", "scholarship", "opportunity", "talent", "sentence-bert", "chromadb", "german", "finder"],
+        answer: "I developed EDU360 (also documented as EducationGate 360°), a semantic talent and scholarship opportunity-matching platform. It pairs students with international academic programs and funding opportunities using Sentence-BERT embeddings, a local ChromaDB vector store, FastAPI backend, and a Next.js/TypeScript frontend.",
+        citation: "Source: Major Projects · EDU360 (Section 7)"
       },
       {
-        id: "resume",
-        keywords: ["resume", "cv", "pdf", "download resume", "experience pdf"],
-        answer: "You can view or download Talha's full resume PDF directly via the 'Resume' button in the navigation bar or the link in the Experience section.",
-        citation: "Source: resume.pdf"
+        id: "tech-fusion",
+        keywords: ["tech fusion", "ai club", "community", "bahria ai club", "volunteers", "festival", "lead", "founder", "350", "events", "workshops"],
+        answer: "I am the Lead & Founder of Tech Fusion / AI Club at Bahria University Islamabad (2025 – Present). I founded the campus technology brand and lead a 50+ volunteer team. We have organized flagship events hosting 350+ participants, secured corporate sponsorships for two consecutive events, and delivered hands-on AI/ML workshops for students. I am currently organizing Tech Fusion 2026 under the theme 'AI Without The Humans' with GDG Islamabad.",
+        citation: "Source: Community Leadership (Section 9, 11)"
       },
       {
-        id: "hire",
-        keywords: ["hire", "contact", "reach", "email", "available", "work together", "collaborate", "project", "engage", "mail"],
-        answer: "Talha is available for AI & ML engineering and research engagements. You can reach out directly at talharehman717@gmail.com (Primary) or freelanceai.tr@gmail.com (Freelance / Client Engagements), or via the 'Let's Work Together' section below.",
-        citation: "Source: Contact · Availability"
+        id: "skills-tiers",
+        keywords: ["skills", "stack", "technologies", "tools", "tech stack", "programming", "languages", "python", "fastapi", "expert", "proficient", "familiar", "tiers"],
+        answer: "According to my CV self-rated proficiency tiers: Expert in Python, RAG Systems (LangChain, Pinecone), Computer Vision (OpenCV, medical imaging), Git/GitHub, and SQL; Proficient in Machine Learning (scikit-learn, TF-IDF, clustering), Flask, FastAPI, Streamlit, MongoDB, and C++; Familiar with NLP (semantic search, embeddings), TypeScript, HTML/CSS, and Generative AI APIs (Gemini, Claude, GPT).",
+        citation: "Source: Technical Skills Matrix (Section 4)"
+      },
+      {
+        id: "certifications",
+        keywords: ["certifications", "certificate", "anthropic", "google ai essentials", "credly", "linkedin learning", "oop", "generative ai", "credentials"],
+        answer: "My confirmed credentials include 'AI Fluency: Framework & Foundations' from Anthropic (completed, associated with UCC, King's College context, HEA, National Forum) and 'Google AI Essentials' via Coursera / GDSC Bahria (with a verified Credly badge). I also hold verified LinkedIn Learning certificates in Object-Oriented Design (by Olivia Stone & Barron Stone) and Generative AI, and have organized/hosted technical deep dive workshops with the Bahria Innovation Center.",
+        citation: "Source: Certifications (Section 12)"
+      },
+      {
+        id: "publications-policy",
+        keywords: ["papers", "published", "publications", "journals", "conference", "doi", "peer review", "how many papers", "ransomware survey"],
+        answer: "I don't have any formally published papers yet. I have co-authored research manuscripts — including 'Device-Bound Stateless Password Derivation Scheme (DSPD)' (under peer review at an Elsevier journal, major revision stage), a ransomware/cybersecurity survey targeting a Q1 venue (in preparation / under review), and Multimodal RAG at Cradle Labs (under review) — plus my Brazilian energy analytics research at FAST-NUCES. In accordance with strict academic integrity, I describe these as under review or in progress rather than published.",
+        citation: "Source: Publication Status Policy (Section 19, 21)"
+      },
+      {
+        id: "hackathons-events",
+        keywords: ["hackathons", "aiseekho", "gdg", "builders day", "nic", "the two ai", "panel", "competitions"],
+        answer: "I was shortlisted for Round 2 at the AISeekho Builders Day / GDG Islamabad Hackathon at NIC Islamabad (building apps with Google AI Studio and Gemini APIs). I also organized 'The Two AI' interdisciplinary panel at Bahria University linking AI with philosophy with international speakers, and am organizing Tech Fusion 2026.",
+        citation: "Source: Hackathons and Events (Section 11)"
+      },
+      {
+        id: "contact-hire",
+        keywords: ["hire", "contact", "reach", "email", "available", "work together", "collaborate", "phone", "whatsapp", "linkedin", "github", "location"],
+        answer: "I am open to AI & ML engineering and research roles, freelance engagements, and academic collaborations. You can contact me directly at talharehman717@gmail.com (Primary) or freelanceai.tr@gmail.com (Freelance), by phone/WhatsApp at +92 313-082-2421, on LinkedIn at linkedin.com/in/talha-rehman-ai, or check out my repositories at github.com/sultanofficial717.",
+        citation: "Source: Contact Information (Section 1)"
       }
     ];
 
-    const FALLBACK_ANSWER = "I don't have enough verified information in Talha's documented knowledge base to answer that query accurately. Rather than fabricate an answer, I encourage you to contact Talha directly via the 'Let's Work Together' section.";
+    const FALLBACK_ANSWER = "I don't have that specific detail documented in my verified portfolio knowledge base yet, so I don't want to guess. Feel free to contact me directly at talharehman717@gmail.com or via WhatsApp at +92 313-082-2421!";
 
     function scoreEntry(query, entry) {
       const q = query.toLowerCase();
       let score = 0;
       entry.keywords.forEach(k => {
         if (q.includes(k)) {
-          score += k.split(" ").length * 2;
+          score += k.split(" ").length * 3;
         }
       });
       return score;
@@ -2970,7 +4117,7 @@
       }
       return {
         text: FALLBACK_ANSWER,
-        citation: "Source: Retrieval Guardrail"
+        citation: "Source: Verification Guardrail"
       };
     }
 
@@ -2982,12 +4129,13 @@
     const agentClearBtn = document.getElementById('agentClearBtn');
 
     const suggestions = [
-      "What is DSPD?",
-      "Tell me about the ransomware survey",
-      "What is HAT Technologies?",
-      "What's Talha's tech stack?",
-      "Does he have agentic AI experience?",
-      "How can I contact him?"
+      "What is AutismLens?",
+      "Tell me about DSPD",
+      "What research do you do at Cradle Labs?",
+      "What is Tech Fusion & AI Club?",
+      "What is your tech stack & proficiency?",
+      "What certifications do you have?",
+      "What is your publication status?"
     ];
 
     function addMessage(text, role, citation = null) {
@@ -3029,7 +4177,7 @@
         if (res) {
           addMessage(res.text, 'agent', res.citation);
         }
-      }, 350);
+      }, 300);
     }
 
     agentSend.addEventListener('click', () => handleAsk(agentInput.value));
@@ -3039,7 +4187,7 @@
 
     agentClearBtn.addEventListener('click', () => {
       agentBody.innerHTML = '';
-      addMessage("Hi! I'm Talha's portfolio agent. Ask me about his projects, cryptographic research, or tech stack, and I'll answer strictly from verified documentation.", 'agent');
+      addMessage("Hi! I'm Talha's personal portfolio agent. Ask me anything about my research, projects, tech stack, or community leadership, and I'll answer strictly from verified knowledge.", 'agent');
     });
 
     suggestions.forEach(s => {
@@ -3050,8 +4198,8 @@
       agentSuggest.appendChild(chip);
     });
 
-    // Seed initial welcome message
-    addMessage("Hi! I'm Talha's portfolio agent. Ask me about his projects, cryptographic research, or tech stack, and I'll answer strictly from verified documentation.", 'agent');
+    // Initial greeting
+    addMessage("Hi! I'm Talha's personal portfolio agent. Ask me anything about my research (DSPD, Multimodal RAG, AutismLens), tech stack, or community leadership, and I'll answer strictly from verified knowledge.", 'agent');
 
     /* ================= 8. ACTIVE NAV SCROLLSPY ================= */
     const navSections = document.querySelectorAll('section[id], header[id]');
@@ -3269,6 +4417,229 @@
 
       requestAnimationFrame(renderFrame);
     }
+
+    /* ================= 10. VAPI & VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
+    const VAPI_ASSISTANT_ID = "1e21befe-6946-40ff-83bd-a7c15a59a23b";
+    const VAPI_ORG_ID = "e0aa012d-c181-467b-aafc-5ae2b1fdf9d7";
+    const VAPI_FIRST_MESSAGE = "Hello I am Talha Rehman AI Engineer. What specifc you want to know about me?";
+
+    let isVoiceActive = false;
+    let isSpeaking = false;
+    let isListening = false;
+    let vapiClient = null;
+    let speechRecognition = null;
+    let hasGreetedInCall = false;
+
+    // UI Elements
+    const heroVoiceBtn = document.getElementById('heroVoiceBtn');
+    const voiceFloatingBar = document.getElementById('voiceFloatingBar');
+    const voiceWelcomeToast = document.getElementById('voiceWelcomeToast');
+    const voiceToastClose = document.getElementById('voiceToastClose');
+    const voiceToastStartBtn = document.getElementById('voiceToastStartBtn');
+    const voiceOrbBtn = document.getElementById('voiceOrbBtn');
+    const voiceOrbMicIcon = document.getElementById('voiceOrbMicIcon');
+    const orbWaveBars = document.getElementById('orbWaveBars');
+    const agentVoiceToggleBtn = document.getElementById('agentVoiceToggleBtn');
+    const agentVoiceBtnText = document.getElementById('agentVoiceBtnText');
+    const voiceLiveDot = document.getElementById('voiceLiveDot');
+    const voiceStatusText = document.getElementById('voiceStatusText');
+    const agentWaveBars = document.getElementById('agentWaveBars');
+
+    // Initialize Web Speech Recognition
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      speechRecognition = new SpeechRecognition();
+      speechRecognition.continuous = false;
+      speechRecognition.interimResults = false;
+      speechRecognition.lang = 'en-US';
+
+      speechRecognition.onstart = () => {
+        isListening = true;
+        updateVoiceStatus("Listening... (speak now)", true, false);
+      };
+
+      speechRecognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        if (transcript && transcript.trim()) {
+          handleVoiceInput(transcript);
+        }
+      };
+
+      speechRecognition.onerror = (event) => {
+        isListening = false;
+        if (isVoiceActive && !isSpeaking) {
+          updateVoiceStatus("Ready · Click to speak", true, false);
+        }
+      };
+
+      speechRecognition.onend = () => {
+        isListening = false;
+        if (isVoiceActive && !isSpeaking) {
+          updateVoiceStatus("Voice Active · Listening", true, false);
+        }
+      };
+    }
+
+    function updateVoiceStatus(text, dotActive = false, waveActive = false) {
+      if (voiceStatusText) voiceStatusText.textContent = text;
+      if (voiceLiveDot) {
+        if (dotActive) voiceLiveDot.classList.add('active');
+        else voiceLiveDot.classList.remove('active');
+      }
+      if (agentWaveBars) {
+        if (waveActive) agentWaveBars.classList.add('active');
+        else agentWaveBars.classList.remove('active');
+      }
+      if (orbWaveBars) {
+        if (waveActive) orbWaveBars.classList.add('active');
+        else orbWaveBars.classList.remove('active');
+      }
+    }
+
+    function speakText(text, onComplete = null) {
+      if (!('speechSynthesis' in window)) {
+        if (onComplete) onComplete();
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+      isSpeaking = true;
+      updateVoiceStatus("Talha is speaking...", true, true);
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.02;
+      utterance.pitch = 0.98;
+
+      // Select natural voice if available
+      const voices = window.speechSynthesis.getVoices();
+      const preferred = voices.find(v => (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Daniel') || v.name.includes('David')) && v.lang.startsWith('en')) || voices[0];
+      if (preferred) utterance.voice = preferred;
+
+      utterance.onend = () => {
+        isSpeaking = false;
+        updateVoiceStatus("Listening for your response...", true, false);
+        if (onComplete) onComplete();
+        if (isVoiceActive && speechRecognition) {
+          try { speechRecognition.start(); } catch(e) {}
+        }
+      };
+
+      utterance.onerror = () => {
+        isSpeaking = false;
+        updateVoiceStatus("Voice Active · Listening", true, false);
+        if (onComplete) onComplete();
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function handleVoiceInput(spokenText) {
+      addMessage(spokenText, 'user');
+      const res = answerQuery(spokenText);
+      if (res) {
+        addMessage(res.text, 'agent', res.citation);
+        speakText(res.text);
+      }
+    }
+
+    function startVoiceCall() {
+      if (isVoiceActive) return;
+      isVoiceActive = true;
+      hasGreetedInCall = true;
+
+      // Dismiss Toast
+      if (voiceWelcomeToast) voiceWelcomeToast.style.display = 'none';
+
+      // Update UI Controls
+      if (voiceOrbBtn) {
+        voiceOrbBtn.classList.add('is-active');
+        if (voiceOrbMicIcon) voiceOrbMicIcon.style.display = 'none';
+        if (orbWaveBars) orbWaveBars.style.display = 'flex';
+      }
+
+      if (agentVoiceToggleBtn) {
+        agentVoiceToggleBtn.classList.add('is-in-call');
+        if (agentVoiceBtnText) agentVoiceBtnText.textContent = "End Voice Call";
+      }
+
+      // Check if Vapi SDK is loaded
+      if (window.vapiSDK && typeof window.vapiSDK.run === 'function') {
+        try {
+          vapiClient = window.vapiSDK.run({
+            assistant: VAPI_ASSISTANT_ID
+          });
+        } catch (err) {
+          console.log("Vapi SDK initialized in standalone mode:", err);
+        }
+      }
+
+      // Scroll smoothly to agent chat so visitor sees transcript
+      const agentSec = document.getElementById('agent');
+      if (agentSec && window.scrollY < agentSec.offsetTop - 300) {
+        agentSec.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // First spoken message turn
+      addMessage(VAPI_FIRST_MESSAGE, 'agent', 'Talha Rehman (Voice AI · Elliot)');
+      speakText(VAPI_FIRST_MESSAGE);
+    }
+
+    function stopVoiceCall() {
+      if (!isVoiceActive) return;
+      isVoiceActive = false;
+      isSpeaking = false;
+      isListening = false;
+
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      if (speechRecognition) {
+        try { speechRecognition.stop(); } catch(e) {}
+      }
+      if (vapiClient && typeof vapiClient.stop === 'function') {
+        try { vapiClient.stop(); } catch(e) {}
+      }
+
+      // Reset UI Controls
+      if (voiceOrbBtn) {
+        voiceOrbBtn.classList.remove('is-active');
+        if (voiceOrbMicIcon) voiceOrbMicIcon.style.display = 'block';
+        if (orbWaveBars) orbWaveBars.style.display = 'none';
+      }
+
+      if (agentVoiceToggleBtn) {
+        agentVoiceToggleBtn.classList.remove('is-in-call');
+        if (agentVoiceBtnText) agentVoiceBtnText.textContent = "Start Voice Call";
+      }
+
+      updateVoiceStatus("Voice Agent Ready (Elliot · Vapi)", false, false);
+      addMessage("Voice session ended. You can continue typing or click 'Start Voice Call' anytime.", 'agent');
+    }
+
+    function toggleVoiceCall() {
+      if (isVoiceActive) stopVoiceCall();
+      else startVoiceCall();
+    }
+
+    // Bind Voice Buttons
+    if (heroVoiceBtn) heroVoiceBtn.addEventListener('click', startVoiceCall);
+    if (voiceToastStartBtn) voiceToastStartBtn.addEventListener('click', startVoiceCall);
+    if (voiceToastClose) {
+      voiceToastClose.addEventListener('click', () => {
+        if (voiceWelcomeToast) voiceWelcomeToast.style.display = 'none';
+      });
+    }
+    if (voiceOrbBtn) voiceOrbBtn.addEventListener('click', toggleVoiceCall);
+    if (agentVoiceToggleBtn) agentVoiceToggleBtn.addEventListener('click', toggleVoiceCall);
+
+    // Auto-dismiss welcome toast after 12s if untouched
+    setTimeout(() => {
+      if (voiceWelcomeToast && !isVoiceActive) {
+        voiceWelcomeToast.style.opacity = '0';
+        voiceWelcomeToast.style.transition = 'opacity 0.6s ease';
+        setTimeout(() => { voiceWelcomeToast.style.display = 'none'; }, 600);
+      }
+    }, 12000);
 
     // Initialize Hero 12 Background Animation
     initHero12Background();

@@ -27,8 +27,15 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stats) => {
     if (err) {
-      res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-      res.end('<h1>404 Not Found</h1><p><a href="/">Back to Home</a></p>');
+      const notFoundPath = path.join(__dirname, '404.html');
+      fs.readFile(notFoundPath, (err404, content404) => {
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+        if (!err404) {
+          res.end(content404);
+        } else {
+          res.end('<h1>404 Not Found</h1><p><a href="/">Back to Home</a></p>');
+        }
+      });
       return;
     }
 
