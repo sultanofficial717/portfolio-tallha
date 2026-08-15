@@ -4344,7 +4344,7 @@
       speakText(answer);
     }
 
-    async function startVoiceCall() {
+    function startVoiceCall() {
       if (isVoiceActive) return;
       isVoiceActive = true;
       unlockAudioContext();
@@ -4355,15 +4355,6 @@
       if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
       if (heroVoiceHint) heroVoiceHint.textContent = "Connecting to Talha's Voice AI (Elliot · Live Voice)...";
       updateVoiceStatus("Connecting Voice...", true, true);
-
-      // Explicitly request microphone access if possible
-      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        try {
-          await navigator.mediaDevices.getUserMedia({ audio: true });
-        } catch(e) {
-          console.log("Mic prompt handled:", e);
-        }
-      }
 
       const VapiClass = (typeof window.Vapi === 'function') ? window.Vapi : (window.Vapi && typeof window.Vapi.default === 'function') ? window.Vapi.default : null;
 
@@ -4421,13 +4412,13 @@
             });
           }
 
-          // Safety Watchdog: If Vapi WebRTC hasn't connected in 2.5 seconds, start speaking via speech engine
+          // Safety Watchdog: If Vapi WebRTC hasn't connected in 2.0 seconds, start speaking via speech engine
           setTimeout(() => {
             if (isVoiceActive && !vapiConnected && !isSpeaking) {
               console.log("Vapi taking time to connect, activating instant voice engine");
               fallbackToSpeechEngine();
             }
-          }, 2500);
+          }, 2000);
 
           return;
         } catch(e) {
