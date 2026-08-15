@@ -1487,225 +1487,6 @@
     }
 
     /* ==========================================================================
-       PERSONAL AI AGENT (Interactive Retrieval Chatbot)
-       ========================================================================== */
-    .agent-wrap {
-      border: 1px solid var(--border-rule);
-      border-radius: var(--radius-md);
-      background: var(--bg-surface);
-      box-shadow: var(--shadow-card);
-      overflow: hidden;
-    }
-
-    .agent-head {
-      padding: 18px 24px;
-      background: var(--bg-surface-2);
-      border-bottom: 1px solid var(--border-rule);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .agent-head .name-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-mono);
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--text-bone);
-    }
-
-    .agent-head .status {
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      color: var(--verify);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--verify-dim);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(94, 234, 212, 0.2);
-    }
-
-    .agent-head .status::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--verify);
-      box-shadow: 0 0 6px var(--verify);
-    }
-
-    .agent-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .agent-body {
-      padding: 24px;
-      min-height: 280px;
-      max-height: 440px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      background: var(--bg-surface);
-    }
-
-    .msg {
-      max-width: 82%;
-      font-size: 14.5px;
-      line-height: 1.6;
-      padding: 14px 18px;
-      border-radius: var(--radius-md);
-      position: relative;
-      animation: msgPop 0.25s ease forwards;
-    }
-
-    @keyframes msgPop {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .msg.user {
-      align-self: flex-end;
-      background: var(--verify-dim);
-      color: var(--verify);
-      border: 1px solid rgba(94, 234, 212, 0.25);
-      border-bottom-right-radius: 2px;
-    }
-
-    .msg.agent {
-      align-self: flex-start;
-      background: var(--bg-surface-2);
-      color: var(--text-dim);
-      border: 1px solid var(--border-rule);
-      border-bottom-left-radius: 2px;
-    }
-
-    .msg.agent strong {
-      color: var(--text-bone);
-    }
-
-    .msg .cite {
-      display: block;
-      margin-top: 10px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-dimmer);
-      border-top: 1px solid var(--border-rule);
-      padding-top: 6px;
-    }
-
-    .typing-indicator {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 12px 16px;
-      align-self: flex-start;
-      background: var(--bg-surface-2);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-rule);
-    }
-
-    .typing-indicator span {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--text-dimmer);
-      animation: typingBounce 1.4s infinite ease-in-out;
-    }
-
-    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes typingBounce {
-      0%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-6px); background: var(--verify); }
-    }
-
-    .agent-suggest {
-      padding: 8px 24px 16px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      background: var(--bg-surface);
-    }
-
-    .suggest-chip {
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      color: var(--text-dim);
-      background: var(--bg-surface-2);
-      border: 1px solid var(--border-rule);
-      padding: 6px 12px;
-      border-radius: var(--radius-full);
-      cursor: pointer;
-      transition: var(--transition-base);
-    }
-
-    .suggest-chip:hover {
-      border-color: var(--verify);
-      color: var(--verify);
-      background: var(--verify-dim);
-    }
-
-    .agent-input-container {
-      display: flex;
-      border-top: 1px solid var(--border-rule);
-      background: var(--bg-surface-2);
-    }
-
-    .agent-input-container input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: var(--text-bone);
-      font-family: var(--font-body);
-      font-size: 14.5px;
-      padding: 16px 24px;
-      outline: none;
-    }
-
-    .agent-input-container input::placeholder {
-      color: var(--text-dimmer);
-    }
-
-    .agent-input-container button {
-      background: transparent;
-      border: none;
-      border-left: 1px solid var(--border-rule);
-      color: var(--verify);
-      font-family: var(--font-mono);
-      font-size: 13.5px;
-      font-weight: 500;
-      padding: 0 24px;
-      cursor: pointer;
-      transition: var(--transition-base);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .agent-input-container button:hover {
-      background: var(--verify-dim);
-    }
-
-    .agent-note {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-dimmer);
-      padding: 12px 24px;
-      background: var(--bg-surface);
-      border-top: 1px dashed var(--border-rule);
-    }
-
-    /* ==========================================================================
        CONTACT SECTION
        ========================================================================== */
     .contact {
@@ -2494,7 +2275,7 @@
             <div class="hero-voice-header">
               <div class="hero-voice-meta">
                 <span class="voice-live-dot" id="voiceLiveDot"></span>
-                <span class="hero-voice-status" id="voiceStatusText">Voice Agent Ready (Elliot · Vapi)</span>
+                <span class="hero-voice-status" id="voiceStatusText">Voice Agent Ready (Elliot · Live Voice AI)</span>
               </div>
               <div class="voice-wave-bars" id="heroWaveBars">
                 <span class="voice-wave-bar"></span>
@@ -2505,11 +2286,11 @@
               </div>
             </div>
             <div class="hero-voice-main">
-              <button id="heroVoiceBtn" class="btn btn-voice-hero" title="Start live voice conversation with Talha's AI">
+              <button id="heroVoiceBtn" class="btn btn-voice-hero" title="Start live voice conversation with Talha's AI representative">
                 <span class="voice-pulse-icon" id="heroVoiceIcon">🎙️</span>
                 <span id="heroVoiceBtnLabel">Talk to Talha (Live Voice AI)</span>
               </button>
-              <span class="hero-voice-hint" id="heroVoiceHint">Click to speak directly with Talha's AI representative in real-time first-person voice.</span>
+              <span class="hero-voice-hint" id="heroVoiceHint">Speak directly with Talha's AI representative in real-time first-person voice.</span>
             </div>
           </div>
         </div>
@@ -3733,216 +3514,7 @@
       });
     }
 
-    /* ================= 6. AGENT KNOWLEDGE BASE & FACT RETRIEVAL ================= */
-    const knowledgeBase = [
-      {
-        id: "identity",
-        keywords: ["who", "talha", "introduce", "background", "yourself", "about", "bio", "overview", "engineer", "title", "position"],
-        answer: "I am Talha Rehman, a final-year BS Artificial Intelligence student at Bahria University Islamabad (E-8 Campus) and a research-minded AI engineer and builder. My work spans NLP, computer vision, RAG, multimodal AI, AI agents, and automation, with research experience across Multimodal RAG at Cradle Labs, medical image CV at CEAI, cybersecurity protocols (DSPD), and Brazilian energy-market analytics at FAST-NUCES. I also founded HAT Technologies and lead a 50+ member university AI community.",
-        citation: "Source: Verified Profile & Bio (Section 1, 17, 22)"
-      },
-      {
-        id: "education",
-        keywords: ["education", "degree", "university", "bahria", "cgpa", "gpa", "courses", "coursework", "grades", "academic", "study", "graduate"],
-        answer: "I am pursuing a BS in Artificial Intelligence (BS AI) at Bahria University, Islamabad Campus (E-8 Campus), with enrollment from Sep 2023 to expected graduation in Jul 2027 (Enrollment: 01-136232-048). My current CGPA is 3.09 / 4.0. Relevant coursework includes Reinforcement Learning (Grade B), Robotics & Robotics Lab (Grade A/A), Deep Learning & Deep Learning Lab (Grade B/A-), Operating Systems & Lab (Grade B+/B+), Machine Learning, Computer Vision, NLP, Databases, Statistics, and Data Structures.",
-        citation: "Source: Academic Background (Section 2)"
-      },
-      {
-        id: "autismlens",
-        keywords: ["autismlens", "autism", "fyp", "final year project", "faryal nosheen", "abdul rehman", "screening", "vineland", "intake"],
-        answer: "For my Final Year Project (FYP-I), my teammate Abdul Rehman and I are building 'AutismLens: A Multimodal AI System for Manual-Grounded Interpretation of Autism Screening Assessments', supervised by Dr. Faryal Nosheen at Bahria University. It features a 5-layer incremental pipeline: (1) Multimodal intake via form/PDF/photo, (2) OCR & OpenCV mark extraction normalized into score vectors, (3) Digitized scoring manual embedded with Sentence-BERT in ChromaDB, (4) LLM interpretation strictly grounded in manual citations to prevent hallucination, and (5) Downloadable structured clinical PDF reports. It is currently at the proposal / active development stage.",
-        citation: "Source: Major Projects · AutismLens FYP (Section 7)"
-      },
-      {
-        id: "dspd",
-        keywords: ["dspd", "cryptography", "crypto", "password", "derivation", "stateless", "argon2id", "hkdf", "adil khan", "security proof", "oracle", "pypi"],
-        answer: "I co-authored a research manuscript titled 'Device-Bound Stateless Password Derivation Scheme (DSPD)' with my research supervisor Adil Khan. DSPD binds cryptographic key material to physical hardware using Argon2id and HKDF-SHA256, formalised under the Random Oracle Model. During revision, I identified and resolved a critical domain-separation vulnerability in HKDF input-keying-material. The paper is currently under peer review at an Elsevier journal (Major Revision stage). I also engineered and published a companion DSPD benchmarking package to PyPI.",
-        citation: "Source: Research Manuscripts · DSPD Scheme (Section 6A)"
-      },
-      {
-        id: "cradle-labs",
-        keywords: ["cradle", "cradle labs", "multimodal rag", "cross-modal", "multimodal", "retrieval", "grounding", "assistant", "paper under review"],
-        answer: "At Cradle Labs in Islamabad (Jun 2025 – Present), I work as a Co-author and Volunteer Research Assistant investigating Multimodal Retrieval-Augmented Generation (Multimodal RAG) systems. My research explores multimodal document ingestion and cross-modal retrieval to ground LLM responses in complex visual documents containing tables, diagrams, and text. I surveyed 30+ recent papers to establish the literature foundation and benchmark baselines for a manuscript currently under review.",
-        citation: "Source: Professional / Research Experience · Cradle Labs (Section 3, 6B)"
-      },
-      {
-        id: "ceai",
-        keywords: ["ceai", "center of excellence", "foot", "medical", "foot image", "diagnosis", "cv intern", "annotation"],
-        answer: "From Sep 2024 to Nov 2024, I served as an AI Research Intern at the Center of Excellence in Artificial Intelligence (CEAI, E-8 Islamabad). I built computer vision pipelines for medical foot image diagnosis, processed and verified 500+ annotated medical image samples, and enhanced dataset quality through systematic annotation standards to support iterative model training cycles.",
-        citation: "Source: Professional Experience · CEAI (Section 3)"
-      },
-      {
-        id: "fast-nuces",
-        keywords: ["fast", "nuces", "energy", "brazilian", "cmo", "pld", "market", "news", "argos", "nllb", "finbert", "price gap", "translation"],
-        answer: "At FAST-NUCES Islamabad, I worked in a research environment developing an NLP and translation pipeline analyzing ~30,350 processed documents (filtered from ~490k raw scraped articles) to investigate whether Brazilian energy and weather news signals can explain or predict the gap between CMO (marginal operating cost) and actual PLD settlement prices over a 45-day window. The pipeline used GPU-accelerated NLLB & Argos Translate, langdetect, Gemini LLM topic labeling (across 12 categories including flood, drought, El Niño), and FinBERT financial sentiment scoring.",
-        citation: "Source: Research Projects · Brazilian Energy NLP (Section 6C)"
-      },
-      {
-        id: "hat-technologies",
-        keywords: ["hat", "technologies", "hat technologies", "agency", "founder", "agency os", "langgraph", "temporal", "automation", "solutions"],
-        answer: "I am the founder of HAT Technologies (hattechnologies.tech), an applied AI software and automation agency. I lead client acquisition and solution architecture, building workflow automations and developing an internal Whitelabel AI Agency OS with LangGraph and Temporal for multi-tenant agent orchestration.",
-        citation: "Source: Professional Experience · HAT Technologies (Section 3, 7)"
-      },
-      {
-        id: "edu360",
-        keywords: ["edu360", "educationgate", "scholarship", "opportunity", "talent", "sentence-bert", "chromadb", "german", "finder"],
-        answer: "I developed EDU360 (also documented as EducationGate 360°), a semantic talent and scholarship opportunity-matching platform. It pairs students with international academic programs and funding opportunities using Sentence-BERT embeddings, a local ChromaDB vector store, FastAPI backend, and a Next.js/TypeScript frontend.",
-        citation: "Source: Major Projects · EDU360 (Section 7)"
-      },
-      {
-        id: "tech-fusion",
-        keywords: ["tech fusion", "ai club", "community", "bahria ai club", "volunteers", "festival", "lead", "founder", "350", "events", "workshops"],
-        answer: "I am the Lead & Founder of Tech Fusion / AI Club at Bahria University Islamabad (2025 – Present). I founded the campus technology brand and lead a 50+ volunteer team. We have organized flagship events hosting 350+ participants, secured corporate sponsorships for two consecutive events, and delivered hands-on AI/ML workshops for students. I am currently organizing Tech Fusion 2026 under the theme 'AI Without The Humans' with GDG Islamabad.",
-        citation: "Source: Community Leadership (Section 9, 11)"
-      },
-      {
-        id: "skills-tiers",
-        keywords: ["skills", "stack", "technologies", "tools", "tech stack", "programming", "languages", "python", "fastapi", "expert", "proficient", "familiar", "tiers"],
-        answer: "According to my CV self-rated proficiency tiers: Expert in Python, RAG Systems (LangChain, Pinecone), Computer Vision (OpenCV, medical imaging), Git/GitHub, and SQL; Proficient in Machine Learning (scikit-learn, TF-IDF, clustering), Flask, FastAPI, Streamlit, MongoDB, and C++; Familiar with NLP (semantic search, embeddings), TypeScript, HTML/CSS, and Generative AI APIs (Gemini, Claude, GPT).",
-        citation: "Source: Technical Skills Matrix (Section 4)"
-      },
-      {
-        id: "certifications",
-        keywords: ["certifications", "certificate", "anthropic", "google ai essentials", "credly", "linkedin learning", "oop", "generative ai", "credentials"],
-        answer: "My confirmed credentials include 'AI Fluency: Framework & Foundations' from Anthropic (completed, associated with UCC, King's College context, HEA, National Forum) and 'Google AI Essentials' via Coursera / GDSC Bahria (with a verified Credly badge). I also hold verified LinkedIn Learning certificates in Object-Oriented Design (by Olivia Stone & Barron Stone) and Generative AI, and have organized/hosted technical deep dive workshops with the Bahria Innovation Center.",
-        citation: "Source: Certifications (Section 12)"
-      },
-      {
-        id: "publications-policy",
-        keywords: ["papers", "published", "publications", "journals", "conference", "doi", "peer review", "how many papers", "ransomware survey"],
-        answer: "I don't have any formally published papers yet. I have co-authored research manuscripts — including 'Device-Bound Stateless Password Derivation Scheme (DSPD)' (under peer review at an Elsevier journal, major revision stage), a ransomware/cybersecurity survey targeting a Q1 venue (in preparation / under review), and Multimodal RAG at Cradle Labs (under review) — plus my Brazilian energy analytics research at FAST-NUCES. In accordance with strict academic integrity, I describe these as under review or in progress rather than published.",
-        citation: "Source: Publication Status Policy (Section 19, 21)"
-      },
-      {
-        id: "hackathons-events",
-        keywords: ["hackathons", "aiseekho", "gdg", "builders day", "nic", "the two ai", "panel", "competitions"],
-        answer: "I was shortlisted for Round 2 at the AISeekho Builders Day / GDG Islamabad Hackathon at NIC Islamabad (building apps with Google AI Studio and Gemini APIs). I also organized 'The Two AI' interdisciplinary panel at Bahria University linking AI with philosophy with international speakers, and am organizing Tech Fusion 2026.",
-        citation: "Source: Hackathons and Events (Section 11)"
-      },
-      {
-        id: "contact-hire",
-        keywords: ["hire", "contact", "reach", "email", "available", "work together", "collaborate", "phone", "whatsapp", "linkedin", "github", "location"],
-        answer: "I am open to AI & ML engineering and research roles, freelance engagements, and academic collaborations. You can contact me directly at talharehman717@gmail.com (Primary) or freelanceai.tr@gmail.com (Freelance), by phone/WhatsApp at +92 313-082-2421, on LinkedIn at linkedin.com/in/talha-rehman-ai, or check out my repositories at github.com/sultanofficial717.",
-        citation: "Source: Contact Information (Section 1)"
-      }
-    ];
-
-    const FALLBACK_ANSWER = "I don't have that specific detail documented in my verified portfolio knowledge base yet, so I don't want to guess. Feel free to contact me directly at talharehman717@gmail.com or via WhatsApp at +92 313-082-2421!";
-
-    function scoreEntry(query, entry) {
-      const q = query.toLowerCase();
-      let score = 0;
-      entry.keywords.forEach(k => {
-        if (q.includes(k)) {
-          score += k.split(" ").length * 3;
-        }
-      });
-      return score;
-    }
-
-    function answerQuery(query) {
-      if (!query || !query.trim()) return null;
-      let best = null, bestScore = 0;
-      knowledgeBase.forEach(entry => {
-        const s = scoreEntry(query, entry);
-        if (s > bestScore) {
-          bestScore = s;
-          best = entry;
-        }
-      });
-      if (best && bestScore > 0) {
-        return {
-          text: best.answer,
-          citation: best.citation
-        };
-      }
-      return {
-        text: FALLBACK_ANSWER,
-        citation: "Source: Verification Guardrail"
-      };
-    }
-
-    /* ================= 7. AGENT UI INTERACTION ================= */
-    const agentBody = document.getElementById('agentBody');
-    const agentInput = document.getElementById('agentInput');
-    const agentSend = document.getElementById('agentSend');
-    const agentSuggest = document.getElementById('agentSuggest');
-    const agentClearBtn = document.getElementById('agentClearBtn');
-
-    const suggestions = [
-      "What is AutismLens?",
-      "Tell me about DSPD",
-      "What research do you do at Cradle Labs?",
-      "What is Tech Fusion & AI Club?",
-      "What is your tech stack & proficiency?",
-      "What certifications do you have?",
-      "What is your publication status?"
-    ];
-
-    function addMessage(text, role, citation = null) {
-      const el = document.createElement('div');
-      el.className = 'msg ' + role;
-      
-      let html = `<div>${text}</div>`;
-      if (citation && role === 'agent') {
-        html += `<span class="cite">📌 ${citation}</span>`;
-      }
-      el.innerHTML = html;
-      agentBody.appendChild(el);
-      agentBody.scrollTop = agentBody.scrollHeight;
-    }
-
-    function showTyping() {
-      const typing = document.createElement('div');
-      typing.className = 'typing-indicator';
-      typing.id = 'agentTyping';
-      typing.innerHTML = '<span></span><span></span><span></span>';
-      agentBody.appendChild(typing);
-      agentBody.scrollTop = agentBody.scrollHeight;
-    }
-
-    function removeTyping() {
-      const typing = document.getElementById('agentTyping');
-      if (typing) typing.remove();
-    }
-
-    function handleAsk(query) {
-      if (!query || !query.trim()) return;
-      addMessage(query, 'user');
-      agentInput.value = '';
-      showTyping();
-      
-      setTimeout(() => {
-        removeTyping();
-        const res = answerQuery(query);
-        if (res) {
-          addMessage(res.text, 'agent', res.citation);
-        }
-      }, 300);
-    }
-
-    agentSend.addEventListener('click', () => handleAsk(agentInput.value));
-    agentInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') handleAsk(agentInput.value);
-    });
-
-    agentClearBtn.addEventListener('click', () => {
-      agentBody.innerHTML = '';
-      addMessage("Hi! I'm Talha's personal portfolio agent. Ask me anything about my research, projects, tech stack, or community leadership, and I'll answer strictly from verified knowledge.", 'agent');
-    });
-
-    suggestions.forEach(s => {
-      const chip = document.createElement('span');
-      chip.className = 'suggest-chip';
-      chip.textContent = s;
-      chip.addEventListener('click', () => handleAsk(s));
-      agentSuggest.appendChild(chip);
-    });
-
-    // Initial greeting
-    addMessage("Hi! I'm Talha's personal portfolio agent. Ask me anything about my research (DSPD, Multimodal RAG, AutismLens), tech stack, or community leadership, and I'll answer strictly from verified knowledge.", 'agent');
-
-    /* ================= 8. ACTIVE NAV SCROLLSPY ================= */
+    /* ================= 5. ACTIVE NAV SCROLLSPY ================= */
     const navSections = document.querySelectorAll('section[id], header[id]');
     const navAnchorLinks = document.querySelectorAll('.navlinks-cluster a[href^="#"], .navlinks-cluster-mobile a[href^="#"]');
 
@@ -4153,13 +3725,7 @@
           }
         }
 
-        requestAnimationFrame(renderFrame);
-      }
-
-      requestAnimationFrame(renderFrame);
-    }
-
-    /* ================= 10. VAPI & ZERO-LATENCY VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
+    /* ================= 6. VAPI & ZERO-LATENCY VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
     const VAPI_PUBLIC_KEY = "5c33a794-9834-42b5-a053-00ae54c8e2fd";
     const VAPI_ASSISTANT_ID = "1e21befe-6946-40ff-83bd-a7c15a59a23b";
     const VAPI_ORG_ID = "e0aa012d-c181-467b-aafc-5ae2b1fdf9d7";
@@ -4212,6 +3778,99 @@ You ARE speaking as Talha's portfolio representative. Always answer in first per
         provider: "soniox"
       }
     };
+
+    const knowledgeBase = [
+      {
+        id: "identity",
+        keywords: ["who", "talha", "introduce", "background", "yourself", "about", "bio", "overview", "engineer", "title", "position"],
+        answer: "I am Talha Rehman, a final-year BS Artificial Intelligence student at Bahria University Islamabad (E-8 Campus) and a research-minded AI engineer and builder. My work spans NLP, computer vision, RAG, multimodal AI, AI agents, and automation, with research experience across Multimodal RAG at Cradle Labs, medical image CV at CEAI, cybersecurity protocols (DSPD), and Brazilian energy-market analytics at FAST-NUCES. I also founded HAT Technologies and lead a 50+ member university AI community.",
+        citation: "Source: Verified Profile & Bio (Section 1, 17, 22)"
+      },
+      {
+        id: "education",
+        keywords: ["education", "degree", "university", "bahria", "cgpa", "gpa", "courses", "coursework", "grades", "academic", "study", "graduate"],
+        answer: "I am pursuing a BS in Artificial Intelligence (BS AI) at Bahria University, Islamabad Campus (E-8 Campus), with enrollment from Sep 2023 to expected graduation in Jul 2027 (Enrollment: 01-136232-048). My current CGPA is 3.09 / 4.0. Relevant coursework includes Reinforcement Learning (Grade B), Robotics & Robotics Lab (Grade A/A), Deep Learning & Deep Learning Lab (Grade B/A-), Operating Systems & Lab (Grade B+/B+), Machine Learning, Computer Vision, NLP, Databases, Statistics, and Data Structures.",
+        citation: "Source: Academic Background (Section 2)"
+      },
+      {
+        id: "autismlens",
+        keywords: ["autismlens", "autism", "fyp", "final year project", "faryal nosheen", "abdul rehman", "screening", "vineland", "intake"],
+        answer: "For my Final Year Project (FYP-I), my teammate Abdul Rehman and I are building 'AutismLens: A Multimodal AI System for Manual-Grounded Interpretation of Autism Screening Assessments', supervised by Dr. Faryal Nosheen at Bahria University. It features a 5-layer incremental pipeline: (1) Multimodal intake via form/PDF/photo, (2) OCR & OpenCV mark extraction normalized into score vectors, (3) Digitized scoring manual embedded with Sentence-BERT in ChromaDB, (4) LLM interpretation strictly grounded in manual citations to prevent hallucination, and (5) Downloadable structured clinical PDF reports. It is currently at the proposal / active development stage.",
+        citation: "Source: Major Projects · AutismLens FYP (Section 7)"
+      },
+      {
+        id: "dspd",
+        keywords: ["dspd", "cryptography", "crypto", "password", "derivation", "stateless", "argon2id", "hkdf", "adil khan", "security proof", "oracle", "pypi"],
+        answer: "I co-authored a research manuscript titled 'Device-Bound Stateless Password Derivation Scheme (DSPD)' with my research supervisor Adil Khan. DSPD binds cryptographic key material to physical hardware using Argon2id and HKDF-SHA256, formalised under the Random Oracle Model. During revision, I identified and resolved a critical domain-separation vulnerability in HKDF input-keying-material. The paper is currently under peer review at an Elsevier journal (Major Revision stage). I also engineered and published a companion DSPD benchmarking package to PyPI.",
+        citation: "Source: Research Manuscripts · DSPD Scheme (Section 6A)"
+      },
+      {
+        id: "cradle-labs",
+        keywords: ["cradle", "cradle labs", "multimodal rag", "cross-modal", "multimodal", "retrieval", "grounding", "assistant", "paper under review"],
+        answer: "At Cradle Labs in Islamabad (Jun 2025 – Present), I work as a Co-author and Volunteer Research Assistant investigating Multimodal Retrieval-Augmented Generation (Multimodal RAG) systems. My research explores multimodal document ingestion and cross-modal retrieval to ground LLM responses in complex visual documents containing tables, diagrams, and text. I surveyed 30+ recent papers to establish the literature foundation and benchmark baselines for a manuscript currently under review.",
+        citation: "Source: Professional / Research Experience · Cradle Labs (Section 3, 6B)"
+      },
+      {
+        id: "ceai",
+        keywords: ["ceai", "center of excellence", "foot", "medical", "foot image", "diagnosis", "cv intern", "annotation"],
+        answer: "From Sep 2024 to Nov 2024, I served as an AI Research Intern at the Center of Excellence in Artificial Intelligence (CEAI, E-8 Islamabad). I built computer vision pipelines for medical foot image diagnosis, processed and verified 500+ annotated medical image samples, and enhanced dataset quality through systematic annotation standards to support iterative model training cycles.",
+        citation: "Source: Professional Experience · CEAI (Section 3)"
+      },
+      {
+        id: "fast-nuces",
+        keywords: ["fast", "nuces", "energy", "brazilian", "cmo", "pld", "market", "news", "argos", "nllb", "finbert", "price gap", "translation"],
+        answer: "At FAST-NUCES Islamabad, I worked in a research environment developing an NLP and translation pipeline analyzing ~30,350 processed documents (filtered from ~490k raw scraped articles) to investigate whether Brazilian energy and weather news signals can explain or predict the gap between CMO (marginal operating cost) and actual PLD settlement prices over a 45-day window. The pipeline used GPU-accelerated NLLB & Argos Translate, langdetect, Gemini LLM topic labeling (across 12 categories including flood, drought, El Niño), and FinBERT financial sentiment scoring.",
+        citation: "Source: Research Projects · Brazilian Energy NLP (Section 6C)"
+      },
+      {
+        id: "hat-technologies",
+        keywords: ["hat", "technologies", "hat technologies", "agency", "founder", "agency os", "langgraph", "temporal", "automation", "solutions"],
+        answer: "I am the founder of HAT Technologies (hattechnologies.tech), an applied AI software and automation agency. I lead client acquisition and solution architecture, building workflow automations and developing an internal Whitelabel AI Agency OS with LangGraph and Temporal for multi-tenant agent orchestration.",
+        citation: "Source: Professional Experience · HAT Technologies (Section 3, 7)"
+      },
+      {
+        id: "edu360",
+        keywords: ["edu360", "educationgate", "scholarship", "opportunity", "talent", "sentence-bert", "chromadb", "german", "finder"],
+        answer: "I developed EDU360 (also documented as EducationGate 360°), a semantic talent and scholarship opportunity-matching platform. It pairs students with international academic programs and funding opportunities using Sentence-BERT embeddings, a local ChromaDB vector store, FastAPI backend, and a Next.js/TypeScript frontend.",
+        citation: "Source: Major Projects · EDU360 (Section 7)"
+      },
+      {
+        id: "tech-fusion",
+        keywords: ["tech fusion", "ai club", "community", "bahria ai club", "volunteers", "festival", "lead", "founder", "350", "events", "workshops"],
+        answer: "I am the Lead & Founder of Tech Fusion / AI Club at Bahria University Islamabad (2025 – Present). I founded the campus technology brand and lead a 50+ volunteer team. We have organized flagship events hosting 350+ participants, secured corporate sponsorships for two consecutive events, and delivered hands-on AI/ML workshops for students. I am currently organizing Tech Fusion 2026 under the theme 'AI Without The Humans' with GDG Islamabad.",
+        citation: "Source: Community Leadership (Section 9, 11)"
+      },
+      {
+        id: "skills-tiers",
+        keywords: ["skills", "stack", "technologies", "tools", "tech stack", "programming", "languages", "python", "fastapi", "expert", "proficient", "familiar", "tiers"],
+        answer: "According to my CV self-rated proficiency tiers: Expert in Python, RAG Systems (LangChain, Pinecone), Computer Vision (OpenCV, medical imaging), Git/GitHub, and SQL; Proficient in Machine Learning (scikit-learn, TF-IDF, clustering), Flask, FastAPI, Streamlit, MongoDB, and C++; Familiar with NLP (semantic search, embeddings), TypeScript, HTML/CSS, and Generative AI APIs (Gemini, Claude, GPT).",
+        citation: "Source: Technical Skills Matrix (Section 4)"
+      },
+      {
+        id: "certifications",
+        keywords: ["certifications", "certificate", "anthropic", "google ai essentials", "credly", "linkedin learning", "oop", "generative ai", "credentials"],
+        answer: "My confirmed credentials include 'AI Fluency: Framework & Foundations' from Anthropic (completed, associated with UCC, King's College context, HEA, National Forum) and 'Google AI Essentials' via Coursera / GDSC Bahria (with a verified Credly badge). I also hold verified LinkedIn Learning certificates in Object-Oriented Design (by Olivia Stone & Barron Stone) and Generative AI, and have organized/hosted technical deep dive workshops with the Bahria Innovation Center.",
+        citation: "Source: Certifications (Section 12)"
+      },
+      {
+        id: "publications-policy",
+        keywords: ["papers", "published", "publications", "journals", "conference", "doi", "peer review", "how many papers", "ransomware survey"],
+        answer: "I don't have any formally published papers yet. I have co-authored research manuscripts — including 'Device-Bound Stateless Password Derivation Scheme (DSPD)' (under peer review at an Elsevier journal, major revision stage), a ransomware/cybersecurity survey targeting a Q1 venue (in preparation / under review), and Multimodal RAG at Cradle Labs (under review) — plus my Brazilian energy analytics research at FAST-NUCES. In accordance with strict academic integrity, I describe these as under review or in progress rather than published.",
+        citation: "Source: Publication Status Policy (Section 19, 21)"
+      },
+      {
+        id: "hackathons-events",
+        keywords: ["hackathons", "aiseekho", "gdg", "builders day", "nic", "the two ai", "panel", "competitions"],
+        answer: "I was shortlisted for Round 2 at the AISeekho Builders Day / GDG Islamabad Hackathon at NIC Islamabad (building apps with Google AI Studio and Gemini APIs). I also organized 'The Two AI' interdisciplinary panel at Bahria University linking AI with philosophy with international speakers, and am organizing Tech Fusion 2026.",
+        citation: "Source: Hackathons and Events (Section 11)"
+      },
+      {
+        id: "contact-hire",
+        keywords: ["hire", "contact", "reach", "email", "available", "work together", "collaborate", "phone", "whatsapp", "linkedin", "github", "location"],
+        answer: "I am open to AI & ML engineering and research roles, freelance engagements, and academic collaborations. You can contact me directly at talharehman717@gmail.com (Primary) or freelanceai.tr@gmail.com (Freelance), by phone/WhatsApp at +92 313-082-2421, on LinkedIn at linkedin.com/in/talha-rehman-ai, or check out my repositories at github.com/sultanofficial717.",
+        citation: "Source: Contact Information (Section 1)"
+      }
+    ];
 
     let isVoiceActive = false;
     let isSpeaking = false;
@@ -4505,9 +4164,9 @@ You ARE speaking as Talha's portfolio representative. Always answer in first per
       if (heroVoiceBtn) heroVoiceBtn.classList.remove('is-in-call');
       if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "Talk to Talha (Live Voice AI)";
       if (heroVoiceIcon) heroVoiceIcon.textContent = "🎙️";
-      if (heroVoiceHint) heroVoiceHint.textContent = "Click to speak directly with Talha's AI representative in real-time first-person voice.";
+      if (heroVoiceHint) heroVoiceHint.textContent = "Speak directly with Talha's AI representative in real-time first-person voice.";
 
-      updateVoiceStatus("Voice Agent Ready (Elliot · Vapi)", false, false);
+      updateVoiceStatus("Voice Agent Ready (Elliot · Live Voice AI)", false, false);
     }
 
     function toggleVoiceCall() {
