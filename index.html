@@ -2215,169 +2215,127 @@
     }
 
     /* ==========================================================================
-       VOICE AGENT (VAPI + NATIVE AUDIO ENGINE) STYLES
+       HERO DIRECT VOICE AGENT (VAPI + NATIVE AUDIO ENGINE) STYLES
        ========================================================================== */
+    .hero-voice-card {
+      margin-top: 28px;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-rule);
+      border-left: 3px solid var(--verify);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: var(--transition-base);
+      max-width: 540px;
+    }
+
+    .hero-voice-card:hover {
+      border-color: rgba(94, 234, 212, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 16px rgba(94, 234, 212, 0.1);
+    }
+
+    .hero-voice-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border-rule);
+    }
+
+    .hero-voice-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-voice-status {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-dim);
+      letter-spacing: 0.02em;
+    }
+
+    .voice-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-dimmer);
+      transition: var(--transition-base);
+    }
+
+    .voice-live-dot.active {
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      animation: blinkDot 1.2s infinite;
+    }
+
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-voice-main {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
     .btn-voice-hero {
-      background: linear-gradient(135deg, rgba(94, 234, 212, 0.15), rgba(13, 148, 136, 0.25));
-      border: 1px solid var(--verify);
+      background: linear-gradient(135deg, rgba(94, 234, 212, 0.18), rgba(13, 148, 136, 0.3));
+      border: 1.5px solid var(--verify);
       color: var(--verify);
-      box-shadow: 0 0 16px rgba(94, 234, 212, 0.15);
-      position: relative;
-      overflow: hidden;
+      box-shadow: 0 0 18px rgba(94, 234, 212, 0.18);
+      border-radius: var(--radius-sm);
+      padding: 12px 24px;
+      font-size: 14px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: var(--transition-base);
+      width: fit-content;
     }
 
     .btn-voice-hero:hover {
-      background: linear-gradient(135deg, rgba(94, 234, 212, 0.25), rgba(13, 148, 136, 0.4));
-      border-color: var(--verify);
-      color: var(--text-bone);
+      background: linear-gradient(135deg, rgba(94, 234, 212, 0.3), rgba(13, 148, 136, 0.45));
+      color: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 0 24px rgba(94, 234, 212, 0.3);
+      box-shadow: 0 0 26px rgba(94, 234, 212, 0.4);
+    }
+
+    .btn-voice-hero.is-in-call {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #ef4444;
+      color: #fca5a5;
+      box-shadow: 0 0 18px rgba(239, 68, 68, 0.35);
+    }
+
+    .btn-voice-hero.is-in-call:hover {
+      background: #ef4444;
+      color: #fff;
     }
 
     .voice-pulse-icon {
       display: inline-block;
       animation: pulseMic 1.8s infinite ease-in-out;
-      margin-right: 6px;
     }
 
     @keyframes pulseMic {
       0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--verify)); }
-      50% { transform: scale(1.2); filter: drop-shadow(0 0 8px var(--verify)); }
+      50% { transform: scale(1.25); filter: drop-shadow(0 0 8px var(--verify)); }
     }
 
-    /* Floating Voice Capsule / Orb */
-    .voice-floating-bar {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 998;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 12px;
-      pointer-events: none;
-    }
-
-    .voice-welcome-toast {
-      pointer-events: auto;
-      background: var(--bg-surface-2);
-      border: 1px solid var(--verify);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 16px rgba(94, 234, 212, 0.2);
-      border-radius: var(--radius-md);
-      padding: 14px 18px;
-      max-width: 320px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      animation: slideInToast 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    @keyframes slideInToast {
-      from { opacity: 0; transform: translateY(20px) scale(0.95); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .voice-toast-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .voice-toast-title {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--verify);
-      font-family: var(--font-mono);
-    }
-
-    .voice-toast-close {
-      background: transparent;
-      border: none;
-      color: var(--text-dimmer);
-      cursor: pointer;
-      font-size: 14px;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-    .voice-toast-close:hover {
-      color: var(--text-bone);
-      background: var(--bg-surface);
-    }
-
-    .voice-toast-body {
+    .hero-voice-hint {
       font-size: 12.5px;
-      color: var(--text-dim);
+      color: var(--text-dimmer);
       line-height: 1.45;
-    }
-
-    .voice-toast-btn {
-      background: var(--verify);
-      color: #0d1217;
-      border: none;
-      border-radius: var(--radius-sm);
-      padding: 7px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      font-family: var(--font-mono);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: var(--transition-base);
-    }
-
-    .voice-toast-btn:hover {
-      background: #7ef2de;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(94, 234, 212, 0.4);
-    }
-
-    .voice-orb-btn {
-      pointer-events: auto;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #132220, #0d1615);
-      border: 1.5px solid var(--verify);
-      color: var(--verify);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(94, 234, 212, 0.25);
-      transition: var(--transition-base);
-      position: relative;
-    }
-
-    .voice-orb-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 24px rgba(94, 234, 212, 0.45);
-      border-color: #a7f3d0;
-    }
-
-    .voice-orb-ring {
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 1px solid var(--verify);
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .voice-orb-btn.is-active .voice-orb-ring {
-      animation: orbRipple 2s cubic-bezier(0.1, 0.2, 0.3, 1) infinite;
-    }
-
-    @keyframes orbRipple {
-      0% { transform: scale(1); opacity: 0.8; }
-      100% { transform: scale(1.6); opacity: 0; }
     }
 
     /* Live Equalizer Wave Bars */
@@ -2405,81 +2363,6 @@
     @keyframes soundWave {
       0% { height: 4px; opacity: 0.4; }
       100% { height: 18px; opacity: 1; }
-    }
-
-    /* Voice Call Modal / Expanded Controls in #agent */
-    .agent-voice-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-      background: var(--bg-surface-2);
-      border-bottom: 1px solid var(--border-rule);
-      font-family: var(--font-mono);
-      font-size: 12px;
-      gap: 12px;
-    }
-
-    .agent-voice-status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-dim);
-    }
-
-    .voice-live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--text-dimmer);
-    }
-
-    .voice-live-dot.active {
-      background: #10b981;
-      box-shadow: 0 0 8px #10b981;
-      animation: blinkDot 1.4s infinite;
-    }
-
-    @keyframes blinkDot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .agent-voice-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-call-action {
-      background: rgba(94, 234, 212, 0.12);
-      border: 1px solid var(--verify);
-      color: var(--verify);
-      border-radius: var(--radius-sm);
-      padding: 5px 12px;
-      font-size: 11.5px;
-      font-family: var(--font-mono);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition-base);
-    }
-
-    .btn-call-action:hover {
-      background: var(--verify);
-      color: #0d1217;
-    }
-
-    .btn-call-action.is-in-call {
-      background: rgba(239, 68, 68, 0.15);
-      border-color: #ef4444;
-      color: #f87171;
-    }
-
-    .btn-call-action.is-in-call:hover {
-      background: #ef4444;
-      color: #fff;
     }
   </style>
 </head>
@@ -2510,8 +2393,7 @@
         <li><a href="#work"><span class="nav-num">04.</span> Research</a></li>
         <li><a href="#projects"><span class="nav-num">05.</span> Projects</a></li>
         <li><a href="#community"><span class="nav-num">06.</span> Community</a></li>
-        <li><a href="#agent"><span class="nav-num">07.</span> AI Agent</a></li>
-        <li><a href="#contact"><span class="nav-num">08.</span> Contact</a></li>
+        <li><a href="#contact"><span class="nav-num">07.</span> Contact</a></li>
       </ul>
 
       <!-- Right Action Cluster -->
@@ -2558,8 +2440,7 @@
       <li><a href="#work" class="mobile-link"><span class="nav-num">04.</span> Research</a></li>
       <li><a href="#projects" class="mobile-link"><span class="nav-num">05.</span> Projects</a></li>
       <li><a href="#community" class="mobile-link"><span class="nav-num">06.</span> Community</a></li>
-      <li><a href="#agent" class="mobile-link"><span class="nav-num">07.</span> Ask the Agent</a></li>
-      <li><a href="#contact" class="mobile-link"><span class="nav-num">08.</span> Contact</a></li>
+      <li><a href="#contact" class="mobile-link"><span class="nav-num">07.</span> Contact</a></li>
     </ul>
     <div style="display:flex; gap:12px; margin-top:12px; padding-top:12px; border-top:1px solid var(--border-rule-subtle);">
       <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-pill" style="flex:1;">View Resume PDF</a>
@@ -2607,11 +2488,32 @@
               Let's Work Together
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <button id="heroVoiceBtn" class="btn btn-voice-hero" title="Start live voice conversation with Talha's AI">
-              <span class="voice-pulse-icon">🎙️</span> Talk to Talha (Voice AI)
-            </button>
             <a href="#work" class="btn btn-ghost">View Research</a>
             <a href="#projects" class="btn btn-ghost">Explore Projects</a>
+          </div>
+
+          <!-- Hero Direct Voice AI Interface (Talk with Talha) -->
+          <div class="hero-voice-card">
+            <div class="hero-voice-header">
+              <div class="hero-voice-meta">
+                <span class="voice-live-dot" id="voiceLiveDot"></span>
+                <span class="hero-voice-status" id="voiceStatusText">Voice Agent Ready (Elliot · Vapi)</span>
+              </div>
+              <div class="voice-wave-bars" id="heroWaveBars">
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
+              </div>
+            </div>
+            <div class="hero-voice-main">
+              <button id="heroVoiceBtn" class="btn btn-voice-hero" title="Start live voice conversation with Talha's AI">
+                <span class="voice-pulse-icon" id="heroVoiceIcon">🎙️</span>
+                <span id="heroVoiceBtnLabel">Talk to Talha (Live Voice AI)</span>
+              </button>
+              <span class="hero-voice-hint" id="heroVoiceHint">Click to speak directly with Talha's AI representative in real-time first-person voice.</span>
+            </div>
           </div>
         </div>
 
@@ -2638,29 +2540,6 @@
                 <span class="mini-tag">DSPD Crypto</span>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Terminal Verification Log (verification_log.sh) — Positioned Below Hero Grid -->
-      <div class="hero-vlog-container">
-        <div class="vlog">
-          <div class="vlog-head">
-            <div class="vlog-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-              <span>verification_log.sh</span>
-            </div>
-            <div class="vlog-dots">
-              <span></span><span></span><span></span>
-            </div>
-          </div>
-          <div class="vlog-body" id="vlogBody"></div>
-          <div class="vlog-foot">
-            <span style="color:var(--text-dimmer);">Interactive Verification Engine</span>
-            <button class="vlog-replay-btn" id="vlogReplayBtn">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
-              Re-run
-            </button>
           </div>
         </div>
       </div>
@@ -3667,69 +3546,6 @@
   </section>
 
   <!-- ==========================================================================
-       PERSONAL AI AGENT (Interactive Chat)
-       ========================================================================== -->
-  <section id="agent">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <div class="sec-label">// 07. Interactive Chat</div>
-          <h2 class="sec-title">Ask the Portfolio Agent</h2>
-        </div>
-        <p class="sec-desc">A zero-hallucination factual knowledge retrieval agent. Ask any question about my education, research, projects, skills, or community work.</p>
-      </div>
-
-      <div class="agent-wrap">
-        <div class="agent-head">
-          <div class="name-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
-            talha-portfolio-agent
-          </div>
-          <div class="agent-actions">
-            <span class="status">retrieval-only · zero fabrication</span>
-            <button id="agentClearBtn" class="btn-ghost btn-sm" style="padding:3px 8px; font-size:11px; border-radius:3px;" title="Clear conversation">Clear</button>
-          </div>
-        </div>
-
-        <!-- Live Voice AI Toolbar -->
-        <div class="agent-voice-toolbar">
-          <div class="agent-voice-status">
-            <span class="voice-live-dot" id="voiceLiveDot"></span>
-            <span id="voiceStatusText">Voice Agent Ready (Elliot · Vapi)</span>
-            <div class="voice-wave-bars" id="agentWaveBars">
-              <span class="voice-wave-bar"></span>
-              <span class="voice-wave-bar"></span>
-              <span class="voice-wave-bar"></span>
-              <span class="voice-wave-bar"></span>
-              <span class="voice-wave-bar"></span>
-            </div>
-          </div>
-          <div class="agent-voice-actions">
-            <button id="agentVoiceToggleBtn" class="btn-call-action" title="Start voice call with Talha's AI">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
-              <span id="agentVoiceBtnText">Start Voice Call</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="agent-body" id="agentBody"></div>
-        <div class="agent-suggest" id="agentSuggest"></div>
-
-        <div class="agent-input-container">
-          <input type="text" id="agentInput" placeholder="Ask about AutismLens, DSPD research, Cradle Labs, tech stack, or certifications…" autocomplete="off">
-          <button id="agentSend">
-            Ask
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-          </button>
-        </div>
-        <p class="agent-note">
-          🔒 <strong>Zero-Hallucination Guardrail:</strong> This agent speaks in first person as Talha Rehman, answering strictly from documented factual records. Research manuscripts are identified as under review or in development rather than fabricated publications.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
        CONTACT SECTION
        ========================================================================== -->
   <section class="contact" id="contact">
@@ -3737,7 +3553,7 @@
       <div class="contact-box">
         <div class="contact-inner">
           <div>
-            <div class="sec-label">// 08. What's Next?</div>
+            <div class="sec-label">// 07. What's Next?</div>
             <h2>Let's Work Together</h2>
             <p>
               I am actively seeking AI engineering and research roles, freelance machine learning opportunities, and academic collaborations. Whether you need a production RAG system, computer vision pipeline, or AI agent workflow, feel free to reach out.
@@ -3842,36 +3658,6 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-  <!-- Floating Voice Agent Capsule & Auto-Greeting Banner -->
-  <div class="voice-floating-bar" id="voiceFloatingBar">
-    <div class="voice-welcome-toast" id="voiceWelcomeToast">
-      <div class="voice-toast-header">
-        <div class="voice-toast-title">
-          <span class="voice-pulse-icon">🎙️</span>
-          <span>Talha's Voice AI</span>
-        </div>
-        <button class="voice-toast-close" id="voiceToastClose" title="Dismiss greeting">×</button>
-      </div>
-      <div class="voice-toast-body">
-        "Hello! I am Talha Rehman, AI Engineer. What specifically would you like to know about me?"
-      </div>
-      <button class="voice-toast-btn" id="voiceToastStartBtn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-        Talk to Talha (Live Voice)
-      </button>
-    </div>
-
-    <button class="voice-orb-btn" id="voiceOrbBtn" title="Toggle Talha Voice AI" aria-label="Toggle Voice AI Assistant">
-      <div class="voice-orb-ring"></div>
-      <svg id="voiceOrbMicIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
-      <div class="voice-wave-bars" id="orbWaveBars" style="display:none;">
-        <span class="voice-wave-bar"></span>
-        <span class="voice-wave-bar"></span>
-        <span class="voice-wave-bar"></span>
-      </div>
-    </button>
-  </div>
-
   <!-- Vapi Official Web SDK -->
   <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" defer></script>
 
@@ -3948,49 +3734,6 @@
         waveHand.style.animation = 'waveHand 0.8s ease-in-out 3';
       });
     }
-
-    /* ================= 5. TERMINAL VERIFICATION LOG ================= */
-    const vlogLines = [
-      "$ verify --profile \"talha-rehman\"",
-      "checking academic_degree (BS AI · Bahria Univ E-8)..... OK [CGPA 3.09]",
-      "checking research_manuscript (DSPD Scheme)............. OK [Major Revision · Under Review]",
-      "checking fyp (AutismLens Multimodal RAG)............... OK [Proposal / Active Dev]",
-      "checking cv_internship (CEAI Medical Foot Diagnosis)... OK [500+ Annotated Samples]",
-      "checking nlp_research (FAST-NUCES Energy Analytics).... OK [30,350 Processed Docs]",
-      "checking community_leadership (Tech Fusion / AI Club).. OK [50+ Volunteers · 350+ Attendees]",
-      "verification status: 100% FACTUAL · ZERO FABRICATION"
-    ];
-
-    const vlogBody = document.getElementById('vlogBody');
-    const vlogReplayBtn = document.getElementById('vlogReplayBtn');
-
-    function renderVerificationLog() {
-      vlogBody.innerHTML = '';
-      let vlogDelay = 0;
-      vlogLines.forEach((line, i) => {
-        const el = document.createElement('div');
-        const isFirst = i === 0;
-        const isLast = i === vlogLines.length - 1;
-        el.className = 'vlog-line' + (!isFirst ? ' done' : '') + (isLast ? ' verified' : '');
-        el.style.animationDelay = vlogDelay + 'ms';
-        
-        const status = document.createElement('span');
-        status.className = 'status';
-        status.textContent = isFirst ? '$' : '✓';
-        
-        const txt = document.createElement('span');
-        txt.className = 'txt';
-        txt.textContent = isFirst ? line.replace('$ ', '') : line;
-        
-        el.appendChild(status);
-        el.appendChild(txt);
-        vlogBody.appendChild(el);
-        vlogDelay += 200;
-      });
-    }
-
-    renderVerificationLog();
-    vlogReplayBtn.addEventListener('click', renderVerificationLog);
 
     /* ================= 6. AGENT KNOWLEDGE BASE & FACT RETRIEVAL ================= */
     const knowledgeBase = [
@@ -4421,29 +4164,22 @@
     /* ================= 10. VAPI & VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
     const VAPI_ASSISTANT_ID = "1e21befe-6946-40ff-83bd-a7c15a59a23b";
     const VAPI_ORG_ID = "e0aa012d-c181-467b-aafc-5ae2b1fdf9d7";
-    const VAPI_FIRST_MESSAGE = "Hello I am Talha Rehman AI Engineer. What specifc you want to know about me?";
+    const VAPI_FIRST_MESSAGE = "Hello Welcome ! I am Talha Rehman AI Engineer.  What specifc you want to know about me?";
 
     let isVoiceActive = false;
     let isSpeaking = false;
     let isListening = false;
     let vapiClient = null;
     let speechRecognition = null;
-    let hasGreetedInCall = false;
 
-    // UI Elements
+    // Hero Voice UI Elements
     const heroVoiceBtn = document.getElementById('heroVoiceBtn');
-    const voiceFloatingBar = document.getElementById('voiceFloatingBar');
-    const voiceWelcomeToast = document.getElementById('voiceWelcomeToast');
-    const voiceToastClose = document.getElementById('voiceToastClose');
-    const voiceToastStartBtn = document.getElementById('voiceToastStartBtn');
-    const voiceOrbBtn = document.getElementById('voiceOrbBtn');
-    const voiceOrbMicIcon = document.getElementById('voiceOrbMicIcon');
-    const orbWaveBars = document.getElementById('orbWaveBars');
-    const agentVoiceToggleBtn = document.getElementById('agentVoiceToggleBtn');
-    const agentVoiceBtnText = document.getElementById('agentVoiceBtnText');
+    const heroVoiceBtnLabel = document.getElementById('heroVoiceBtnLabel');
+    const heroVoiceIcon = document.getElementById('heroVoiceIcon');
+    const heroVoiceHint = document.getElementById('heroVoiceHint');
     const voiceLiveDot = document.getElementById('voiceLiveDot');
     const voiceStatusText = document.getElementById('voiceStatusText');
-    const agentWaveBars = document.getElementById('agentWaveBars');
+    const heroWaveBars = document.getElementById('heroWaveBars');
 
     // Initialize Web Speech Recognition
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -4465,7 +4201,7 @@
         }
       };
 
-      speechRecognition.onerror = (event) => {
+      speechRecognition.onerror = () => {
         isListening = false;
         if (isVoiceActive && !isSpeaking) {
           updateVoiceStatus("Ready · Click to speak", true, false);
@@ -4486,13 +4222,9 @@
         if (dotActive) voiceLiveDot.classList.add('active');
         else voiceLiveDot.classList.remove('active');
       }
-      if (agentWaveBars) {
-        if (waveActive) agentWaveBars.classList.add('active');
-        else agentWaveBars.classList.remove('active');
-      }
-      if (orbWaveBars) {
-        if (waveActive) orbWaveBars.classList.add('active');
-        else orbWaveBars.classList.remove('active');
+      if (heroWaveBars) {
+        if (waveActive) heroWaveBars.classList.add('active');
+        else heroWaveBars.classList.remove('active');
       }
     }
 
@@ -4517,7 +4249,7 @@
 
       utterance.onend = () => {
         isSpeaking = false;
-        updateVoiceStatus("Listening for your response...", true, false);
+        updateVoiceStatus("Listening for your question...", true, false);
         if (onComplete) onComplete();
         if (isVoiceActive && speechRecognition) {
           try { speechRecognition.start(); } catch(e) {}
@@ -4533,34 +4265,45 @@
       window.speechSynthesis.speak(utterance);
     }
 
-    function handleVoiceInput(spokenText) {
-      addMessage(spokenText, 'user');
-      const res = answerQuery(spokenText);
-      if (res) {
-        addMessage(res.text, 'agent', res.citation);
-        speakText(res.text);
+    function answerQueryFromVoice(query) {
+      const q = query.toLowerCase();
+      let bestMatch = null;
+      let maxScore = 0;
+
+      for (const item of knowledgeBase) {
+        let score = 0;
+        for (const kw of item.keywords) {
+          if (q.includes(kw.toLowerCase())) {
+            score += 2;
+          }
+        }
+        if (score > maxScore) {
+          maxScore = score;
+          bestMatch = item;
+        }
       }
+
+      if (bestMatch && maxScore > 0) {
+        return bestMatch.answer;
+      }
+
+      return "I'm Talha Rehman, a final-year BS Artificial Intelligence student at Bahria University Islamabad and a research-minded AI engineer and builder. I've worked across NLP, computer vision, RAG, multimodal AI, AI agents, and automation, while also contributing to research and building technology communities. What specifically would you like to know about my work?";
+    }
+
+    function handleVoiceInput(spokenText) {
+      const answer = answerQueryFromVoice(spokenText);
+      speakText(answer);
     }
 
     function startVoiceCall() {
       if (isVoiceActive) return;
       isVoiceActive = true;
-      hasGreetedInCall = true;
-
-      // Dismiss Toast
-      if (voiceWelcomeToast) voiceWelcomeToast.style.display = 'none';
 
       // Update UI Controls
-      if (voiceOrbBtn) {
-        voiceOrbBtn.classList.add('is-active');
-        if (voiceOrbMicIcon) voiceOrbMicIcon.style.display = 'none';
-        if (orbWaveBars) orbWaveBars.style.display = 'flex';
-      }
-
-      if (agentVoiceToggleBtn) {
-        agentVoiceToggleBtn.classList.add('is-in-call');
-        if (agentVoiceBtnText) agentVoiceBtnText.textContent = "End Voice Call";
-      }
+      if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
+      if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "End Voice Call";
+      if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
+      if (heroVoiceHint) heroVoiceHint.textContent = "Voice call active with Talha's AI representative. Click 'End Voice Call' to hang up.";
 
       // Check if Vapi SDK is loaded
       if (window.vapiSDK && typeof window.vapiSDK.run === 'function') {
@@ -4569,18 +4312,11 @@
             assistant: VAPI_ASSISTANT_ID
           });
         } catch (err) {
-          console.log("Vapi SDK initialized in standalone mode:", err);
+          console.log("Vapi SDK initialized in standalone voice mode:", err);
         }
       }
 
-      // Scroll smoothly to agent chat so visitor sees transcript
-      const agentSec = document.getElementById('agent');
-      if (agentSec && window.scrollY < agentSec.offsetTop - 300) {
-        agentSec.scrollIntoView({ behavior: 'smooth' });
-      }
-
       // First spoken message turn
-      addMessage(VAPI_FIRST_MESSAGE, 'agent', 'Talha Rehman (Voice AI · Elliot)');
       speakText(VAPI_FIRST_MESSAGE);
     }
 
@@ -4601,19 +4337,12 @@
       }
 
       // Reset UI Controls
-      if (voiceOrbBtn) {
-        voiceOrbBtn.classList.remove('is-active');
-        if (voiceOrbMicIcon) voiceOrbMicIcon.style.display = 'block';
-        if (orbWaveBars) orbWaveBars.style.display = 'none';
-      }
-
-      if (agentVoiceToggleBtn) {
-        agentVoiceToggleBtn.classList.remove('is-in-call');
-        if (agentVoiceBtnText) agentVoiceBtnText.textContent = "Start Voice Call";
-      }
+      if (heroVoiceBtn) heroVoiceBtn.classList.remove('is-in-call');
+      if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "Talk to Talha (Live Voice AI)";
+      if (heroVoiceIcon) heroVoiceIcon.textContent = "🎙️";
+      if (heroVoiceHint) heroVoiceHint.textContent = "Click to speak directly with Talha's AI representative in real-time first-person voice.";
 
       updateVoiceStatus("Voice Agent Ready (Elliot · Vapi)", false, false);
-      addMessage("Voice session ended. You can continue typing or click 'Start Voice Call' anytime.", 'agent');
     }
 
     function toggleVoiceCall() {
@@ -4621,25 +4350,8 @@
       else startVoiceCall();
     }
 
-    // Bind Voice Buttons
-    if (heroVoiceBtn) heroVoiceBtn.addEventListener('click', startVoiceCall);
-    if (voiceToastStartBtn) voiceToastStartBtn.addEventListener('click', startVoiceCall);
-    if (voiceToastClose) {
-      voiceToastClose.addEventListener('click', () => {
-        if (voiceWelcomeToast) voiceWelcomeToast.style.display = 'none';
-      });
-    }
-    if (voiceOrbBtn) voiceOrbBtn.addEventListener('click', toggleVoiceCall);
-    if (agentVoiceToggleBtn) agentVoiceToggleBtn.addEventListener('click', toggleVoiceCall);
-
-    // Auto-dismiss welcome toast after 12s if untouched
-    setTimeout(() => {
-      if (voiceWelcomeToast && !isVoiceActive) {
-        voiceWelcomeToast.style.opacity = '0';
-        voiceWelcomeToast.style.transition = 'opacity 0.6s ease';
-        setTimeout(() => { voiceWelcomeToast.style.display = 'none'; }, 600);
-      }
-    }, 12000);
+    // Bind Hero Voice Button
+    if (heroVoiceBtn) heroVoiceBtn.addEventListener('click', toggleVoiceCall);
 
     // Initialize Hero 12 Background Animation
     initHero12Background();
