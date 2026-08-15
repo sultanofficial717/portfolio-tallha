@@ -4,6 +4,7 @@
   "description": "Talha Rehman — AI & ML Engineer Portfolio with Personal AI Agent",
   "main": "server.js",
   "scripts": {
+    "build": "echo 'Static build ready'",
     "start": "node server.js",
     "serve": "node server.js",
     "dev": "node server.js"
