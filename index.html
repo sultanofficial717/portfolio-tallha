@@ -2496,15 +2496,12 @@
                 <span class="voice-live-dot" id="voiceLiveDot"></span>
                 <span class="hero-voice-status" id="voiceStatusText">Voice Agent Ready (Elliot · Vapi)</span>
               </div>
-              <div style="display:flex; align-items:center; gap:10px;">
-                <div class="voice-wave-bars" id="heroWaveBars">
-                  <span class="voice-wave-bar"></span>
-                  <span class="voice-wave-bar"></span>
-                  <span class="voice-wave-bar"></span>
-                  <span class="voice-wave-bar"></span>
-                  <span class="voice-wave-bar"></span>
-                </div>
-                <button id="vapiSettingsBtn" style="background:transparent; border:none; color:var(--text-dimmer); cursor:pointer; font-size:13px; padding:2px 4px; border-radius:4px;" title="Configure Vapi Public Key">⚙️</button>
+              <div class="voice-wave-bars" id="heroWaveBars">
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
+                <span class="voice-wave-bar"></span>
               </div>
             </div>
             <div class="hero-voice-main">
@@ -4163,6 +4160,7 @@
     }
 
     /* ================= 10. VAPI & ZERO-LATENCY VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
+    const VAPI_PUBLIC_KEY = "9dab58dc-378e-4d6e-9de1-0f04c991e401";
     const VAPI_ASSISTANT_ID = "1e21befe-6946-40ff-83bd-a7c15a59a23b";
     const VAPI_ORG_ID = "e0aa012d-c181-467b-aafc-5ae2b1fdf9d7";
     const VAPI_FIRST_MESSAGE = "Hello Welcome ! I am Talha Rehman AI Engineer.  What specifc you want to know about me?";
@@ -4185,7 +4183,6 @@
     const voiceLiveDot = document.getElementById('voiceLiveDot');
     const voiceStatusText = document.getElementById('voiceStatusText');
     const heroWaveBars = document.getElementById('heroWaveBars');
-    const vapiSettingsBtn = document.getElementById('vapiSettingsBtn');
 
     // Preload & Cache Natural English Voice immediately on page load
     function initVoices() {
@@ -4202,7 +4199,7 @@
       window.speechSynthesis.onvoiceschanged = initVoices;
     }
 
-    // Initialize Low-Latency Web Speech Recognition
+    // Initialize Low-Latency Web Speech Recognition (as fallback)
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (SpeechRecognition) {
       speechRecognition = new SpeechRecognition();
@@ -4239,7 +4236,7 @@
               lastSpokenTranscript = currentText;
               handleVoiceInput(currentText);
             }
-          }, 650); // Fast 650ms end-of-speech response
+          }, 600); // Fast 600ms end-of-speech response
         }
       };
 
@@ -4349,44 +4346,70 @@
 
     function startVoiceCall() {
       if (isVoiceActive) return;
-      isVoiceActive = true;
       unlockAudioContext();
 
-      // Update UI Controls
+      const VapiClass = window.Vapi || (window.vapiSDK && window.vapiSDK.Vapi);
+
+      if (typeof VapiClass === 'function') {
+        try {
+          if (!vapiClient) {
+            vapiClient = new VapiClass(VAPI_PUBLIC_KEY);
+
+            vapiClient.on('call-start', () => {
+              isVoiceActive = true;
+              updateVoiceStatus("Connected · Elliot Live Voice", true, true);
+              if (heroVoiceHint) heroVoiceHint.textContent = "Voice call active with Talha's AI representative. Click 'End Voice Call' to hang up.";
+            });
+
+            vapiClient.on('speech-start', () => {
+              isSpeaking = true;
+              updateVoiceStatus("Talha is speaking...", true, true);
+            });
+
+            vapiClient.on('speech-end', () => {
+              isSpeaking = false;
+              updateVoiceStatus("Listening to your voice...", true, false);
+            });
+
+            vapiClient.on('volume-level', (vol) => {
+              if (heroWaveBars) {
+                const bars = heroWaveBars.querySelectorAll('.voice-wave-bar');
+                bars.forEach((bar, idx) => {
+                  const h = Math.max(4, Math.min(22, vol * 28 * (1 + (idx % 3) * 0.25)));
+                  bar.style.height = `${h}px`;
+                });
+              }
+            });
+
+            vapiClient.on('call-end', () => {
+              stopVoiceCall();
+            });
+
+            vapiClient.on('error', (err) => {
+              console.warn("Vapi WebRTC event:", err);
+            });
+          }
+
+          isVoiceActive = true;
+          if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
+          if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "End Voice Call";
+          if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
+          if (heroVoiceHint) heroVoiceHint.textContent = "Connecting to Talha's Voice AI (Elliot · WebRTC)...";
+          updateVoiceStatus("Connecting to Vapi...", true, true);
+
+          vapiClient.start(VAPI_ASSISTANT_ID);
+          return;
+        } catch(e) {
+          console.warn("Vapi WebRTC start fallback:", e);
+        }
+      }
+
+      // Fast synchronous speech turn with zero latency as fallback
+      isVoiceActive = true;
       if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
       if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "End Voice Call";
       if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
       if (heroVoiceHint) heroVoiceHint.textContent = "Voice call active with Talha's AI representative. Click 'End Voice Call' to hang up.";
-
-      // Check for Vapi Public API Key (localStorage or global)
-      const vapiKey = localStorage.getItem('vapi_public_key');
-      const VapiClass = window.Vapi || (window.vapiSDK && window.vapiSDK.Vapi);
-
-      if (vapiKey && VapiClass) {
-        try {
-          if (!vapiClient) {
-            vapiClient = new VapiClass(vapiKey);
-            vapiClient.on('call-start', () => {
-              updateVoiceStatus("Connected (Elliot Live Voice)", true, true);
-            });
-            vapiClient.on('speech-start', () => {
-              updateVoiceStatus("Talha is speaking...", true, true);
-            });
-            vapiClient.on('speech-end', () => {
-              updateVoiceStatus("Listening...", true, false);
-            });
-            vapiClient.on('call-end', () => {
-              stopVoiceCall();
-            });
-          }
-          vapiClient.start(VAPI_ASSISTANT_ID);
-          return;
-        } catch(e) {
-          console.warn("Vapi WebRTC init fallback:", e);
-        }
-      }
-
-      // Fast synchronous speech turn with zero latency
       speakText(VAPI_FIRST_MESSAGE);
     }
 
@@ -4423,24 +4446,6 @@
 
     // Bind Hero Voice Button
     if (heroVoiceBtn) heroVoiceBtn.addEventListener('click', toggleVoiceCall);
-
-    // Vapi Public Key Settings Modal Trigger
-    if (vapiSettingsBtn) {
-      vapiSettingsBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const currentKey = localStorage.getItem('vapi_public_key') || '';
-        const inputKey = prompt("Enter your Vapi Public API Key (from vapi.ai dashboard) for direct ultra-low latency WebRTC streaming:\n(Leave blank to use pre-warmed instant engine)", currentKey);
-        if (inputKey !== null) {
-          if (inputKey.trim()) {
-            localStorage.setItem('vapi_public_key', inputKey.trim());
-            alert("✓ Vapi Public API Key saved! Direct WebRTC Elliot voice enabled.");
-          } else {
-            localStorage.removeItem('vapi_public_key');
-            alert("Vapi Public Key cleared. Using pre-warmed instant voice engine.");
-          }
-        }
-      });
-    }
 
     // Initialize Hero 12 Background Animation
     initHero12Background();
