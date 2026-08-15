@@ -2496,12 +2496,15 @@
                 <span class="voice-live-dot" id="voiceLiveDot"></span>
                 <span class="hero-voice-status" id="voiceStatusText">Voice Agent Ready (Elliot · Vapi)</span>
               </div>
-              <div class="voice-wave-bars" id="heroWaveBars">
-                <span class="voice-wave-bar"></span>
-                <span class="voice-wave-bar"></span>
-                <span class="voice-wave-bar"></span>
-                <span class="voice-wave-bar"></span>
-                <span class="voice-wave-bar"></span>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <div class="voice-wave-bars" id="heroWaveBars">
+                  <span class="voice-wave-bar"></span>
+                  <span class="voice-wave-bar"></span>
+                  <span class="voice-wave-bar"></span>
+                  <span class="voice-wave-bar"></span>
+                  <span class="voice-wave-bar"></span>
+                </div>
+                <button id="vapiSettingsBtn" style="background:transparent; border:none; color:var(--text-dimmer); cursor:pointer; font-size:13px; padding:2px 4px; border-radius:4px;" title="Configure Vapi Public Key">⚙️</button>
               </div>
             </div>
             <div class="hero-voice-main">
@@ -3655,7 +3658,8 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-  <!-- Vapi Official Web SDK -->
+  <!-- Vapi Official Web SDK (Ultra-Low Latency WebRTC) -->
+  <script src="https://cdn.jsdelivr.net/npm/@vapi-ai/web@latest/dist/vapi.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" defer></script>
 
   <!-- ==========================================================================
@@ -4158,7 +4162,7 @@
       requestAnimationFrame(renderFrame);
     }
 
-    /* ================= 10. VAPI & VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
+    /* ================= 10. VAPI & ZERO-LATENCY VOICE AGENT ENGINE (Elliot / First-Person Voice) ================= */
     const VAPI_ASSISTANT_ID = "1e21befe-6946-40ff-83bd-a7c15a59a23b";
     const VAPI_ORG_ID = "e0aa012d-c181-467b-aafc-5ae2b1fdf9d7";
     const VAPI_FIRST_MESSAGE = "Hello Welcome ! I am Talha Rehman AI Engineer.  What specifc you want to know about me?";
@@ -4168,6 +4172,10 @@
     let isListening = false;
     let vapiClient = null;
     let speechRecognition = null;
+    let preloadedVoice = null;
+    let audioCtx = null;
+    let silenceTimer = null;
+    let lastSpokenTranscript = "";
 
     // Hero Voice UI Elements
     const heroVoiceBtn = document.getElementById('heroVoiceBtn');
@@ -4177,38 +4185,75 @@
     const voiceLiveDot = document.getElementById('voiceLiveDot');
     const voiceStatusText = document.getElementById('voiceStatusText');
     const heroWaveBars = document.getElementById('heroWaveBars');
+    const vapiSettingsBtn = document.getElementById('vapiSettingsBtn');
 
-    // Initialize Web Speech Recognition
+    // Preload & Cache Natural English Voice immediately on page load
+    function initVoices() {
+      if (!('speechSynthesis' in window)) return;
+      const voices = window.speechSynthesis.getVoices();
+      if (voices && voices.length > 0) {
+        preloadedVoice = voices.find(v => (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Guy') || v.name.includes('Daniel') || v.name.includes('David') || v.name.includes('Matthew')) && v.lang.startsWith('en')) ||
+                         voices.find(v => v.lang.startsWith('en')) ||
+                         voices[0];
+      }
+    }
+    if ('speechSynthesis' in window) {
+      initVoices();
+      window.speechSynthesis.onvoiceschanged = initVoices;
+    }
+
+    // Initialize Low-Latency Web Speech Recognition
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (SpeechRecognition) {
       speechRecognition = new SpeechRecognition();
-      speechRecognition.continuous = false;
-      speechRecognition.interimResults = false;
+      speechRecognition.continuous = true;
+      speechRecognition.interimResults = true;
       speechRecognition.lang = 'en-US';
 
       speechRecognition.onstart = () => {
         isListening = true;
-        updateVoiceStatus("Listening... (speak now)", true, false);
-      };
-
-      speechRecognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        if (transcript && transcript.trim()) {
-          handleVoiceInput(transcript);
+        if (isVoiceActive && !isSpeaking) {
+          updateVoiceStatus("Listening... (speak now)", true, false);
         }
       };
 
-      speechRecognition.onerror = () => {
+      speechRecognition.onresult = (event) => {
+        if (!isVoiceActive || isSpeaking) return;
+        let interimText = '';
+        let finalText = '';
+
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            finalText += event.results[i][0].transcript;
+          } else {
+            interimText += event.results[i][0].transcript;
+          }
+        }
+
+        const currentText = (finalText || interimText).trim();
+        if (currentText && currentText !== lastSpokenTranscript) {
+          updateVoiceStatus(`Hearing: "${currentText}"`, true, true);
+          clearTimeout(silenceTimer);
+          silenceTimer = setTimeout(() => {
+            if (isVoiceActive && !isSpeaking && currentText) {
+              lastSpokenTranscript = currentText;
+              handleVoiceInput(currentText);
+            }
+          }, 650); // Fast 650ms end-of-speech response
+        }
+      };
+
+      speechRecognition.onerror = (e) => {
         isListening = false;
         if (isVoiceActive && !isSpeaking) {
-          updateVoiceStatus("Ready · Click to speak", true, false);
+          updateVoiceStatus("Listening...", true, false);
         }
       };
 
       speechRecognition.onend = () => {
         isListening = false;
         if (isVoiceActive && !isSpeaking) {
-          updateVoiceStatus("Voice Active · Listening", true, false);
+          try { speechRecognition.start(); } catch(e) {}
         }
       };
     }
@@ -4225,24 +4270,34 @@
       }
     }
 
+    function unlockAudioContext() {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+      } catch(e) {}
+    }
+
     function speakText(text, onComplete = null) {
       if (!('speechSynthesis' in window)) {
         if (onComplete) onComplete();
         return;
       }
 
+      unlockAudioContext();
       window.speechSynthesis.cancel();
+      window.speechSynthesis.resume(); // Fixes Chromium synthesis freeze
+
       isSpeaking = true;
       updateVoiceStatus("Talha is speaking...", true, true);
 
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.02;
+      if (preloadedVoice) utterance.voice = preloadedVoice;
+      utterance.rate = 1.05;
       utterance.pitch = 0.98;
-
-      // Select natural voice if available
-      const voices = window.speechSynthesis.getVoices();
-      const preferred = voices.find(v => (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Daniel') || v.name.includes('David')) && v.lang.startsWith('en')) || voices[0];
-      if (preferred) utterance.voice = preferred;
 
       utterance.onend = () => {
         isSpeaking = false;
@@ -4255,7 +4310,7 @@
 
       utterance.onerror = () => {
         isSpeaking = false;
-        updateVoiceStatus("Voice Active · Listening", true, false);
+        updateVoiceStatus("Listening...", true, false);
         if (onComplete) onComplete();
       };
 
@@ -4295,6 +4350,7 @@
     function startVoiceCall() {
       if (isVoiceActive) return;
       isVoiceActive = true;
+      unlockAudioContext();
 
       // Update UI Controls
       if (heroVoiceBtn) heroVoiceBtn.classList.add('is-in-call');
@@ -4302,18 +4358,35 @@
       if (heroVoiceIcon) heroVoiceIcon.textContent = "🔴";
       if (heroVoiceHint) heroVoiceHint.textContent = "Voice call active with Talha's AI representative. Click 'End Voice Call' to hang up.";
 
-      // Check if Vapi SDK is loaded
-      if (window.vapiSDK && typeof window.vapiSDK.run === 'function') {
+      // Check for Vapi Public API Key (localStorage or global)
+      const vapiKey = localStorage.getItem('vapi_public_key');
+      const VapiClass = window.Vapi || (window.vapiSDK && window.vapiSDK.Vapi);
+
+      if (vapiKey && VapiClass) {
         try {
-          vapiClient = window.vapiSDK.run({
-            assistant: VAPI_ASSISTANT_ID
-          });
-        } catch (err) {
-          console.log("Vapi SDK initialized in standalone voice mode:", err);
+          if (!vapiClient) {
+            vapiClient = new VapiClass(vapiKey);
+            vapiClient.on('call-start', () => {
+              updateVoiceStatus("Connected (Elliot Live Voice)", true, true);
+            });
+            vapiClient.on('speech-start', () => {
+              updateVoiceStatus("Talha is speaking...", true, true);
+            });
+            vapiClient.on('speech-end', () => {
+              updateVoiceStatus("Listening...", true, false);
+            });
+            vapiClient.on('call-end', () => {
+              stopVoiceCall();
+            });
+          }
+          vapiClient.start(VAPI_ASSISTANT_ID);
+          return;
+        } catch(e) {
+          console.warn("Vapi WebRTC init fallback:", e);
         }
       }
 
-      // First spoken message turn
+      // Fast synchronous speech turn with zero latency
       speakText(VAPI_FIRST_MESSAGE);
     }
 
@@ -4322,6 +4395,7 @@
       isVoiceActive = false;
       isSpeaking = false;
       isListening = false;
+      clearTimeout(silenceTimer);
 
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
@@ -4349,6 +4423,24 @@
 
     // Bind Hero Voice Button
     if (heroVoiceBtn) heroVoiceBtn.addEventListener('click', toggleVoiceCall);
+
+    // Vapi Public Key Settings Modal Trigger
+    if (vapiSettingsBtn) {
+      vapiSettingsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const currentKey = localStorage.getItem('vapi_public_key') || '';
+        const inputKey = prompt("Enter your Vapi Public API Key (from vapi.ai dashboard) for direct ultra-low latency WebRTC streaming:\n(Leave blank to use pre-warmed instant engine)", currentKey);
+        if (inputKey !== null) {
+          if (inputKey.trim()) {
+            localStorage.setItem('vapi_public_key', inputKey.trim());
+            alert("✓ Vapi Public API Key saved! Direct WebRTC Elliot voice enabled.");
+          } else {
+            localStorage.removeItem('vapi_public_key');
+            alert("Vapi Public Key cleared. Using pre-warmed instant voice engine.");
+          }
+        }
+      });
+    }
 
     // Initialize Hero 12 Background Animation
     initHero12Background();
