@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1210" />
+      <stop offset="100%" stop-color="#141c18" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg5)" rx="16"/>
+  <rect x="20" y="20" width="760" height="560" fill="none" stroke="#253a30" stroke-width="2" rx="12"/>
+  
+  <!-- Header Bar -->
+  <rect x="40" y="40" width="720" height="50" fill="#101a14" rx="8"/>
+  <circle cx="65" cy="65" r="6" fill="#ff5f56"/>
+  <circle cx="85" cy="65" r="6" fill="#ffbd2e"/>
+  <circle cx="105" cy="65" r="6" fill="#27c93f"/>
+  <text x="135" y="70" fill="#7ba892" font-family="'JetBrains Mono', monospace" font-size="14">edu360_semantic_talent_matcher.py · FastAPI + ChromaDB</text>
+  
+  <!-- Architecture Diagram -->
+  <g transform="translate(60, 130)">
+    <rect x="20" y="20" width="200" height="220" rx="10" fill="#14241c" stroke="#25543c" stroke-width="1.5"/>
+    <text x="120" y="60" fill="#00F050" font-family="'Anton', sans-serif" font-size="18" text-anchor="middle">STUDENT PROFILES</text>
+    <text x="120" y="100" fill="#cfd9df" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Academic Records</text>
+    <text x="120" y="130" fill="#cfd9df" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Research Interests</text>
+    <text x="120" y="160" fill="#cfd9df" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Skill Embeddings</text>
+    <text x="120" y="200" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Vector Embeddings</text>
+
+    <!-- Arrow -->
+    <path d="M230 130 L 260 130" stroke="#00F050" stroke-width="2.5"/>
+
+    <rect x="265" y="20" width="180" height="220" rx="10" fill="#182c20" stroke="#00F050" stroke-width="2"/>
+    <text x="355" y="60" fill="#ffffff" font-family="'Anton', sans-serif" font-size="18" text-anchor="middle">SEMANTIC ENGINE</text>
+    <text x="355" y="100" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Sentence-BERT</text>
+    <text x="355" y="130" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">ChromaDB Store</text>
+    <text x="355" y="160" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Cosine Similarity</text>
+    <text x="355" y="200" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">FastAPI Engine</text>
+
+    <!-- Arrow -->
+    <path d="M455 130 L 485 130" stroke="#00D4F0" stroke-width="2.5"/>
+
+    <rect x="490" y="20" width="170" height="220" rx="10" fill="#14241c" stroke="#25543c" stroke-width="1.5"/>
+    <text x="575" y="60" fill="#00D4F0" font-family="'Anton', sans-serif" font-size="18" text-anchor="middle">MATCHED GRANTS</text>
+    <text x="575" y="100" fill="#cfd9df" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Global Scholarships</text>
+    <text x="575" y="130" fill="#cfd9df" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Funded Degrees</text>
+    <text x="575" y="160" fill="#cfd9df" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">Exchange Programs</text>
+    <text x="575" y="200" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Personalized Ranking</text>
+  </g>
+  
+  <!-- Footer Metrics -->
+  <g transform="translate(60, 430)">
+    <rect x="0" y="0" width="680" height="110" rx="10" fill="#101a14" stroke="#253a30" stroke-width="1.5"/>
+    <text x="30" y="40" fill="#7ba892" font-family="'JetBrains Mono', monospace" font-size="12">TECH STACK</text>
+    <text x="30" y="72" fill="#ffffff" font-family="'Anton', sans-serif" font-size="20">FASTAPI · CHROMADB · SENTENCE-BERT · NEXT.JS / TYPESCRIPT</text>
+    <text x="30" y="95" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12">Semantic Talent &amp; Scholarship Opportunity-Matching Platform</text>
+  </g>
+</svg>

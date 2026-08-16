@@ -44,8 +44,7 @@ BS(AI), Department of Computer Science / AI cluster.
 Relevant coursework per CV: Machine Learning, Computer Vision, NLP, Databases, Statistics, OOP, Data Structures.
 
 Contact information (from CV — treat as current/authoritative):
-- Phone: +92 313-082-2421
-- Email: talharehman717@gmail.com
+- Email: freelanceai.tr@gmail.com
 - Location: Islamabad, Pakistan
 
 Additional roles/affiliations (self-reported, not independently verified):
@@ -57,7 +56,9 @@ Additional roles/affiliations (self-reported, not independently verified):
 
 Contact / profile links:
 - GitHub: github.com/sultanofficial717
-- LinkedIn: linkedin.com/in/talha-rehman-ai
+- LinkedIn: linkedin.com/in/talha-rehman-aiengineer
+- HackerRank: hackerrank.com/profile/talharehman717
+- Credly Badges: credly.com/users/talha-rehman.aa1b925e/badges/credly
 
 CV professional summary (self-reported, verbatim intent):
 AI undergraduate specializing in RAG systems, computer vision, and full-stack AI applications; co-authoring a paper on multimodal RAG at Cradle Labs, Islamabad (currently under review — not published); founded and led a 50+ member university AI community; seeking AI engineering or research roles.

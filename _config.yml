@@ -4,19 +4,23 @@ title: Talha Rehman — AI & ML Engineer
 description: Research-minded AI engineer, builder and community leader focused on turning AI research and ideas into practical intelligent systems. Portfolio and interactive AI agent for Talha Rehman.
 url: https://sultanofficial717.github.io/portfolio-tallha/
 baseurl: ''
-email: talharehman717@gmail.com
+email: freelanceai.tr@gmail.com
 cover: https://sultanofficial717.github.io/portfolio-tallha/img/og.png
 logo: https://sultanofficial717.github.io/portfolio-tallha/img/headshot.jpg
 resume: https://sultanofficial717.github.io/portfolio-tallha/resume.pdf
 social:
   - title: email
-    url: mailto:talharehman717@gmail.com
+    url: mailto:freelanceai.tr@gmail.com
   - title: freelance_email
     url: mailto:freelanceai.tr@gmail.com
   - title: linkedin
-    url: https://linkedin.com/in/talha-rehman-ai
+    url: https://www.linkedin.com/in/talha-rehman-aiengineer/
   - title: github
     url: https://github.com/sultanofficial717
+  - title: hackerrank
+    url: https://www.hackerrank.com/profile/talharehman717
+  - title: credly
+    url: https://www.credly.com/users/talha-rehman.aa1b925e/badges/credly
   - title: company
     url: https://www.hattechnologies.tech
 
