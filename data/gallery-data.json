@@ -1,0 +1,484 @@
+[
+  {
+    "id": "ev-1786987648478",
+    "title": "COMPEC'26",
+    "category": "event",
+    "year": "2026",
+    "role": "Startup Pitch Competition",
+    "subtitle": "NUST University",
+    "desc": "I presented my smart AI based automted job searching model and get the real time feedback from the industry and academia experts.",
+    "tags": [],
+    "images": [
+      "img/gallery/uploads/img_1786988257499_tii6kk.jpg"
+    ],
+    "facts": [
+      {
+        "title": "ROLE",
+        "value": "Pitch my Startup"
+      },
+      {
+        "title": "CATEGORY",
+        "value": "EVENT"
+      },
+      {
+        "title": "TIMELINE",
+        "value": "2026"
+      }
+    ],
+    "actions": [
+      {
+        "label": "VIEW IN PORTFOLIO",
+        "url": "index.html#community",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "tech-fusion-2026",
+    "category": "event",
+    "year": "2025",
+    "role": "Lead Organizer & Founder",
+    "title": "TECH FUSION 2025",
+    "subtitle": "Theme: \"Silent Partner of Every Industry AI \"",
+    "desc": "One day event having 400+ attendees and 15+ particiaption from different universities.",
+    "tags": [
+      "50+ Volunteers",
+      "400+ Attendees",
+      "GDG Islamabad",
+      "Corporate Sponsors",
+      "Agentic AI"
+    ],
+    "images": [
+      "img/gallery/uploads/img_1786988170164_b4pnq8.jpg",
+      "img/gallery/uploads/img_1786986995049_6aub56.jpg",
+      "img/gallery/uploads/img_1786986995114_2nn01t.jpg",
+      "img/gallery/uploads/img_1786986995082_jrwj2i.jpg",
+      "img/gallery/uploads/img_1786986995131_j0w14c.jpg"
+    ],
+    "facts": [
+      {
+        "title": "ROLE",
+        "value": "Founder & Community Lead"
+      },
+      {
+        "title": "TEAM SIZE",
+        "value": "50+ Volunteer Engineers"
+      },
+      {
+        "title": "EXPECTED ATTENDEES",
+        "value": "350+ Participants"
+      },
+      {
+        "title": "KEY PARTNERS",
+        "value": "GDG Islamabad & BIC"
+      }
+    ],
+    "actions": [
+      {
+        "label": "VISIT HOME PORTFOLIO",
+        "url": "index.html#community",
+        "primary": true
+      },
+      {
+        "label": "CONTACT ORGANIZER",
+        "url": "mailto:freelanceai.tr@gmail.com",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "aiseekho-hackathon",
+    "category": "event",
+    "year": "2026",
+    "role": "Hackathon Finalist · NIC Islamabad",
+    "title": "AISEEKHO BUILDERS DAY",
+    "subtitle": "GDG Islamabad Hackathon · National Incubation Center (NIC) Islamabad",
+    "desc": "Lead the data and registration team at competitive AISeekho Builders Day / GDG Islamabad Hackathon held at National Incubation Center (NIC) Islamabad. Designed and delivered prototype solutions leveraging Google AI Studio, Gemini 1.5 multimodal APIs, and structured JSON prompt chains.",
+    "tags": [
+      "Lead Data & Registration Team",
+      "Evaluate the \"Ilm ki Roshni\" Track Projects"
+    ],
+    "images": [
+      "img/gallery/uploads/img_1786986217796_sc02an.jpg",
+      "img/gallery/uploads/img_1786986219106_lsib3x.jpg",
+      "img/gallery/uploads/img_1786986218081_ol8ld8.jpg",
+      "img/gallery/uploads/img_1786986218202_1wnvxp.jpg",
+      "img/gallery/uploads/img_1786986219907_6c038k.jpg"
+    ],
+    "facts": [
+      {
+        "title": "VENUE",
+        "value": "NIC Islamabad"
+      },
+      {
+        "title": "ORGANIZER",
+        "value": "GDG Islamabad & AISeekho"
+      },
+      {
+        "title": "STACK",
+        "value": "Gemini APIs, Google AI Studio"
+      },
+      {
+        "title": "STATUS",
+        "value": "Round 2 Shortlisted Finalist"
+      }
+    ],
+    "actions": [
+      {
+        "label": "VIEW RESEARCH CASE STUDIES",
+        "url": "index.html#projects",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "two-ai-panel",
+    "category": "event",
+    "year": "2025",
+    "role": "Curator & Lead Host",
+    "title": "THE TWO AI PANEL",
+    "subtitle": "Interdisciplinary Symposium Linking AI & Philosophy",
+    "desc": "Curated and hosted \"The Two AI\" interdisciplinary panel at Bahria University linking artificial intelligence with philosophy, human consciousness boundaries, deterministic system safety, and ethical alignment. Welcomed international guest speakers, university faculty, and 150+ student attendees.",
+    "tags": [
+      "AI Philosophy",
+      "Global Speakers",
+      "Safety & Alignment",
+      "150+ Attendees"
+    ],
+    "images": [
+      "img/gallery/two-ai-panel.svg",
+      "img/gallery/bahria-journey.svg"
+    ],
+    "facts": [
+      {
+        "title": "VENUE",
+        "value": "Bahria University Islamabad"
+      },
+      {
+        "title": "THEME",
+        "value": "AI, Philosophy & Alignment"
+      },
+      {
+        "title": "AUDIENCE",
+        "value": "150+ Students & Faculty"
+      },
+      {
+        "title": "PANEL ROSTER",
+        "value": "International & National Speakers"
+      }
+    ],
+    "actions": [
+      {
+        "label": "BACK TO PORTFOLIO",
+        "url": "index.html#community",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "fast-nuces-lab",
+    "category": "research",
+    "year": "2026–PRES.",
+    "role": "Research Engineer · NLP & Finance",
+    "title": "FAST-NUCES DATA INSIGHTS LAB",
+    "subtitle": "Brazilian Energy Market NLP & Price-Gap Analytics",
+    "desc": "Developing an NLP and translation pipeline analyzing ~30,350 processed documents (filtered from ~490k raw scraped articles) to investigate whether Brazilian energy and weather news signals can explain or predict the gap between CMO (marginal operating cost) and actual PLD settlement prices over a 45-day window.",
+    "tags": [
+      "~30,350 Docs",
+      "NLLB & Argos",
+      "FinBERT Sentiment",
+      "Gemini Topic Labeling"
+    ],
+    "images": [
+      "img/gallery/fast-nuces-lab.svg",
+      "img/projects/thumbnail/energy-nlp.svg"
+    ],
+    "facts": [
+      {
+        "title": "AFFILIATION",
+        "value": "FAST-NUCES Data Insights Lab"
+      },
+      {
+        "title": "CORPUS SIZE",
+        "value": "~30,350 Filtered Docs"
+      },
+      {
+        "title": "TECH STACK",
+        "value": "NLLB, Argos, FinBERT, Gemini"
+      },
+      {
+        "title": "TARGET",
+        "value": "CMO vs PLD Settlement Price-Gap"
+      }
+    ],
+    "actions": [
+      {
+        "label": "EXPLORE CASE STUDY",
+        "url": "index.html#projects",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "cradle-labs",
+    "category": "research",
+    "year": "2025",
+    "role": "Co-Author & Volunteer Research Assistant",
+    "title": "CRADLE LABS (MULTIMODAL RAG)",
+    "subtitle": "Cross-Modal Document Ingestion & Retrieval Grounding",
+    "desc": "Served as a Co-author and Volunteer Research Assistant investigating Multimodal Retrieval-Augmented Generation (Multimodal RAG) systems. Explored multimodal document ingestion and cross-modal retrieval to ground LLM responses in complex visual documents containing tables, diagrams, and text. Surveyed 30+ recent papers to establish benchmark baselines for manuscript under review.",
+    "tags": [
+      "Multimodal RAG",
+      "30+ Papers Survey",
+      "Cross-Modal Retrieval",
+      "Under Review"
+    ],
+    "images": [
+      "img/gallery/cradle-labs-research.svg",
+      "img/projects/thumbnail/multimodal-rag.svg"
+    ],
+    "facts": [
+      {
+        "title": "ROLE",
+        "value": "Co-Author / Volunteer RA"
+      },
+      {
+        "title": "LOCATION",
+        "value": "Cradle Labs, Islamabad"
+      },
+      {
+        "title": "LITERATURE BASE",
+        "value": "30+ Surveyed Papers"
+      },
+      {
+        "title": "STATUS",
+        "value": "Manuscript Under Review"
+      }
+    ],
+    "actions": [
+      {
+        "label": "EXPLORE CASE STUDY",
+        "url": "index.html#projects",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "ceai-medical-cv",
+    "category": "research",
+    "year": "2024",
+    "role": "AI Research Intern · Computer Vision",
+    "title": "CENTER OF EXCELLENCE IN AI (CEAI)",
+    "subtitle": "Medical Foot Computer Vision Diagnostic Pipeline",
+    "desc": "AI Research Intern at CEAI (E-8 Islamabad). Built computer vision pipelines for medical foot image diagnosis, processed and verified 500+ annotated medical image samples, and enhanced dataset quality through systematic annotation standards to support iterative model training cycles.",
+    "tags": [
+      "500+ Image Samples",
+      "OpenCV Diagnostics",
+      "Quality Control",
+      "Medical Foot CV"
+    ],
+    "images": [
+      "img/gallery/ceai-medical-lab.svg",
+      "img/projects/thumbnail/medical-foot-cv.svg"
+    ],
+    "facts": [
+      {
+        "title": "ROLE",
+        "value": "AI Research Intern"
+      },
+      {
+        "title": "DATASET SIZE",
+        "value": "500+ Annotated Medical Samples"
+      },
+      {
+        "title": "TOOLS",
+        "value": "OpenCV, Python, Image QC Pipelines"
+      },
+      {
+        "title": "DURATION",
+        "value": "Sep 2024 – Nov 2024"
+      }
+    ],
+    "actions": [
+      {
+        "label": "EXPLORE CASE STUDY",
+        "url": "index.html#projects",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "hat-technologies",
+    "category": "agency",
+    "year": "2024–PRES.",
+    "role": "Founder & Lead Architect",
+    "title": "HAT TECHNOLOGIES",
+    "subtitle": "Whitelabel AI Agency OS & Automation Suite",
+    "desc": "Founder and lead architect of HAT Technologies (hattechnologies.tech), an applied AI software and automation agency. Engineered an internal Whitelabel AI Agency OS with LangGraph and Temporal for fault-tolerant multi-tenant agent orchestration and client workflow automation.",
+    "tags": [
+      "LangGraph",
+      "Temporal Workflows",
+      "Multi-Tenant OS",
+      "hattechnologies.tech"
+    ],
+    "images": [
+      "img/gallery/hat-agency-os.svg",
+      "img/projects/thumbnail/edu360.svg"
+    ],
+    "facts": [
+      {
+        "title": "ROLE",
+        "value": "Founder & Lead Architect"
+      },
+      {
+        "title": "FRAMEWORKS",
+        "value": "LangGraph, Temporal, Python, FastAPI"
+      },
+      {
+        "title": "SERVICES",
+        "value": "Applied AI, Agentic Workflows"
+      },
+      {
+        "title": "WEBSITE",
+        "value": "hattechnologies.tech"
+      }
+    ],
+    "actions": [
+      {
+        "label": "VISIT HAT TECHNOLOGIES",
+        "url": "https://www.hattechnologies.tech",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "google-credly",
+    "category": "credential",
+    "year": "2024",
+    "role": "Google · Coursera ·",
+    "title": "GOOGLE AI ESSENTIALS",
+    "subtitle": "",
+    "desc": "Completed Google AI Essentials with an official digital badge verified on Credly. Certified in generative AI foundation models, prompt engineering pipelines, workplace AI productivity tools, and responsible AI system deployment.",
+    "tags": [
+      "Credly Verified",
+      "Google AI",
+      "Prompt Engineering",
+      "Responsible AI"
+    ],
+    "images": [
+      "img/gallery/uploads/img_1786987454070_bf8rya.jpg"
+    ],
+    "facts": [
+      {
+        "title": "ISSUER",
+        "value": "Google"
+      },
+      {
+        "title": "PLATFORM",
+        "value": "Credly & Coursera"
+      },
+      {
+        "title": "AFFILIATION",
+        "value": "GDSC Bahria University"
+      },
+      {
+        "title": "VERIFICATION",
+        "value": "Public Digital Credential"
+      }
+    ],
+    "actions": [
+      {
+        "label": "VIEW ON CREDLY ↗",
+        "url": "https://www.credly.com/users/talha-rehman.aa1b925e/badges/credly",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "bahria-journey",
+    "category": "credential",
+    "year": "2023–2027",
+    "role": "Final-Year BS Artificial Intelligence",
+    "title": "BAHRIA UNIVERSITY ISLAMABAD",
+    "subtitle": "BS Artificial Intelligence (Final-Year Candidate)",
+    "desc": "Pursuing BS in Artificial Intelligence (BS AI) at Bahria University, Islamabad Campus (E-8 Campus), with expected graduation in Jul 2027. Completed rigorous coursework including Reinforcement Learning, Robotics (Grade A), Deep Learning, Operating Systems, Machine Learning, Computer Vision, and Data Structures.",
+    "tags": [
+      "BS AI (2023–2027)",
+      "Reinforcement Learning",
+      "Robotics (Grade A)",
+      "Deep Learning"
+    ],
+    "images": [
+      "img/gallery/bahria-journey.svg"
+    ],
+    "facts": [
+      {
+        "title": "PROGRAM",
+        "value": "BS Artificial Intelligence"
+      },
+      {
+        "title": "TIMELINE",
+        "value": "Sep 2023 – Expected Jul 2027"
+      },
+      {
+        "title": "LOCATION",
+        "value": "Islamabad, Pakistan"
+      },
+      {
+        "title": "CAMPUS ROLES",
+        "value": "Tech Fusion Founder, AI Researcher"
+      }
+    ],
+    "actions": [
+      {
+        "label": "DOWNLOAD CV",
+        "url": "talha-cv.pdf",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "ai-club-leadership",
+    "category": "event",
+    "year": "2025–PRES.",
+    "role": "Lead & Founder · Tech Fusion / AI Club",
+    "title": "AI COMMUNITY LEADERSHIP",
+    "subtitle": "Campus Technology Brand & Student Leadership",
+    "desc": "Founded and lead the official campus technology brand and a 50+ volunteer team. Hosted 350+ participants across AI/ML events, secured corporate sponsorships for consecutive editions, and delivered technical deep dives in collaboration with the Bahria Innovation Center.",
+    "tags": [
+      "50+ Volunteers",
+      "Flagship Hackathons",
+      "BIC Deep Dives",
+      "Student Mentorship"
+    ],
+    "images": [
+      "img/gallery/tech-fusion-event.svg",
+      "img/gallery/two-ai-panel.svg"
+    ],
+    "facts": [
+      {
+        "title": "ORGANIZATION",
+        "value": "Tech Fusion / AI Club Bahria"
+      },
+      {
+        "title": "TEAM SIZE",
+        "value": "50+ Volunteers"
+      },
+      {
+        "title": "FLAGSHIP ATTENDANCE",
+        "value": "350+ Participants"
+      },
+      {
+        "title": "WORKSHOPS",
+        "value": "AI/ML Hands-on Series"
+      }
+    ],
+    "actions": [
+      {
+        "label": "BACK TO PORTFOLIO",
+        "url": "index.html#community",
+        "primary": true
+      }
+    ]
+  }
+]

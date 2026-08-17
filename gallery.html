@@ -14,10 +14,11 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="img/og.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="img/headshot.jpg">
+  <!-- Favicon (Matched with Main Page) -->
+  <link rel="icon" type="image/svg+xml" href="img/logo/tr-logo.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Google Fonts: Anton (Display), Roboto Flex (Sans Body), JetBrains Mono (Technical) -->
+  <!-- Google Fonts: Anton, Roboto Flex, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700&display=swap" rel="stylesheet">
@@ -194,7 +195,7 @@
     }
 
     .site-header.is-scrolled {
-      background: rgba(18, 18, 18, 0.9);
+      background: rgba(18, 18, 18, 0.92);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -243,10 +244,9 @@
       pointer-events: auto;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
-    /* Back Link Pill Button */
     .back-btn-pill {
       display: inline-flex;
       align-items: center;
@@ -269,7 +269,7 @@
       transform: translateX(-3px);
     }
 
-    /* ================= BUTTONS (Tajmirul Style) ================= */
+    /* Buttons */
     .btn-custom {
       position: relative;
       display: inline-flex;
@@ -331,7 +331,7 @@
 
     /* ================= GALLERY HERO HEADER ================= */
     .gallery-hero {
-      padding: 150px 0 60px;
+      padding: 150px 0 50px;
       position: relative;
       border-bottom: 1px solid #282828;
     }
@@ -386,7 +386,7 @@
       color: hsl(var(--muted-foreground));
       max-width: 780px;
       line-height: 1.6;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
     /* ================= FILTER TABS ================= */
@@ -440,11 +440,11 @@
       font-weight: 700;
     }
 
-    /* ================= GALLERY CARDS GRID ================= */
+    /* ================= PHOTO STACK GALLERY CARDS ================= */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 32px;
+      gap: 40px 32px;
       margin-bottom: 100px;
     }
 
@@ -454,28 +454,80 @@
       }
     }
 
-    .gallery-card {
+    /* Photo Stack Container */
+    .photo-stack-card {
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Stack Deck Visual Illusion Layers */
+    .stack-layer-back-2 {
+      position: absolute;
+      top: -12px;
+      left: 10px;
+      right: 10px;
+      height: 100%;
+      background: #111111;
+      border: 1px solid #282828;
+      border-radius: 18px;
+      z-index: 1;
+      transform: rotate(2.5deg);
+      transition: transform 0.35s ease, border-color 0.35s ease;
+      pointer-events: none;
+    }
+
+    .stack-layer-back-1 {
+      position: absolute;
+      top: -6px;
+      left: 6px;
+      right: 6px;
+      height: 100%;
+      background: #161616;
+      border: 1px solid #303030;
+      border-radius: 18px;
+      z-index: 2;
+      transform: rotate(-1.5deg);
+      transition: transform 0.35s ease, border-color 0.35s ease;
+      pointer-events: none;
+    }
+
+    .photo-stack-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .photo-stack-card:hover .stack-layer-back-2 {
+      transform: rotate(5deg) translateY(-4px) translateX(6px);
+      border-color: rgba(0, 240, 80, 0.3);
+    }
+
+    .photo-stack-card:hover .stack-layer-back-1 {
+      transform: rotate(-3deg) translateY(-2px) translateX(-4px);
+      border-color: rgba(0, 212, 240, 0.3);
+    }
+
+    .card-front {
+      position: relative;
       background-color: hsl(var(--card-bg));
       border: 1px solid var(--card-border);
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
-      position: relative;
-      cursor: pointer;
+      z-index: 3;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .gallery-card:hover {
-      transform: translateY(-6px);
+    .photo-stack-card:hover .card-front {
       border-color: hsl(var(--primary));
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 80, 0.15);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 240, 80, 0.2);
     }
 
     .card-media-wrap {
       width: 100%;
       height: 240px;
-      background-color: #0d0d0d;
+      background-color: #0c0c0c;
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid #242424;
@@ -488,8 +540,9 @@
       transition: transform 0.5s ease;
     }
 
-    .gallery-card:hover .card-media-wrap img, .gallery-card:hover .card-media-wrap svg {
-      transform: scale(1.04);
+    .photo-stack-card:hover .card-media-wrap img,
+    .photo-stack-card:hover .card-media-wrap svg {
+      transform: scale(1.05);
     }
 
     .card-overlay-badge {
@@ -500,7 +553,7 @@
       font-size: 11px;
       font-weight: 700;
       color: #ffffff;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.15);
       padding: 4px 10px;
@@ -509,24 +562,21 @@
       text-transform: uppercase;
     }
 
-    .card-overlay-badge.badge-event {
-      color: #00F050;
-      border-color: rgba(0, 240, 80, 0.4);
-    }
-
-    .card-overlay-badge.badge-research {
-      color: #00D4F0;
-      border-color: rgba(0, 212, 240, 0.4);
-    }
-
-    .card-overlay-badge.badge-agency {
-      color: #eab308;
-      border-color: rgba(234, 179, 8, 0.4);
-    }
-
-    .card-overlay-badge.badge-credential {
-      color: #a855f7;
-      border-color: rgba(168, 85, 247, 0.4);
+    .card-stack-count-badge {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: #000;
+      background: hsl(var(--primary));
+      padding: 4px 10px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
 
     .card-year-badge {
@@ -535,8 +585,8 @@
       right: 14px;
       font-family: var(--font-mono);
       font-size: 11px;
-      color: #8c8c8c;
-      background: rgba(0, 0, 0, 0.75);
+      color: #b0b0b0;
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(8px);
       padding: 4px 8px;
       border-radius: 6px;
@@ -570,7 +620,7 @@
       transition: color 0.2s ease;
     }
 
-    .gallery-card:hover .card-title {
+    .photo-stack-card:hover .card-title {
       color: hsl(var(--primary));
     }
 
@@ -613,18 +663,14 @@
       transition: opacity 0.2s ease;
     }
 
-    .card-inspect-btn:hover {
-      opacity: 0.8;
-    }
-
-    /* ================= LIGHTBOX / DETAIL MODAL ================= */
-    .lightbox-modal {
+    /* ================= FULLSCREEN PICTURE SCROLL POPUP ================= */
+    .photo-scroll-modal {
       position: fixed;
       inset: 0;
       z-index: 10005;
-      background: rgba(0, 0, 0, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -634,120 +680,221 @@
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
-    .lightbox-modal.is-open {
+    .photo-scroll-modal.is-open {
       opacity: 1;
       visibility: visible;
     }
 
-    .lightbox-content {
-      background: #141414;
+    .photo-scroll-dialog {
+      background: #151515;
       border: 1px solid #333;
-      border-radius: 18px;
-      max-width: 960px;
+      border-radius: 20px;
+      max-width: 1040px;
       width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
       position: relative;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
-      transform: scale(0.95);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 80, 0.1);
+      overflow: hidden;
+      transform: scale(0.96);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .lightbox-modal.is-open .lightbox-content {
+    .photo-scroll-modal.is-open .photo-scroll-dialog {
       transform: scale(1);
     }
 
-    .lightbox-close-btn {
+    /* Modal Cross Close Button */
+    .modal-close-cross-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 42px;
-      height: 42px;
+      top: 18px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: #202020;
-      border: 1px solid #383838;
+      background: rgba(30, 30, 30, 0.9);
+      border: 1px solid #444;
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 22px;
       cursor: pointer;
-      z-index: 10;
-      transition: all 0.2s ease;
+      z-index: 20;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
     }
 
-    .lightbox-close-btn:hover {
+    .modal-close-cross-btn:hover {
       background: #e11d48;
       border-color: #e11d48;
-      transform: rotate(90deg);
+      transform: rotate(90deg) scale(1.08);
     }
 
-    .lightbox-media {
+    /* Picture Showcase Viewer */
+    .modal-showcase-area {
+      position: relative;
       width: 100%;
-      max-height: 440px;
+      height: 420px;
       background: #090909;
-      border-bottom: 1px solid #282828;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-bottom: 1px solid #282828;
       overflow: hidden;
     }
 
-    .lightbox-media img, .lightbox-media svg {
+    .modal-active-img-wrap {
       width: 100%;
       height: 100%;
-      max-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-active-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
+      border-radius: 8px;
+      transition: opacity 0.25s ease;
     }
 
-    .lightbox-body {
-      padding: 36px 40px;
-    }
-
-    .lightbox-tag-pill {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: hsl(var(--primary));
-      background: rgba(0, 240, 80, 0.1);
-      border: 1px solid rgba(0, 240, 80, 0.3);
-      padding: 4px 12px;
-      border-radius: 100px;
-      margin-bottom: 12px;
-    }
-
-    .lightbox-title {
-      font-family: var(--font-anton);
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.05;
-      text-transform: uppercase;
+    /* Arrow Nav Buttons */
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(18, 18, 18, 0.85);
+      border: 1px solid #444;
       color: #ffffff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .carousel-nav-btn:hover {
+      background: hsl(var(--primary));
+      color: #000;
+      border-color: hsl(var(--primary));
+      box-shadow: 0 0 16px var(--primary);
+    }
+
+    .carousel-nav-btn.prev-btn { left: 16px; }
+    .carousel-nav-btn.next-btn { right: 16px; }
+
+    /* Scrollable Thumbnails Strip */
+    .modal-thumbs-strip-wrap {
+      background: #101010;
+      border-bottom: 1px solid #262626;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .modal-thumbs-strip-wrap::-webkit-scrollbar {
+      height: 6px;
+    }
+    .modal-thumbs-strip-wrap::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 3px;
+    }
+
+    .modal-thumb-btn {
+      position: relative;
+      width: 80px;
+      height: 54px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      background: #050505;
+      cursor: pointer;
+      flex-shrink: 0;
+      opacity: 0.55;
+      transition: all 0.2s ease;
+    }
+
+    .modal-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-thumb-btn.is-active, .modal-thumb-btn:hover {
+      opacity: 1;
+      border-color: hsl(var(--primary));
+      transform: scale(1.05);
+    }
+
+    /* Modal Text Body */
+    .modal-body-content {
+      padding: 28px 36px 36px;
+      overflow-y: auto;
+      max-height: calc(92vh - 540px);
+    }
+
+    .modal-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 8px;
     }
 
-    .lightbox-subtitle {
+    .modal-tag-pill {
       font-family: var(--font-mono);
-      font-size: 14px;
+      font-size: 11px;
+      color: hsl(var(--primary));
+      background: rgba(0, 240, 80, 0.1);
+      border: 1px solid rgba(0, 240, 80, 0.3);
+      padding: 4px 10px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    .modal-title {
+      font-family: var(--font-anton);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .modal-subtitle {
+      font-family: var(--font-mono);
+      font-size: 13px;
       color: hsl(var(--secondary));
+      margin-bottom: 16px;
+    }
+
+    .modal-desc {
+      font-size: 15px;
+      color: #d1d1d1;
+      line-height: 1.65;
       margin-bottom: 24px;
     }
 
-    .lightbox-desc {
-      font-size: 16px;
-      color: #d1d1d1;
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .lightbox-facts-grid {
+    .modal-facts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
       background: #0c0c0c;
       border: 1px solid #242424;
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 10px;
+      padding: 16px 20px;
     }
 
     .fact-box h4 {
@@ -760,18 +907,18 @@
 
     .fact-box p {
       font-family: var(--font-sans);
-      font-size: 15px;
+      font-size: 14px;
       color: #ffffff;
       font-weight: 600;
     }
 
-    .lightbox-actions {
+    .modal-actions-row {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
-    /* ================= AI VOICE AGENT WIDGET (Preserved) ================= */
+    /* ================= AI VOICE AGENT FLOATING WIDGET ================= */
     .voice-floating-widget {
       position: fixed;
       bottom: 28px;
@@ -817,13 +964,6 @@
       100% { box-shadow: 0 0 0 0 rgba(0, 240, 80, 0); }
     }
 
-    .voice-circle-icon {
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .voice-circle-pulse-ring {
       position: absolute;
       inset: -6px;
@@ -851,7 +991,6 @@
       box-shadow: 0 0 8px hsl(var(--primary));
     }
 
-    /* Voice Agent Popover Card */
     .voice-popup-card {
       width: 360px;
       max-width: calc(100vw - 40px);
@@ -932,7 +1071,6 @@
       color: #ffffff;
     }
 
-    /* Soundwave Equalizer */
     .voice-popup-equalizer {
       display: flex;
       align-items: center;
@@ -1043,7 +1181,7 @@
 </head>
 <body>
 
-  <!-- 10-Bar Preloader -->
+  <!-- 10-Bar Curtain Preloader -->
   <div id="preloader">
     <div class="preloader-item"></div>
     <div class="preloader-item"></div>
@@ -1096,352 +1234,92 @@
       <div class="container">
         <div class="gallery-lead-tag">
           <span class="dot"></span>
-          <span>CURATED EVENT &amp; EXPERIENCE RECORD</span>
+          <span>INTERACTIVE PHOTO STACKS &amp; MILESTONE RECORDS</span>
         </div>
 
         <h1 class="gallery-hero-title">
           OVERALL <span class="lime">EXPERIENCE</span> &amp;<br>
-          JOURNEY GALLERY
+          EVENT STACKS
         </h1>
 
         <p class="gallery-hero-desc">
-          An interactive visual showcase of flagship events, community leadership, research laboratories (FAST-NUCES, Cradle Labs, CEAI), agency orchestration at HAT Technologies, and verified digital credentials.
+          Click on any photo stack to open the fullscreen picture browser and scroll through all high-resolution event captures, research diagrams, and verified journey snapshots.
         </p>
 
         <!-- Filter Tabs -->
         <div class="filter-tabs-row" id="filterTabs">
           <button class="filter-tab-btn is-active" data-filter="all">
             <span>ALL MILESTONES</span>
-            <span class="tab-count">10</span>
+            <span class="tab-count" id="count-all">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="event">
             <span>EVENTS &amp; COMMUNITY</span>
-            <span class="tab-count">4</span>
+            <span class="tab-count" id="count-event">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="research">
             <span>AI RESEARCH &amp; LABS</span>
-            <span class="tab-count">3</span>
+            <span class="tab-count" id="count-research">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="agency">
             <span>AGENCY &amp; SYSTEMS</span>
-            <span class="tab-count">1</span>
+            <span class="tab-count" id="count-agency">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="credential">
             <span>JOURNEY &amp; BADGES</span>
-            <span class="tab-count">2</span>
+            <span class="tab-count" id="count-credential">0</span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Grid -->
+    <!-- Gallery Grid of Photo Stacks -->
     <section class="gallery-section">
       <div class="container">
         <div class="gallery-grid" id="galleryGrid">
-
-          <!-- Card 1: Tech Fusion 2026 -->
-          <article class="gallery-card" data-category="event" data-id="tech-fusion">
-            <div class="card-media-wrap">
-              <img src="img/gallery/tech-fusion-event.svg" alt="Tech Fusion 2026 Event" loading="lazy">
-              <span class="card-overlay-badge badge-event">FLAGSHIP EVENT</span>
-              <span class="card-year-badge">2026</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Lead Organizer &amp; Founder</p>
-                <h3 class="card-title">TECH FUSION 2026</h3>
-                <p class="card-desc">
-                  Upcoming flagship campus technology festival themed <em>"AI Without The Humans"</em> in partnership with GDG Islamabad. Leading 50+ volunteer engineers and managing corporate sponsorships.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">50+ Volunteers</span>
-                  <span class="tech-chip">350+ Attendees</span>
-                  <span class="tech-chip">GDG Islamabad</span>
-                  <span class="tech-chip">Corporate Sponsors</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT EVENT DETAILS</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2: AISeekho Builders Day -->
-          <article class="gallery-card" data-category="event" data-id="aiseekho">
-            <div class="card-media-wrap">
-              <img src="img/gallery/aiseekho-hackathon.svg" alt="AISeekho Builders Day Hackathon" loading="lazy">
-              <span class="card-overlay-badge badge-event">HACKATHON SHORTLIST</span>
-              <span class="card-year-badge">2025</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Hackathon Finalist · NIC Islamabad</p>
-                <h3 class="card-title">AISEEKHO BUILDERS DAY</h3>
-                <p class="card-desc">
-                  Selected for Round 2 at the GDG Islamabad / AISeekho Hackathon at National Incubation Center (NIC) Islamabad, building multimodal AI workflows using Google AI Studio and Gemini APIs.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">Google AI Studio</span>
-                  <span class="tech-chip">Gemini APIs</span>
-                  <span class="tech-chip">Round 2 Finalist</span>
-                  <span class="tech-chip">NIC Islamabad</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT HACKATHON RECORD</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3: The Two AI Panel -->
-          <article class="gallery-card" data-category="event" data-id="two-ai">
-            <div class="card-media-wrap">
-              <img src="img/gallery/two-ai-panel.svg" alt="The Two AI Panel" loading="lazy">
-              <span class="card-overlay-badge badge-event">CAMPUS SYMPOSIUM</span>
-              <span class="card-year-badge">2025</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Curator &amp; Lead Host</p>
-                <h3 class="card-title">THE TWO AI PANEL</h3>
-                <p class="card-desc">
-                  Organized "The Two AI" interdisciplinary panel at Bahria University linking AI with philosophy and ethical alignment, featuring international guest speakers and student innovators.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">AI Philosophy</span>
-                  <span class="tech-chip">Global Speakers</span>
-                  <span class="tech-chip">Safety &amp; Alignment</span>
-                  <span class="tech-chip">150+ Attendees</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT SYMPOSIUM DETAILS</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 4: FAST-NUCES Data Insights Lab -->
-          <article class="gallery-card" data-category="research" data-id="fast-nuces">
-            <div class="card-media-wrap">
-              <img src="img/gallery/fast-nuces-lab.svg" alt="FAST-NUCES Data Insights Lab" loading="lazy">
-              <span class="card-overlay-badge badge-research">RESEARCH LAB</span>
-              <span class="card-year-badge">2026–PRES.</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Research Engineer · NLP &amp; Finance</p>
-                <h3 class="card-title">FAST-NUCES LAB</h3>
-                <p class="card-desc">
-                  Engineered an NLP and translation pipeline analyzing ~30,350 processed documents (filtered from ~490k raw articles) to predict the price-gap between Brazilian CMO and actual PLD spot settlement prices.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">~30,350 Docs</span>
-                  <span class="tech-chip">NLLB &amp; Argos</span>
-                  <span class="tech-chip">FinBERT Sentiment</span>
-                  <span class="tech-chip">Gemini Topic Labeling</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT RESEARCH PIPELINE</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 5: Cradle Labs Multimodal RAG -->
-          <article class="gallery-card" data-category="research" data-id="cradle-labs">
-            <div class="card-media-wrap">
-              <img src="img/gallery/cradle-labs-research.svg" alt="Cradle Labs Multimodal RAG" loading="lazy">
-              <span class="card-overlay-badge badge-research">RESEARCH ASSISTANT</span>
-              <span class="card-year-badge">2025</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Co-Author &amp; Volunteer Research Assistant</p>
-                <h3 class="card-title">CRADLE LABS</h3>
-                <p class="card-desc">
-                  Investigated Multimodal Retrieval-Augmented Generation (Multimodal RAG) systems, cross-modal retrieval, visual document ingestion, and surveyed 30+ papers to establish benchmark baselines for manuscript under review.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">Multimodal RAG</span>
-                  <span class="tech-chip">30+ Papers Survey</span>
-                  <span class="tech-chip">Cross-Modal Retrieval</span>
-                  <span class="tech-chip">Under Review</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT RESEARCH SCOPE</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 6: CEAI Medical Foot CV -->
-          <article class="gallery-card" data-category="research" data-id="ceai">
-            <div class="card-media-wrap">
-              <img src="img/gallery/ceai-medical-lab.svg" alt="CEAI Medical Foot CV" loading="lazy">
-              <span class="card-overlay-badge badge-research">RESEARCH INTERNSHIP</span>
-              <span class="card-year-badge">2024</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">AI Research Intern · Computer Vision</p>
-                <h3 class="card-title">CEAI MEDICAL LAB</h3>
-                <p class="card-desc">
-                  Center of Excellence in AI (CEAI E-8 Islamabad). Engineered computer vision pipelines for medical foot image diagnosis, processed and verified 500+ annotated medical image samples.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">500+ Image Samples</span>
-                  <span class="tech-chip">OpenCV Diagnostics</span>
-                  <span class="tech-chip">Quality Control</span>
-                  <span class="tech-chip">Medical Foot CV</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT INTERNSHIP DETAILS</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 7: HAT Technologies Agency OS -->
-          <article class="gallery-card" data-category="agency" data-id="hat-technologies">
-            <div class="card-media-wrap">
-              <img src="img/gallery/hat-agency-os.svg" alt="HAT Technologies Whitelabel Agency OS" loading="lazy">
-              <span class="card-overlay-badge badge-agency">FOUNDER &amp; ARCHITECT</span>
-              <span class="card-year-badge">2024–PRES.</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Founder · Software Agency</p>
-                <h3 class="card-title">HAT TECHNOLOGIES</h3>
-                <p class="card-desc">
-                  Applied AI software and automation agency. Architected a Whitelabel AI Agency OS with LangGraph and Temporal for multi-tenant agent orchestration and client workflow automation.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">LangGraph</span>
-                  <span class="tech-chip">Temporal Workflows</span>
-                  <span class="tech-chip">Multi-Tenant OS</span>
-                  <span class="tech-chip">hattechnologies.tech</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT AGENCY PLATFORM</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 8: Google AI Essentials Credly Badge -->
-          <article class="gallery-card" data-category="credential" data-id="google-credly">
-            <div class="card-media-wrap">
-              <img src="img/gallery/google-credly-badge.svg" alt="Google AI Essentials Credly Badge" loading="lazy">
-              <span class="card-overlay-badge badge-credential">CREDLY VERIFIED</span>
-              <span class="card-year-badge">2024</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Google · Coursera · GDSC Bahria</p>
-                <h3 class="card-title">GOOGLE AI ESSENTIALS</h3>
-                <p class="card-desc">
-                  Verified digital badge issued by Google via Coursera &amp; GDSC Bahria. Certified in generative AI foundation models, prompt engineering pipelines, workplace AI automation, and responsible AI deployment.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">Credly Verified</span>
-                  <span class="tech-chip">Google AI</span>
-                  <span class="tech-chip">Prompt Engineering</span>
-                  <span class="tech-chip">Responsible AI</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>VIEW CREDLY BADGE ↗</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 9: BS AI Journey @ Bahria University -->
-          <article class="gallery-card" data-category="credential" data-id="bahria-journey">
-            <div class="card-media-wrap">
-              <img src="img/gallery/bahria-journey.svg" alt="Bahria University BS AI Journey" loading="lazy">
-              <span class="card-overlay-badge badge-credential">ACADEMIC JOURNEY</span>
-              <span class="card-year-badge">2023–2027</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Final-Year BS Artificial Intelligence</p>
-                <h3 class="card-title">BAHRIA UNIVERSITY</h3>
-                <p class="card-desc">
-                  Department of Computer Science / AI Cluster at Bahria University Islamabad Campus. Advanced coursework in Reinforcement Learning, Robotics, Computer Vision, Deep Learning, and Operating Systems.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">BS AI (2023–2027)</span>
-                  <span class="tech-chip">Reinforcement Learning</span>
-                  <span class="tech-chip">Robotics (Grade A)</span>
-                  <span class="tech-chip">Deep Learning</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT ACADEMIC RECORD</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 10: Tech Fusion / AI Club Leadership -->
-          <article class="gallery-card" data-category="event" data-id="ai-club-leadership">
-            <div class="card-media-wrap">
-              <img src="img/gallery/tech-fusion-event.svg" alt="Tech Fusion Community Leadership" loading="lazy">
-              <span class="card-overlay-badge badge-event">COMMUNITY LEADERSHIP</span>
-              <span class="card-year-badge">2025–PRES.</span>
-            </div>
-            <div class="card-body">
-              <div>
-                <p class="card-role">Lead &amp; Founder · Tech Fusion / AI Club</p>
-                <h3 class="card-title">AI COMMUNITY LEADERSHIP</h3>
-                <p class="card-desc">
-                  Founded the official campus technology brand and lead a 50+ volunteer team at Bahria University Islamabad. Hosted 350+ participants across AI/ML events, secured corporate sponsorships, and ran hands-on workshops.
-                </p>
-                <div class="card-tags-row">
-                  <span class="tech-chip">50+ Volunteers</span>
-                  <span class="tech-chip">Flagship Hackathons</span>
-                  <span class="tech-chip">BIC Deep Dives</span>
-                  <span class="tech-chip">Student Mentorship</span>
-                </div>
-              </div>
-              <div class="card-inspect-btn">
-                <span>INSPECT LEADERSHIP RECORD</span>
-                <span>↗</span>
-              </div>
-            </div>
-          </article>
-
+          <!-- Dynamically Injected Photo Stacks -->
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= LIGHTBOX MODAL ================= -->
-  <div class="lightbox-modal" id="lightboxModal">
-    <div class="lightbox-content">
-      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close modal">✕</button>
-      <div class="lightbox-media" id="lightboxMedia">
-        <!-- Injected Media -->
-      </div>
-      <div class="lightbox-body">
-        <span class="lightbox-tag-pill" id="lightboxTag">CATEGORY</span>
-        <h2 class="lightbox-title" id="lightboxTitle">MILESTONE TITLE</h2>
-        <p class="lightbox-subtitle" id="lightboxSubtitle">SUBTITLE</p>
-        <p class="lightbox-desc" id="lightboxDesc">Full description...</p>
+  <!-- ================= FULLSCREEN PICTURE SCROLL POPUP ================= -->
+  <div class="photo-scroll-modal" id="photoScrollModal">
+    <div class="photo-scroll-dialog">
+      <!-- Cross Button to Close Popup -->
+      <button class="modal-close-cross-btn" id="modalCloseCrossBtn" aria-label="Close photo popup" title="Close popup (Esc)">✕</button>
+      
+      <!-- Showcase Area -->
+      <div class="modal-showcase-area">
+        <button class="carousel-nav-btn prev-btn" id="carouselPrevBtn" aria-label="Previous picture">←</button>
         
-        <div class="lightbox-facts-grid" id="lightboxFacts">
+        <div class="modal-active-img-wrap" id="modalActiveImgWrap">
+          <img src="" id="modalActiveImg" alt="Event preview" onerror="this.src='img/gallery/tech-fusion-event.svg'">
+        </div>
+
+        <button class="carousel-nav-btn next-btn" id="carouselNextBtn" aria-label="Next picture">→</button>
+      </div>
+
+      <!-- Scrollable Thumbnails Strip -->
+      <div class="modal-thumbs-strip-wrap" id="modalThumbsStrip">
+        <!-- Thumbnails injected here -->
+      </div>
+
+      <!-- Modal Body Details -->
+      <div class="modal-body-content">
+        <div class="modal-tag-row">
+          <span class="modal-tag-pill" id="modalTag">CATEGORY</span>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: #888;" id="modalYear">2026</span>
+        </div>
+
+        <h2 class="modal-title" id="modalTitle">EVENT TITLE</h2>
+        <p class="modal-subtitle" id="modalSubtitle">SUBTITLE</p>
+        <p class="modal-desc" id="modalDesc">Detailed description...</p>
+        
+        <div class="modal-facts-grid" id="modalFacts">
           <!-- Injected Facts -->
         </div>
 
-        <div class="lightbox-actions" id="lightboxActions">
+        <div class="modal-actions-row" id="modalActions">
           <!-- Action Buttons -->
         </div>
       </div>
@@ -1451,7 +1329,7 @@
   <!-- ================= FOOTER ================= -->
   <footer class="gallery-footer">
     <div class="container">
-      <p style="font-family: var(--font-mono); font-size: 13px; color: hsl(var(--primary)); margin-bottom: 8px;">GET IN TOUCH</p>
+      <p style="font-family: var(--font-mono); font-size: 13px; color: hsl(var(--primary)); margin-bottom: 8px;">DIRECT INQUIRY</p>
       <a href="mailto:freelanceai.tr@gmail.com" class="footer-email-link">freelanceai.tr@gmail.com</a>
 
       <div class="footer-social-row">
@@ -1473,14 +1351,13 @@
       </div>
 
       <p style="font-size: 13px; color: #777777;">
-        Crafted for <strong>Talha Rehman</strong> · AI &amp; ML Engineer · <a href="index.html" style="color: hsl(var(--primary)); text-decoration: none;">Return to Home Portfolio</a>
+        Tailored for <strong>Talha Rehman</strong> · AI &amp; ML Engineer · <a href="index.html" style="color: hsl(var(--primary)); text-decoration: none;">Return to Home Portfolio</a>
       </p>
     </div>
   </footer>
 
   <!-- ================= AI VOICE AGENT FLOATING WIDGET ================= -->
   <div class="voice-floating-widget">
-    <!-- Popover Card -->
     <div class="voice-popup-card" id="voicePopupCard">
       <div class="voice-popup-header">
         <div class="voice-popup-agent-info">
@@ -1493,7 +1370,6 @@
         <button class="voice-popup-close-btn" id="voicePopupCloseBtn" aria-label="Close voice popup">✕</button>
       </div>
 
-      <!-- Live Waveform Equalizer -->
       <div class="voice-popup-equalizer" id="heroWaveBars">
         <span class="equalizer-bar"></span>
         <span class="equalizer-bar"></span>
@@ -1518,7 +1394,6 @@
       </div>
     </div>
 
-    <!-- Floating Circle Button -->
     <button class="voice-circle-btn" id="voiceCircleBtn" aria-label="Open AI Voice Assistant">
       <span class="voice-circle-pulse-ring"></span>
       <span class="voice-live-dot"></span>
@@ -1569,7 +1444,7 @@
         });
       });
 
-      const hoverables = document.querySelectorAll('a, button, .gallery-card, .filter-tab-btn, .footer-pill');
+      const hoverables = document.querySelectorAll('a, button, .photo-stack-card, .filter-tab-btn, .footer-pill');
       hoverables.forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
@@ -1638,264 +1513,289 @@
       }
     });
 
-    /* ================= 5. FILTER TABS LOGIC ================= */
-    const filterBtns = document.querySelectorAll('.filter-tab-btn');
-    const galleryCards = document.querySelectorAll('.gallery-card');
+    /* ================= 5. DYNAMIC GALLERY DATA & RENDERING ================= */
+    let galleryEvents = [];
+    let activeFilter = 'all';
 
+    const galleryGrid = document.getElementById('galleryGrid');
+
+    async function fetchGalleryEvents() {
+      // 1. Try local storage first if modified
+      const cached = localStorage.getItem('talha_gallery_data');
+      if (cached) {
+        try {
+          galleryEvents = JSON.parse(cached);
+          renderGalleryStacks();
+        } catch (e) {}
+      }
+
+      // 2. Fetch from backend / json seed (busting browser cache)
+      try {
+        const res = await fetch('/api/gallery?t=' + Date.now(), { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            galleryEvents = data;
+            try {
+              localStorage.setItem('talha_gallery_data', JSON.stringify(data));
+            } catch (e) {}
+            renderGalleryStacks();
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Backend gallery fetch error:', err);
+      }
+
+      // 3. Fallback to data/gallery-data.json
+      if (galleryEvents.length === 0) {
+        try {
+          const resSeed = await fetch('data/gallery-data.json?t=' + Date.now());
+          if (resSeed.ok) {
+            galleryEvents = await resSeed.json();
+            try {
+              localStorage.setItem('talha_gallery_data', JSON.stringify(galleryEvents));
+            } catch (e) {}
+            renderGalleryStacks();
+          }
+        } catch (err2) {}
+      }
+    }
+
+    // Auto re-fetch on window focus or storage change from admin panel
+    window.addEventListener('focus', () => fetchGalleryEvents());
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'talha_gallery_data') {
+        fetchGalleryEvents();
+      }
+    });
+
+    function updateTabCounts() {
+      const counts = { all: galleryEvents.length, event: 0, research: 0, agency: 0, credential: 0 };
+      galleryEvents.forEach(item => {
+        if (counts[item.category] !== undefined) counts[item.category]++;
+      });
+
+      document.getElementById('count-all').textContent = counts.all;
+      document.getElementById('count-event').textContent = counts.event;
+      document.getElementById('count-research').textContent = counts.research;
+      document.getElementById('count-agency').textContent = counts.agency;
+      document.getElementById('count-credential').textContent = counts.credential;
+    }
+
+    function renderGalleryStacks() {
+      updateTabCounts();
+      galleryGrid.innerHTML = '';
+
+      const filtered = activeFilter === 'all' 
+        ? galleryEvents 
+        : galleryEvents.filter(ev => ev.category === activeFilter);
+
+      if (filtered.length === 0) {
+        galleryGrid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align:center; padding: 60px 0; color: hsl(var(--muted-foreground));">
+            No milestones found in this category.
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(ev => {
+        const card = document.createElement('article');
+        card.className = 'photo-stack-card';
+        card.setAttribute('data-category', ev.category);
+        card.setAttribute('data-id', ev.id);
+
+        const images = (ev.images && ev.images.length > 0) ? ev.images : ['img/gallery/tech-fusion-event.svg'];
+        const coverImg = images[0];
+        const count = images.length;
+
+        const hasMultiStack = count > 1;
+
+        card.innerHTML = `
+          ${hasMultiStack ? '<div class="stack-layer-back-2"></div>' : ''}
+          ${hasMultiStack ? '<div class="stack-layer-back-1"></div>' : ''}
+          
+          <div class="card-front">
+            <div class="card-media-wrap">
+              <img src="${coverImg}" alt="${ev.title}" loading="lazy" onerror="this.src='img/gallery/tech-fusion-event.svg'">
+              <span class="card-overlay-badge badge-${ev.category}">${(ev.category || 'EVENT').toUpperCase()}</span>
+              <span class="card-year-badge">${ev.year || '2026'}</span>
+              <span class="card-stack-count-badge">📷 ${count} ${count === 1 ? 'Photo' : 'Photos Stack'}</span>
+            </div>
+
+            <div class="card-body">
+              <div>
+                <p class="card-role">${ev.role || 'Contributor'}</p>
+                <h3 class="card-title">${ev.title}</h3>
+                <p class="card-desc">${ev.desc || ''}</p>
+                <div class="card-tags-row">
+                  ${(ev.tags || []).map(t => `<span class="tech-chip">${t}</span>`).join('')}
+                </div>
+              </div>
+
+              <div class="card-inspect-btn">
+                <span>BROWSE PHOTO STACK</span>
+                <span>➔</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          openPhotoScrollModal(ev);
+        });
+
+        galleryGrid.appendChild(card);
+      });
+    }
+
+    // Filter Buttons binding
+    const filterBtns = document.querySelectorAll('.filter-tab-btn');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
-
-        const filterValue = btn.getAttribute('data-filter');
-
-        galleryCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
-          if (filterValue === 'all' || cardCategory === filterValue) {
-            gsap.to(card, {
-              autoAlpha: 1,
-              scale: 1,
-              duration: 0.35,
-              display: 'flex',
-              ease: 'power2.out'
-            });
-          } else {
-            gsap.to(card, {
-              autoAlpha: 0,
-              scale: 0.95,
-              duration: 0.25,
-              display: 'none',
-              ease: 'power2.in'
-            });
-          }
-        });
+        activeFilter = btn.getAttribute('data-filter');
+        renderGalleryStacks();
       });
     });
 
-    /* ================= 6. LIGHTBOX DATA & MODAL ================= */
-    const GALLERY_DETAILS = {
-      'tech-fusion': {
-        tag: 'CAMPUS FLAGSHIP · 2026',
-        title: 'TECH FUSION 2026',
-        subtitle: '"AI Without The Humans" · GDG Islamabad Collaboration',
-        media: 'img/gallery/tech-fusion-event.svg',
-        desc: 'Organizing the upcoming flagship event under the theme "AI Without The Humans" in collaboration with GDG Islamabad. Leading a team of 50+ volunteer engineers, arranging high-impact keynote sessions, hands-on agentic AI workshops, and managing multi-tiered corporate sponsorships.',
-        facts: [
-          { title: 'ROLE', value: 'Founder & Community Lead' },
-          { title: 'VOLUNTEER TEAM', value: '50+ Volunteer Engineers' },
-          { title: 'ATTENDEES', value: '350+ Participants' },
-          { title: 'PARTNERS', value: 'GDG Islamabad & BIC' }
-        ],
-        actions: [
-          { label: 'VISIT HOME PORTFOLIO', url: 'index.html#community', primary: true },
-          { label: 'CONTACT ORGANIZER', url: 'mailto:freelanceai.tr@gmail.com', primary: false }
-        ]
-      },
-      'aiseekho': {
-        tag: 'HACKATHON SHORTLIST · 2025',
-        title: 'AISEEKHO BUILDERS DAY',
-        subtitle: 'GDG Islamabad Hackathon · National Incubation Center (NIC) Islamabad',
-        media: 'img/gallery/aiseekho-hackathon.svg',
-        desc: 'Shortlisted for Round 2 at the competitive AISeekho Builders Day / GDG Islamabad Hackathon held at National Incubation Center (NIC) Islamabad. Designed and delivered prototype solutions leveraging Google AI Studio, Gemini 1.5 multimodal APIs, and structured JSON prompt chains.',
-        facts: [
-          { title: 'VENUE', value: 'NIC Islamabad' },
-          { title: 'ORGANIZER', value: 'GDG Islamabad & AISeekho' },
-          { title: 'STACK', value: 'Gemini APIs, Google AI Studio' },
-          { title: 'STATUS', value: 'Round 2 Shortlisted Finalist' }
-        ],
-        actions: [
-          { label: 'VIEW RESEARCH CASE STUDIES', url: 'index.html#projects', primary: true }
-        ]
-      },
-      'two-ai': {
-        tag: 'CAMPUS INITIATIVE · 2025',
-        title: 'THE TWO AI PANEL',
-        subtitle: 'Interdisciplinary Symposium Linking AI & Philosophy',
-        media: 'img/gallery/two-ai-panel.svg',
-        desc: 'Curated and hosted "The Two AI" interdisciplinary panel at Bahria University linking artificial intelligence with philosophy, human consciousness boundaries, deterministic system safety, and ethical alignment. Welcomed international guest speakers, university faculty, and 150+ student attendees.',
-        facts: [
-          { title: 'VENUE', value: 'Bahria University Islamabad' },
-          { title: 'THEME', value: 'AI, Philosophy & Alignment' },
-          { title: 'AUDIENCE', value: '150+ Students & Faculty' },
-          { title: 'SPEAKER ROSTER', value: 'International & National Panel' }
-        ],
-        actions: [
-          { label: 'BACK TO PORTFOLIO', url: 'index.html#community', primary: true }
-        ]
-      },
-      'fast-nuces': {
-        tag: 'RESEARCH LAB · 2026–PRESENT',
-        title: 'DATA INSIGHTS LAB (FAST-NUCES)',
-        subtitle: 'Brazilian Energy Market NLP & Price-Gap Analytics',
-        media: 'img/gallery/fast-nuces-lab.svg',
-        desc: 'Developing an NLP and translation pipeline analyzing ~30,350 processed documents (filtered from ~490k raw scraped articles) to investigate whether Brazilian energy and weather news signals can explain or predict the gap between CMO (marginal operating cost) and actual PLD settlement prices over a 45-day window.',
-        facts: [
-          { title: 'AFFILIATION', value: 'FAST-NUCES Data Insights Lab' },
-          { title: 'CORPUS SIZE', value: '~30,350 Filtered Docs' },
-          { title: 'TECH STACK', value: 'NLLB, Argos, FinBERT, Gemini' },
-          { title: 'TARGET', value: 'CMO vs PLD Settlement Price-Gap' }
-        ],
-        actions: [
-          { label: 'EXPLORE CASE STUDY', url: 'index.html#projects', primary: true }
-        ]
-      },
-      'cradle-labs': {
-        tag: 'RESEARCH LAB · 2025',
-        title: 'CRADLE LABS (MULTIMODAL RAG)',
-        subtitle: 'Cross-Modal Document Ingestion & Retrieval Grounding',
-        media: 'img/gallery/cradle-labs-research.svg',
-        desc: 'Served as a Co-author and Volunteer Research Assistant investigating Multimodal Retrieval-Augmented Generation (Multimodal RAG) systems. Explored multimodal document ingestion and cross-modal retrieval to ground LLM responses in complex visual documents containing tables, diagrams, and text. Surveyed 30+ recent papers to establish benchmark baselines for manuscript under review.',
-        facts: [
-          { title: 'ROLE', value: 'Co-Author / Volunteer RA' },
-          { title: 'LOCATION', value: 'Cradle Labs, Islamabad' },
-          { title: 'LITERATURE BASE', value: '30+ Surveyed Papers' },
-          { title: 'MANUSCRIPT STATUS', value: 'Under Review' }
-        ],
-        actions: [
-          { label: 'EXPLORE CASE STUDY', url: 'index.html#projects', primary: true }
-        ]
-      },
-      'ceai': {
-        tag: 'RESEARCH INTERNSHIP · 2024',
-        title: 'CENTER OF EXCELLENCE IN AI (CEAI)',
-        subtitle: 'Medical Foot Computer Vision Diagnostic Pipeline',
-        media: 'img/gallery/ceai-medical-lab.svg',
-        desc: 'AI Research Intern at CEAI (E-8 Islamabad). Built computer vision pipelines for medical foot image diagnosis, processed and verified 500+ annotated medical image samples, and enhanced dataset quality through systematic annotation standards to support iterative model training cycles.',
-        facts: [
-          { title: 'ROLE', value: 'AI Research Intern' },
-          { title: 'DATASET SIZE', value: '500+ Annotated Medical Samples' },
-          { title: 'TOOLS', value: 'OpenCV, Python, Image QC Pipelines' },
-          { title: 'DURATION', value: 'Sep 2024 – Nov 2024' }
-        ],
-        actions: [
-          { label: 'EXPLORE CASE STUDY', url: 'index.html#projects', primary: true }
-        ]
-      },
-      'hat-technologies': {
-        tag: 'AGENCY & SYSTEMS · 2024–PRESENT',
-        title: 'HAT TECHNOLOGIES',
-        subtitle: 'Whitelabel AI Agency OS & Automation Suite',
-        media: 'img/gallery/hat-agency-os.svg',
-        desc: 'Founder and lead architect of HAT Technologies (hattechnologies.tech), an applied AI software and automation agency. Engineered an internal Whitelabel AI Agency OS with LangGraph and Temporal for fault-tolerant multi-tenant agent orchestration and client workflow automation.',
-        facts: [
-          { title: 'ROLE', value: 'Founder & Lead Architect' },
-          { title: 'FRAMEWORKS', value: 'LangGraph, Temporal, Python, FastAPI' },
-          { title: 'SERVICES', value: 'Applied AI, Agentic Workflows' },
-          { title: 'WEBSITE', value: 'hattechnologies.tech' }
-        ],
-        actions: [
-          { label: 'VISIT HAT TECHNOLOGIES', url: 'https://www.hattechnologies.tech', primary: true }
-        ]
-      },
-      'google-credly': {
-        tag: 'CREDLY VERIFIED BADGE · 2024',
-        title: 'GOOGLE AI ESSENTIALS',
-        subtitle: 'Verified Digital Badge via Coursera & GDSC Bahria',
-        media: 'img/gallery/google-credly-badge.svg',
-        desc: 'Completed Google AI Essentials with an official digital badge verified on Credly. Certified in generative AI foundation models, prompt engineering pipelines, workplace AI productivity tools, and responsible AI system deployment.',
-        facts: [
-          { title: 'ISSUER', value: 'Google' },
-          { title: 'PLATFORM', value: 'Credly & Coursera' },
-          { title: 'AFFILIATION', value: 'GDSC Bahria University' },
-          { title: 'VERIFICATION', value: 'Public Digital Credential' }
-        ],
-        actions: [
-          { label: 'VIEW ON CREDLY ↗', url: 'https://www.credly.com/users/talha-rehman.aa1b925e/badges/credly', primary: true }
-        ]
-      },
-      'bahria-journey': {
-        tag: 'ACADEMIC JOURNEY · 2023–2027',
-        title: 'BAHRIA UNIVERSITY ISLAMABAD',
-        subtitle: 'BS Artificial Intelligence (Final-Year Candidate)',
-        media: 'img/gallery/bahria-journey.svg',
-        desc: 'Pursuing BS in Artificial Intelligence (BS AI) at Bahria University, Islamabad Campus (E-8 Campus), with expected graduation in Jul 2027. Completed rigorous coursework including Reinforcement Learning, Robotics (Grade A), Deep Learning, Operating Systems, Machine Learning, Computer Vision, and Data Structures.',
-        facts: [
-          { title: 'PROGRAM', value: 'BS Artificial Intelligence' },
-          { title: 'TIMELINE', value: 'Sep 2023 – Expected Jul 2027' },
-          { title: 'LOCATION', value: 'Islamabad, Pakistan' },
-          { title: 'CAMPUS ROLES', value: 'Tech Fusion Founder, AI Researcher' }
-        ],
-        actions: [
-          { label: 'DOWNLOAD CV', url: 'talha-cv.pdf', primary: true }
-        ]
-      },
-      'ai-club-leadership': {
-        tag: 'COMMUNITY LEADERSHIP · 2025–PRESENT',
-        title: 'TECH FUSION / AI CLUB',
-        subtitle: 'Campus Technology Brand & Student Leadership',
-        media: 'img/gallery/tech-fusion-event.svg',
-        desc: 'Founded and lead the official campus technology brand and a 50+ volunteer team. Hosted 350+ participants across AI/ML events, secured corporate sponsorships for consecutive editions, and delivered technical deep dives in collaboration with the Bahria Innovation Center.',
-        facts: [
-          { title: 'ORGANIZATION', value: 'Tech Fusion / AI Club Bahria' },
-          { title: 'TEAM SIZE', value: '50+ Volunteers' },
-          { title: 'FLAGSHIP ATTENDANCE', value: '350+ Participants' },
-          { title: 'WORKSHOPS', value: 'AI/ML Hands-on Series' }
-        ],
-        actions: [
-          { label: 'BACK TO PORTFOLIO', url: 'index.html#community', primary: true }
-        ]
-      }
-    };
+    /* ================= 6. FULLSCREEN PHOTO SCROLL POPUP LOGIC ================= */
+    const photoScrollModal = document.getElementById('photoScrollModal');
+    const modalCloseCrossBtn = document.getElementById('modalCloseCrossBtn');
+    const modalActiveImg = document.getElementById('modalActiveImg');
+    const carouselPrevBtn = document.getElementById('carouselPrevBtn');
+    const carouselNextBtn = document.getElementById('carouselNextBtn');
+    const modalThumbsStrip = document.getElementById('modalThumbsStrip');
+    const modalTag = document.getElementById('modalTag');
+    const modalYear = document.getElementById('modalYear');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalFacts = document.getElementById('modalFacts');
+    const modalActions = document.getElementById('modalActions');
 
-    const lightboxModal = document.getElementById('lightboxModal');
-    const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-    const lightboxMedia = document.getElementById('lightboxMedia');
-    const lightboxTag = document.getElementById('lightboxTag');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxSubtitle = document.getElementById('lightboxSubtitle');
-    const lightboxDesc = document.getElementById('lightboxDesc');
-    const lightboxFacts = document.getElementById('lightboxFacts');
-    const lightboxActions = document.getElementById('lightboxActions');
+    let currentModalEvent = null;
+    let currentPhotoIndex = 0;
 
-    function openLightbox(id) {
-      const data = GALLERY_DETAILS[id];
-      if (!data) return;
+    function openPhotoScrollModal(eventData) {
+      currentModalEvent = eventData;
+      currentPhotoIndex = 0;
 
-      lightboxTag.textContent = data.tag;
-      lightboxTitle.textContent = data.title;
-      lightboxSubtitle.textContent = data.subtitle;
-      lightboxDesc.innerHTML = data.desc;
-      lightboxMedia.innerHTML = `<img src="${data.media}" alt="${data.title}">`;
+      modalTag.textContent = (eventData.category || 'EVENT').toUpperCase();
+      modalYear.textContent = eventData.year || '2026';
+      modalTitle.textContent = eventData.title;
+      modalSubtitle.textContent = eventData.subtitle || '';
+      modalDesc.textContent = eventData.desc || '';
 
-      // Facts Grid
-      lightboxFacts.innerHTML = data.facts.map(f => `
+      const images = (eventData.images && eventData.images.length > 0) ? eventData.images : ['img/gallery/tech-fusion-event.svg'];
+
+      // Render Thumbnails Strip
+      modalThumbsStrip.innerHTML = '';
+      images.forEach((imgSrc, idx) => {
+        const thumb = document.createElement('button');
+        thumb.className = `modal-thumb-btn ${idx === 0 ? 'is-active' : ''}`;
+        thumb.innerHTML = `<img src="${imgSrc}" alt="Thumbnail ${idx + 1}" onerror="this.src='img/gallery/tech-fusion-event.svg'">`;
+        thumb.addEventListener('click', () => {
+          setActivePhoto(idx);
+        });
+        modalThumbsStrip.appendChild(thumb);
+      });
+
+      // Enable/Disable Nav Buttons
+      carouselPrevBtn.style.display = images.length > 1 ? 'flex' : 'none';
+      carouselNextBtn.style.display = images.length > 1 ? 'flex' : 'none';
+      modalThumbsStrip.style.display = images.length > 1 ? 'flex' : 'none';
+
+      // Set First Photo
+      setActivePhoto(0);
+
+      // Render Facts Grid
+      const facts = eventData.facts || [
+        { title: 'ROLE', value: eventData.role || 'Organizer' },
+        { title: 'TIMELINE', value: eventData.year || '2026' }
+      ];
+      modalFacts.innerHTML = facts.map(f => `
         <div class="fact-box">
           <h4>${f.title}</h4>
           <p>${f.value}</p>
         </div>
       `).join('');
 
-      // Actions
-      lightboxActions.innerHTML = data.actions.map(a => `
-        <a href="${a.url}" target="${a.url.startsWith('http') ? '_blank' : '_self'}" class="btn-custom ${a.primary ? 'btn-primary' : 'btn-outline'}" style="height: 46px; padding: 0 24px; font-size: 14px;">
+      // Render Actions
+      const actions = eventData.actions || [
+        { label: 'BACK TO HOME PORTFOLIO', url: 'index.html#community', primary: true }
+      ];
+      modalActions.innerHTML = actions.map(a => `
+        <a href="${a.url}" target="${a.url.startsWith('http') ? '_blank' : '_self'}" class="btn-custom ${a.primary ? 'btn-primary' : 'btn-outline'}" style="height: 44px; padding: 0 22px; font-size: 13px;">
           <span class="btn-bubble"></span>
           ${a.label}
         </a>
       `).join('');
 
-      lightboxModal.classList.add('is-open');
+      photoScrollModal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeLightbox() {
-      lightboxModal.classList.remove('is-open');
-      document.body.style.overflow = '';
+    function setActivePhoto(idx) {
+      if (!currentModalEvent) return;
+      const images = (currentModalEvent.images && currentModalEvent.images.length > 0) ? currentModalEvent.images : ['img/gallery/tech-fusion-event.svg'];
+      
+      currentPhotoIndex = (idx + images.length) % images.length;
+
+      // Crossfade active image
+      modalActiveImg.style.opacity = '0';
+      setTimeout(() => {
+        modalActiveImg.src = images[currentPhotoIndex];
+        modalActiveImg.style.opacity = '1';
+      }, 150);
+
+      // Update Thumbnails active state
+      const thumbBtns = modalThumbsStrip.querySelectorAll('.modal-thumb-btn');
+      thumbBtns.forEach((tb, i) => {
+        if (i === currentPhotoIndex) {
+          tb.classList.add('is-active');
+          tb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else {
+          tb.classList.remove('is-active');
+        }
+      });
     }
 
-    galleryCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const id = card.getAttribute('data-id');
-        openLightbox(id);
-      });
+    function closePhotoModal() {
+      photoScrollModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      currentModalEvent = null;
+    }
+
+    // Modal controls
+    modalCloseCrossBtn.addEventListener('click', closePhotoModal);
+    carouselPrevBtn.addEventListener('click', () => setActivePhoto(currentPhotoIndex - 1));
+    carouselNextBtn.addEventListener('click', () => setActivePhoto(currentPhotoIndex + 1));
+
+    photoScrollModal.addEventListener('click', (e) => {
+      if (e.target === photoScrollModal) closePhotoModal();
     });
 
-    lightboxCloseBtn.addEventListener('click', closeLightbox);
-    lightboxModal.addEventListener('click', (e) => {
-      if (e.target === lightboxModal) closeLightbox();
-    });
+    // Keyboard & Wheel navigation
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      if (!photoScrollModal.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closePhotoModal();
+      if (e.key === 'ArrowLeft') setActivePhoto(currentPhotoIndex - 1);
+      if (e.key === 'ArrowRight') setActivePhoto(currentPhotoIndex + 1);
     });
+
+    // Mouse wheel scrolling on showcase area scrolls through pictures
+    const modalShowcaseArea = document.querySelector('.modal-showcase-area');
+    modalShowcaseArea.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      if (e.deltaY > 0) {
+        setActivePhoto(currentPhotoIndex + 1);
+      } else {
+        setActivePhoto(currentPhotoIndex - 1);
+      }
+    }, { passive: false });
 
     /* ================= 7. AI VOICE AGENT WIDGET LOGIC ================= */
     const VAPI_PUBLIC_KEY = "3881dfd7-be07-4e76-a496-c1d47914bf4a";
@@ -1907,14 +1807,12 @@
     const heroVoiceBtn = document.getElementById('heroVoiceBtn');
     const heroVoiceBtnLabel = document.getElementById('heroVoiceBtnLabel');
     const voiceStatusText = document.getElementById('voiceStatusText');
-    const heroWaveBars = document.getElementById('heroWaveBars');
 
     let isVoiceActive = false;
     let isSpeaking = false;
     let vapiClient = null;
     let speechRecognition = null;
 
-    // Toggle Popup Card
     if (voiceCircleBtn && voicePopupCard) {
       voiceCircleBtn.addEventListener('click', () => {
         voicePopupCard.classList.toggle('is-visible');
@@ -1926,7 +1824,6 @@
       });
     }
 
-    // Voice Knowledge Base
     const KNOWLEDGE_BASE = [
       {
         id: "events-gallery",
@@ -1961,7 +1858,7 @@
           return item.answer;
         }
       }
-      return "I'm Talha Rehman, AI & ML Engineer. You can explore my experience gallery or reach out to me directly at freelanceai.tr@gmail.com.";
+      return "I'm Talha Rehman, AI & ML Engineer. You can explore my experience gallery photo stacks or reach out directly at freelanceai.tr@gmail.com.";
     }
 
     function speakFallback(text) {
@@ -2030,7 +1927,7 @@
         }
         if (voiceStatusText) voiceStatusText.textContent = "Voice Agent Active · Speak now";
         if (heroVoiceBtnLabel) heroVoiceBtnLabel.textContent = "END VOICE CALL";
-        speakFallback("Hi! Welcome to my experience gallery. Ask me about Tech Fusion 2026, my research at FAST-NUCES or Cradle Labs, or my Credly badges!");
+        speakFallback("Hi! Welcome to my experience gallery photo stacks. Ask me about Tech Fusion 2026, my research at FAST-NUCES or Cradle Labs, or my Credly badges!");
       }
     }
 
@@ -2059,7 +1956,6 @@
       });
     }
 
-    // Suggested Chips
     const promptChips = document.querySelectorAll('.voice-prompt-chip');
     promptChips.forEach(chip => {
       chip.addEventListener('click', () => {
@@ -2071,6 +1967,9 @@
         }, 500);
       });
     });
+
+    // Start
+    fetchGalleryEvents();
   </script>
 </body>
 </html>
