@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-ai" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1c"/>
+      <stop offset="50%" stop-color="#0f1a2e"/>
+      <stop offset="100%" stop-color="#060913"/>
+    </linearGradient>
+    <linearGradient id="card-ai" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14213d" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0b1325" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg-ai)" stroke="#1e3256" stroke-width="2"/>
+  
+  <circle cx="500" cy="180" r="160" fill="#4285F4" opacity="0.1" filter="blur(40px)"/>
+  <circle cx="200" cy="280" r="130" fill="#34A853" opacity="0.08" filter="blur(40px)"/>
+
+  <!-- Top Badge -->
+  <rect x="40" y="35" width="240" height="30" rx="15" fill="#112547" stroke="#4285F4" stroke-width="1.2"/>
+  <circle cx="56" cy="50" r="5" fill="#4285F4"/>
+  <text x="70" y="55" fill="#4285F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">ROUND 2 SHORTLIST · NIC</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="110" fill="#ffffff" font-family="'Anton', sans-serif" font-size="44" letter-spacing="1.5">AISEEKHO BUILDERS DAY</text>
+  <text x="40" y="140" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" letter-spacing="1">GDG ISLAMABAD HACKATHON · NATIONAL INCUBATION CENTER</text>
+
+  <g transform="translate(40, 170)">
+    <rect width="720" height="270" rx="14" fill="url(#card-ai)" stroke="#223a63" stroke-width="1.5"/>
+
+    <!-- Left Box -->
+    <rect x="25" y="25" width="210" height="100" rx="10" fill="#0d182e" stroke="#1d355e"/>
+    <text x="40" y="60" fill="#4285F4" font-family="'Anton', sans-serif" font-size="30">GEMINI API</text>
+    <text x="40" y="86" fill="#8ea6cf" font-family="'Roboto Flex', sans-serif" font-size="13">Google AI Studio</text>
+    <text x="40" y="106" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11">● Multimodal Prototyping</text>
+
+    <!-- Center Box -->
+    <rect x="255" y="25" width="210" height="100" rx="10" fill="#0d182e" stroke="#1d355e"/>
+    <text x="270" y="60" fill="#34A853" font-family="'Anton', sans-serif" font-size="30">NIC ISB</text>
+    <text x="270" y="86" fill="#8ea6cf" font-family="'Roboto Flex', sans-serif" font-size="13">National Incubation Center</text>
+    <text x="270" y="106" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11">● On-Site Builder Sprint</text>
+
+    <!-- Right Box -->
+    <rect x="485" y="25" width="210" height="100" rx="10" fill="#0d182e" stroke="#1d355e"/>
+    <text x="500" y="60" fill="#EA4335" font-family="'Anton', sans-serif" font-size="30">FINALIST</text>
+    <text x="500" y="86" fill="#8ea6cf" font-family="'Roboto Flex', sans-serif" font-size="13">Competitive Selection</text>
+    <text x="500" y="106" fill="#FBBC05" font-family="'JetBrains Mono', monospace" font-size="11">● Round 2 Qualification</text>
+
+    <!-- Summary Box -->
+    <rect x="25" y="145" width="670" height="100" rx="10" fill="#091222" stroke="#182e52"/>
+    <text x="45" y="178" fill="#ffffff" font-family="'Roboto Flex', sans-serif" font-size="14" font-weight="600">Sprint Architecture &amp; Delivery:</text>
+    <text x="45" y="202" fill="#9db4dc" font-family="'Roboto Flex', sans-serif" font-size="13">Engineered real-time multimodal intelligence workflows utilizing Gemini 1.5 Flash &amp; Pro embeddings and prompt chain caching.</text>
+    <text x="45" y="226" fill="#4285F4" font-family="'JetBrains Mono', monospace" font-size="12">Organized by Google Developer Groups (GDG) Islamabad &amp; AISeekho</text>
+  </g>
+</svg>

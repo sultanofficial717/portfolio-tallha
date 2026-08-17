@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-tf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a120e"/>
+      <stop offset="50%" stop-color="#111c16"/>
+      <stop offset="100%" stop-color="#050a07"/>
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18251e" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0d1611" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg-tf)" stroke="#223b2b" stroke-width="2"/>
+  
+  <!-- Subtle Grid Lines -->
+  <g stroke="#1a2f22" stroke-width="1" opacity="0.4">
+    <line x1="50" y1="0" x2="50" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="750" y1="0" x2="750" y2="500"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+  </g>
+
+  <!-- Stage Glow Ambient -->
+  <circle cx="400" cy="180" r="140" fill="#00F050" opacity="0.12" filter="blur(40px)"/>
+  <circle cx="250" cy="220" r="110" fill="#00D4F0" opacity="0.1" filter="blur(40px)"/>
+
+  <!-- Top Badge -->
+  <rect x="40" y="35" width="220" height="30" rx="15" fill="#142c1d" stroke="#00F050" stroke-width="1.2"/>
+  <circle cx="56" cy="50" r="5" fill="#00F050"/>
+  <text x="70" y="55" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">FLAGSHIP EVENT · 2026</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="110" fill="#ffffff" font-family="'Anton', sans-serif" font-size="44" letter-spacing="1.5">TECH FUSION 2026</text>
+  <text x="40" y="140" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="600" letter-spacing="1">"AI WITHOUT THE HUMANS" · GDG ISLAMABAD COLLABORATION</text>
+
+  <!-- Stage Visual Representation -->
+  <g transform="translate(40, 170)">
+    <!-- Stage Platform Card -->
+    <rect width="720" height="270" rx="14" fill="url(#card-grad)" stroke="#233a2c" stroke-width="1.5"/>
+
+    <!-- Left Stats Pill -->
+    <rect x="25" y="25" width="200" height="100" rx="10" fill="#0f1a14" stroke="#254230"/>
+    <text x="40" y="62" fill="#00F050" font-family="'Anton', sans-serif" font-size="34">50+ TEAM</text>
+    <text x="40" y="88" fill="#889e90" font-family="'Roboto Flex', sans-serif" font-size="13">Volunteer Engineers Led</text>
+    <text x="40" y="106" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11">● Bahria Tech Brand</text>
+
+    <!-- Center Stats Pill -->
+    <rect x="245" y="25" width="230" height="100" rx="10" fill="#0f1a14" stroke="#254230"/>
+    <text x="260" y="62" fill="#ffffff" font-family="'Anton', sans-serif" font-size="34">350+ ATTENDEES</text>
+    <text x="260" y="88" fill="#889e90" font-family="'Roboto Flex', sans-serif" font-size="13">Developers, Students &amp; Guests</text>
+    <text x="260" y="106" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11">● Flagship Hall Assembly</text>
+
+    <!-- Right Stats Pill -->
+    <rect x="495" y="25" width="200" height="100" rx="10" fill="#0f1a14" stroke="#254230"/>
+    <text x="510" y="62" fill="#00D4F0" font-family="'Anton', sans-serif" font-size="34">SPONSORS</text>
+    <text x="510" y="88" fill="#889e90" font-family="'Roboto Flex', sans-serif" font-size="13">Corporate &amp; Tech Backing</text>
+    <text x="510" y="106" fill="#ffb800" font-family="'JetBrains Mono', monospace" font-size="11">● 2 Consecutive Events</text>
+
+    <!-- Bottom Highlights Row -->
+    <rect x="25" y="145" width="670" height="100" rx="10" fill="#0c1510" stroke="#1d3626"/>
+    <text x="45" y="178" fill="#ffffff" font-family="'Roboto Flex', sans-serif" font-size="14" font-weight="600">Event Highlights &amp; Activities:</text>
+    <text x="45" y="202" fill="#8fac98" font-family="'Roboto Flex', sans-serif" font-size="13">Hands-on Agentic AI Workshops · Interactive Keynotes · Hackathon Project Showcase · Multi-University Delegation</text>
+    <text x="45" y="226" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12">Lead Organizer: Talha Rehman (Founder @ Tech Fusion, Bahria University)</text>
+  </g>
+</svg>

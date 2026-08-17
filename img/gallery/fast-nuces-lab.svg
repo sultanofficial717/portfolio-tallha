@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-fast" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141408"/>
+      <stop offset="50%" stop-color="#24220c"/>
+      <stop offset="100%" stop-color="#0a0a03"/>
+    </linearGradient>
+    <linearGradient id="card-fast" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#333010" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1c1a07" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg-fast)" stroke="#4d4715" stroke-width="2"/>
+  
+  <circle cx="450" cy="180" r="160" fill="#eab308" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Top Badge -->
+  <rect x="40" y="35" width="270" height="30" rx="15" fill="#302c0b" stroke="#eab308" stroke-width="1.2"/>
+  <circle cx="56" cy="50" r="5" fill="#eab308"/>
+  <text x="70" y="55" fill="#eab308" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">RESEARCH LAB · FAST-NUCES</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="110" fill="#ffffff" font-family="'Anton', sans-serif" font-size="44" letter-spacing="1.5">DATA INSIGHTS LAB</text>
+  <text x="40" y="140" fill="#fde047" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" letter-spacing="1">BRAZILIAN ENERGY MARKET NLP &amp; PRICE-GAP ANALYTICS</text>
+
+  <g transform="translate(40, 170)">
+    <rect width="720" height="270" rx="14" fill="url(#card-fast)" stroke="#575017" stroke-width="1.5"/>
+
+    <rect x="25" y="25" width="210" height="100" rx="10" fill="#1f1d06" stroke="#423d0f"/>
+    <text x="40" y="60" fill="#fde047" font-family="'Anton', sans-serif" font-size="30">~30,350 DOCS</text>
+    <text x="40" y="86" fill="#ded795" font-family="'Roboto Flex', sans-serif" font-size="13">Filtered from 490k raw</text>
+    <text x="40" y="106" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11">● Portuguese NLP Core</text>
+
+    <rect x="255" y="25" width="210" height="100" rx="10" fill="#1f1d06" stroke="#423d0f"/>
+    <text x="270" y="60" fill="#ffffff" font-family="'Anton', sans-serif" font-size="30">CMO vs PLD</text>
+    <text x="270" y="86" fill="#ded795" font-family="'Roboto Flex', sans-serif" font-size="13">Price-Gap Signals</text>
+    <text x="270" y="106" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11">● 45-Day Correlation</text>
+
+    <rect x="485" y="25" width="210" height="100" rx="10" fill="#1f1d06" stroke="#423d0f"/>
+    <text x="500" y="60" fill="#00D4F0" font-family="'Anton', sans-serif" font-size="30">FINBERT</text>
+    <text x="500" y="86" fill="#ded795" font-family="'Roboto Flex', sans-serif" font-size="13">NLLB + Argos Translate</text>
+    <text x="500" y="106" fill="#eab308" font-family="'JetBrains Mono', monospace" font-size="11">● 12 Gemini LLM Topics</text>
+
+    <rect x="25" y="145" width="670" height="100" rx="10" fill="#141303" stroke="#332e08"/>
+    <text x="45" y="178" fill="#ffffff" font-family="'Roboto Flex', sans-serif" font-size="14" font-weight="600">Research Environment &amp; Role:</text>
+    <text x="45" y="202" fill="#d9d18e" font-family="'Roboto Flex', sans-serif" font-size="13">Developed high-throughput GPU-accelerated pipeline analyzing weather catastrophes and hydrological news.</text>
+    <text x="45" y="226" fill="#fde047" font-family="'JetBrains Mono', monospace" font-size="12">Affiliation: Data Insights Lab, FAST-NUCES Islamabad (Jul 2026 – Present)</text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-credly" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1a15"/>
+      <stop offset="50%" stop-color="#122b22"/>
+      <stop offset="100%" stop-color="#06120e"/>
+    </linearGradient>
+    <linearGradient id="card-credly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18362b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0d211a" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg-credly)" stroke="#23523f" stroke-width="2"/>
+  
+  <circle cx="450" cy="180" r="160" fill="#00F050" opacity="0.12" filter="blur(40px)"/>
+  <circle cx="650" cy="280" r="120" fill="#ffb800" opacity="0.1" filter="blur(40px)"/>
+
+  <!-- Top Badge -->
+  <rect x="40" y="35" width="260" height="30" rx="15" fill="#143b2c" stroke="#00F050" stroke-width="1.2"/>
+  <circle cx="56" cy="50" r="5" fill="#00F050"/>
+  <text x="70" y="55" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">CREDLY VERIFIED BADGE</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="110" fill="#ffffff" font-family="'Anton', sans-serif" font-size="44" letter-spacing="1.5">GOOGLE AI ESSENTIALS</text>
+  <text x="40" y="140" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" letter-spacing="1">ISSUED BY GOOGLE VIA COURSERA &amp; GDSC BAHRIA</text>
+
+  <g transform="translate(40, 170)">
+    <rect width="720" height="270" rx="14" fill="url(#card-credly)" stroke="#2b614b" stroke-width="1.5"/>
+
+    <!-- Left Box -->
+    <rect x="25" y="25" width="210" height="100" rx="10" fill="#0e241c" stroke="#1f4b39"/>
+    <text x="40" y="60" fill="#00F050" font-family="'Anton', sans-serif" font-size="30">GEN AI</text>
+    <text x="40" y="86" fill="#9ecbb8" font-family="'Roboto Flex', sans-serif" font-size="13">Foundation Models</text>
+    <text x="40" y="106" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11">● Prompt Engineering</text>
+
+    <!-- Center Box -->
+    <rect x="255" y="25" width="210" height="100" rx="10" fill="#0e241c" stroke="#1f4b39"/>
+    <text x="270" y="60" fill="#ffffff" font-family="'Anton', sans-serif" font-size="30">WORKFLOWS</text>
+    <text x="270" y="86" fill="#9ecbb8" font-family="'Roboto Flex', sans-serif" font-size="13">AI Productivity Tooling</text>
+    <text x="270" y="106" fill="#ffb800" font-family="'JetBrains Mono', monospace" font-size="11">● System Integration</text>
+
+    <!-- Right Box -->
+    <rect x="485" y="25" width="210" height="100" rx="10" fill="#0e241c" stroke="#1f4b39"/>
+    <text x="500" y="60" fill="#00D4F0" font-family="'Anton', sans-serif" font-size="30">ETHICS</text>
+    <text x="500" y="86" fill="#9ecbb8" font-family="'Roboto Flex', sans-serif" font-size="13">Responsible AI Principles</text>
+    <text x="500" y="106" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11">● Bias &amp; Safety Grounding</text>
+
+    <!-- Summary Box -->
+    <rect x="25" y="145" width="670" height="100" rx="10" fill="#081813" stroke="#173b2d"/>
+    <text x="45" y="178" fill="#ffffff" font-family="'Roboto Flex', sans-serif" font-size="14" font-weight="600">Credly Digital Verification:</text>
+    <text x="45" y="202" fill="#a4d7c2" font-family="'Roboto Flex', sans-serif" font-size="13">Verified digital transcript and skills badge registered under Talha Rehman on the official Credly registry platform.</text>
+    <text x="45" y="226" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="12">Link: credly.com/users/talha-rehman.aa1b925e/badges/credly</text>
+  </g>
+</svg>

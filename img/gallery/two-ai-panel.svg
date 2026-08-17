@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140f1a"/>
+      <stop offset="50%" stop-color="#1f1628"/>
+      <stop offset="100%" stop-color="#0a0810"/>
+    </linearGradient>
+    <linearGradient id="card-panel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1e36" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#160f1d" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg-panel)" stroke="#3e2a4f" stroke-width="2"/>
+  
+  <circle cx="450" cy="180" r="150" fill="#a855f7" opacity="0.12" filter="blur(40px)"/>
+  <circle cx="200" cy="240" r="120" fill="#00D4F0" opacity="0.08" filter="blur(40px)"/>
+
+  <!-- Top Badge -->
+  <rect x="40" y="35" width="280" height="30" rx="15" fill="#291838" stroke="#a855f7" stroke-width="1.2"/>
+  <circle cx="56" cy="50" r="5" fill="#a855f7"/>
+  <text x="70" y="55" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">SYMPOSIUM · BAHRIA UNIVERSITY</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="110" fill="#ffffff" font-family="'Anton', sans-serif" font-size="44" letter-spacing="1.5">THE TWO AI PANEL</text>
+  <text x="40" y="140" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" letter-spacing="1">BRIDGING ARTIFICIAL INTELLIGENCE, PHILOSOPHY &amp; ETHICAL SYSTEMS</text>
+
+  <g transform="translate(40, 170)">
+    <rect width="720" height="270" rx="14" fill="url(#card-panel)" stroke="#452a5a" stroke-width="1.5"/>
+
+    <!-- Left Box -->
+    <rect x="25" y="25" width="210" height="100" rx="10" fill="#1b1224" stroke="#362247"/>
+    <text x="40" y="60" fill="#c084fc" font-family="'Anton', sans-serif" font-size="30">GLOBAL</text>
+    <text x="40" y="86" fill="#baa4cd" font-family="'Roboto Flex', sans-serif" font-size="13">International Speakers</text>
+    <text x="40" y="106" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11">● Keynote Dialogues</text>
+
+    <!-- Center Box -->
+    <rect x="255" y="25" width="210" height="100" rx="10" fill="#1b1224" stroke="#362247"/>
+    <text x="270" y="60" fill="#ffffff" font-family="'Anton', sans-serif" font-size="30">ETHICS &amp; AI</text>
+    <text x="270" y="86" fill="#baa4cd" font-family="'Roboto Flex', sans-serif" font-size="13">Interdisciplinary Lens</text>
+    <text x="270" y="106" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11">● Societal Alignment</text>
+
+    <!-- Right Box -->
+    <rect x="485" y="25" width="210" height="100" rx="10" fill="#1b1224" stroke="#362247"/>
+    <text x="500" y="60" fill="#00D4F0" font-family="'Anton', sans-serif" font-size="30">COMMUNITY</text>
+    <text x="500" y="86" fill="#baa4cd" font-family="'Roboto Flex', sans-serif" font-size="13">Faculty &amp; Student Synergy</text>
+    <text x="500" y="106" fill="#ffb800" font-family="'JetBrains Mono', monospace" font-size="11">● 150+ Attendees</text>
+
+    <!-- Summary Box -->
+    <rect x="25" y="145" width="670" height="100" rx="10" fill="#130b1a" stroke="#2c1a3b"/>
+    <text x="45" y="178" fill="#ffffff" font-family="'Roboto Flex', sans-serif" font-size="14" font-weight="600">Interdisciplinary Symposium Scope:</text>
+    <text x="45" y="202" fill="#caaedc" font-family="'Roboto Flex', sans-serif" font-size="13">Explored technical agent autonomy, consciousness boundaries, safety guardrails, and deterministic verification.</text>
+    <text x="45" y="226" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="12">Curated &amp; Organized by: Talha Rehman (Bahria University Islamabad)</text>
+  </g>
+</svg>

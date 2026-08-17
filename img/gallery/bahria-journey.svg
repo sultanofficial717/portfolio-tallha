@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-bahria" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1118"/>
+      <stop offset="50%" stop-color="#141f2e"/>
+      <stop offset="100%" stop-color="#070a0e"/>
+    </linearGradient>
+    <linearGradient id="card-bahria" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b2a3d" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f1925" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg-bahria)" stroke="#233a54" stroke-width="2"/>
+  
+  <circle cx="450" cy="180" r="160" fill="#3b82f6" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Top Badge -->
+  <rect x="40" y="35" width="280" height="30" rx="15" fill="#132438" stroke="#3b82f6" stroke-width="1.2"/>
+  <circle cx="56" cy="50" r="5" fill="#3b82f6"/>
+  <text x="70" y="55" fill="#60a5fa" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">ACADEMIC JOURNEY · 2023–2027</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="110" fill="#ffffff" font-family="'Anton', sans-serif" font-size="44" letter-spacing="1.5">BS ARTIFICIAL INTELLIGENCE</text>
+  <text x="40" y="140" fill="#60a5fa" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" letter-spacing="1">BAHRIA UNIVERSITY ISLAMABAD · AI &amp; COMPUTING CLUSTER</text>
+
+  <g transform="translate(40, 170)">
+    <rect width="720" height="270" rx="14" fill="url(#card-bahria)" stroke="#2b4769" stroke-width="1.5"/>
+
+    <rect x="25" y="25" width="210" height="100" rx="10" fill="#0f1b29" stroke="#1d3654"/>
+    <text x="40" y="60" fill="#60a5fa" font-family="'Anton', sans-serif" font-size="30">ADVANCED</text>
+    <text x="40" y="86" fill="#a4c2e6" font-family="'Roboto Flex', sans-serif" font-size="13">Reinforcement Learning</text>
+    <text x="40" y="106" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11">● Robotics &amp; Deep Learning</text>
+
+    <rect x="255" y="25" width="210" height="100" rx="10" fill="#0f1b29" stroke="#1d3654"/>
+    <text x="270" y="60" fill="#ffffff" font-family="'Anton', sans-serif" font-size="30">RESEARCH</text>
+    <text x="270" y="86" fill="#a4c2e6" font-family="'Roboto Flex', sans-serif" font-size="13">Multimodal Systems &amp; CV</text>
+    <text x="270" y="106" fill="#ffb800" font-family="'JetBrains Mono', monospace" font-size="11">● Cryptographic Schemes</text>
+
+    <rect x="485" y="25" width="210" height="100" rx="10" fill="#0f1b29" stroke="#1d3654"/>
+    <text x="500" y="60" fill="#00F050" font-family="'Anton', sans-serif" font-size="30">LEADERSHIP</text>
+    <text x="500" y="86" fill="#a4c2e6" font-family="'Roboto Flex', sans-serif" font-size="13">Campus Community Founder</text>
+    <text x="500" y="106" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11">● Flagship AI Organizer</text>
+
+    <rect x="25" y="145" width="670" height="100" rx="10" fill="#09111a" stroke="#172b43"/>
+    <text x="45" y="178" fill="#ffffff" font-family="'Roboto Flex', sans-serif" font-size="14" font-weight="600">Core Engineering Competencies:</text>
+    <text x="45" y="202" fill="#bad3f0" font-family="'Roboto Flex', sans-serif" font-size="13">Machine Learning, Computer Vision, Operating Systems, NLP, Object-Oriented Design, Database Systems, Statistics &amp; Optimization.</text>
+    <text x="45" y="226" fill="#60a5fa" font-family="'JetBrains Mono', monospace" font-size="12">Campus: Bahria University E-8 Islamabad Campus (Enrollment: 01-136232-048)</text>
+  </g>
+</svg>

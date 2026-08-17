@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-cradle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1320"/>
+      <stop offset="50%" stop-color="#122238"/>
+      <stop offset="100%" stop-color="#060c14"/>
+    </linearGradient>
+    <linearGradient id="card-cradle" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#182e4d" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0e1b2e" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg-cradle)" stroke="#22426d" stroke-width="2"/>
+  
+  <circle cx="450" cy="180" r="160" fill="#00D4F0" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Top Badge -->
+  <rect x="40" y="35" width="270" height="30" rx="15" fill="#142c4b" stroke="#00D4F0" stroke-width="1.2"/>
+  <circle cx="56" cy="50" r="5" fill="#00D4F0"/>
+  <text x="70" y="55" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">RESEARCH LAB · CRADLE LABS</text>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="110" fill="#ffffff" font-family="'Anton', sans-serif" font-size="44" letter-spacing="1.5">CRADLE LABS</text>
+  <text x="40" y="140" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" letter-spacing="1">MULTIMODAL RETRIEVAL-AUGMENTED GENERATION (MULTIMODAL RAG)</text>
+
+  <g transform="translate(40, 170)">
+    <rect width="720" height="270" rx="14" fill="url(#card-cradle)" stroke="#2b5082" stroke-width="1.5"/>
+
+    <rect x="25" y="25" width="210" height="100" rx="10" fill="#0d1c30" stroke="#1d3b66"/>
+    <text x="40" y="60" fill="#00D4F0" font-family="'Anton', sans-serif" font-size="30">30+ PAPERS</text>
+    <text x="40" y="86" fill="#9bc2ed" font-family="'Roboto Flex', sans-serif" font-size="13">Literature Surveyed</text>
+    <text x="40" y="106" fill="#00F050" font-family="'JetBrains Mono', monospace" font-size="11">● Benchmark Baselines</text>
+
+    <rect x="255" y="25" width="210" height="100" rx="10" fill="#0d1c30" stroke="#1d3b66"/>
+    <text x="270" y="60" fill="#ffffff" font-family="'Anton', sans-serif" font-size="30">CROSS-MODAL</text>
+    <text x="270" y="86" fill="#9bc2ed" font-family="'Roboto Flex', sans-serif" font-size="13">Visual Document Ingestion</text>
+    <text x="270" y="106" fill="#ffb800" font-family="'JetBrains Mono', monospace" font-size="11">● Tables &amp; Diagrams</text>
+
+    <rect x="485" y="25" width="210" height="100" rx="10" fill="#0d1c30" stroke="#1d3b66"/>
+    <text x="500" y="60" fill="#00F050" font-family="'Anton', sans-serif" font-size="30">CO-AUTHOR</text>
+    <text x="500" y="86" fill="#9bc2ed" font-family="'Roboto Flex', sans-serif" font-size="13">Research Manuscript</text>
+    <text x="500" y="106" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="11">● Under Review</text>
+
+    <rect x="25" y="145" width="670" height="100" rx="10" fill="#081321" stroke="#142b4d"/>
+    <text x="45" y="178" fill="#ffffff" font-family="'Roboto Flex', sans-serif" font-size="14" font-weight="600">Research Focus &amp; Methodology:</text>
+    <text x="45" y="202" fill="#a4c9f5" font-family="'Roboto Flex', sans-serif" font-size="13">Pioneered architectural frameworks for grounding LLM reasoning in high-density diagrammatic &amp; tabular visual inputs.</text>
+    <text x="45" y="226" fill="#00D4F0" font-family="'JetBrains Mono', monospace" font-size="12">Role: Co-Author &amp; Volunteer Research Assistant · Cradle Labs (Jun 2025 – Aug 2025)</text>
+  </g>
+</svg>
