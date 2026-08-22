@@ -486,16 +486,16 @@
     }
 
     .drawer-nav-group {
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
     .drawer-label {
       font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: var(--text-xs);
+      letter-spacing: 1px;
+      text-transform: none;
       color: hsl(var(--muted-foreground));
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .drawer-links {
@@ -703,8 +703,27 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       margin-bottom: 28px;
+    }
+
+    .banner-tertiary-link {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: hsl(var(--primary));
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .banner-tertiary-link:hover,
+    .banner-tertiary-link:focus-visible {
+      color: #ffffff;
+      transform: translateX(4px);
+      text-decoration: underline;
     }
 
     .banner-status-badge {
@@ -907,10 +926,10 @@
       color: #ffffff;
     }
 
-    /* Consistent vertical grid alignment across categories (Issue 11 Fix) */
+    /* Strict grid & flex alignment (Issues 3, 8 & 11 Fix) */
     .stack-items-wrap {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 14px 16px;
       width: 100%;
     }
@@ -923,7 +942,7 @@
       border: 1px solid #282828;
       padding: 10px 16px;
       border-radius: 8px;
-      min-height: 48px;
+      min-height: 52px;
       transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
@@ -933,23 +952,27 @@
       background: #202020;
     }
 
-    /* Increased icon size for quick visual identification (Issue 12 Fix) */
+    /* Standardized icon column size */
     .stack-icon {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
       object-fit: contain;
       flex-shrink: 0;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
+    /* Wrap text naturally without truncation ellipsis (Issue 3 Fix) */
     .stack-badge span {
       font-family: var(--font-roboto-flex);
       font-size: var(--text-sm);
       font-weight: 500;
       color: #ffffff;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
+      line-height: 1.3;
+      word-break: normal;
     }
 
     @media (max-width: 768px) {
@@ -1224,36 +1247,48 @@
       transform: scale(1) translateY(0);
     }
 
+    /* Modal Close Button (Issue 10 Fix: clearly anchored inside modal header) */
     .modal-close-btn {
       position: absolute;
-      top: 24px;
-      right: 24px;
-      width: 40px;
-      height: 40px;
+      top: 20px;
+      right: 20px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: #222;
-      border: 1px solid #333;
-      color: #fff;
+      background: #202020;
+      border: 1px solid #383838;
+      color: #ffffff;
       font-size: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
+      z-index: 10;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
-    .modal-close-btn:hover {
-      background: hsl(var(--primary));
-      color: #000;
-      transform: scale(1.1);
+    .modal-close-btn:hover,
+    .modal-close-btn:focus-visible {
+      background-color: hsl(var(--primary));
+      border-color: hsl(var(--primary));
+      color: #000000;
+      transform: scale(1.08);
+      outline: none;
     }
 
     /* ==========================================================================
-       COMMUNITY & CERTIFICATIONS SECTION
+       COMMUNITY & CERTIFICATIONS SECTION (Issue 5 & 9 Fix: Balanced 2x2 Grid with equal heights)
        ========================================================================== */
     .community-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 768px) {
+      .community-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .community-card {
@@ -1263,6 +1298,7 @@
       padding: 28px;
       display: flex;
       flex-direction: column;
+      height: 100%;
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
@@ -1271,13 +1307,14 @@
       border-color: hsl(var(--primary));
     }
 
-    /* Accessible font size >= 12px (Issue 8 Fix) */
+    /* Accessible font size & sentence case (Issues 4 & 8 Fix) */
     .comm-tag {
       display: inline-block;
       align-self: flex-start;
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: var(--text-xs);
       letter-spacing: 0.75px;
+      text-transform: none;
       color: hsl(var(--primary));
       background: rgba(0, 240, 80, 0.08);
       border: 1px solid rgba(0, 240, 80, 0.25);
@@ -1860,15 +1897,14 @@
 
           <div class="banner-actions">
             <a href="#projects" class="btn-custom btn-primary">
-              <span class="btn-bubble"></span>
+              <span class="btn-bubble" aria-hidden="true"></span>
               Explore Research
             </a>
             <a href="talha-cv.pdf" target="_blank" rel="noopener noreferrer" class="btn-custom btn-outline">
-              <span class="btn-bubble"></span>
+              <span class="btn-bubble" aria-hidden="true"></span>
               Download CV
             </a>
-            <a href="gallery.html" class="btn-custom btn-outline" style="border-color: rgba(0, 240, 80, 0.4); color: #00F050;">
-              <span class="btn-bubble"></span>
+            <a href="gallery.html" class="banner-tertiary-link">
               Experience Gallery ➔
             </a>
           </div>
@@ -2362,7 +2398,7 @@
       <div class="community-grid">
         <!-- Event 1: Tech Fusion 2025 -->
         <div class="community-card">
-          <span class="comm-tag">CAMPUS FLAGSHIP · GDG ISLAMABAD</span>
+          <span class="comm-tag">Campus Flagship · GDG Islamabad</span>
           <h3 class="comm-title">Tech Fusion 2025</h3>
           <p class="comm-desc">
             Organizing the upcoming flagship event under the theme <em>"AI Without The Humans"</em> in collaboration with GDG Islamabad. Leading 50+ volunteer engineers, arranging technical panels, and managing corporate sponsorships.
@@ -2371,7 +2407,7 @@
 
         <!-- Event 2: Tech Fusion / AI Club Bahria -->
         <div class="community-card">
-          <span class="comm-tag">COMMUNITY LEADERSHIP</span>
+          <span class="comm-tag">Community Leadership</span>
           <h3 class="comm-title">Tech Fusion / AI Club</h3>
           <p class="comm-desc">
             Founded the official campus technology brand and lead a 50+ volunteer team at Bahria University Islamabad. Hosted 350+ participants across AI/ML events, secured sponsors, and delivered hands-on workshops.
@@ -2380,7 +2416,7 @@
 
         <!-- Event 3: AISeekho Builders Day -->
         <div class="community-card">
-          <span class="comm-tag">HACKATHON SHORTLIST</span>
+          <span class="comm-tag">Hackathon Shortlist</span>
           <h3 class="comm-title">AISeekho Builders Day</h3>
           <p class="comm-desc">
             Lead data and registration team at  AISeekho Builders Day / GDG Islamabad Hackathon at National Incubation Center (NIC) Islamabad, developing multimodal AI applications using Google AI Studio &amp; Gemini APIs.
@@ -2389,7 +2425,7 @@
 
         <!-- Event 4: The Two AI Panel -->
         <div class="community-card">
-          <span class="comm-tag">INTERDISCIPLINARY INITIATIVE</span>
+          <span class="comm-tag">Interdisciplinary Initiative</span>
           <h3 class="comm-title">The Two AI Panel</h3>
           <p class="comm-desc">
             Organized "The Two AI" interdisciplinary symposium at Bahria University linking AI with philosophy and ethical alignment, hosting international guest speakers and student innovators.
@@ -2401,7 +2437,7 @@
 
   <!-- ==========================================================================
        CERTIFICATIONS & DIGITAL BADGES SECTION
-       ========================================================================== -->
+       ========================================================================= -->
   <section id="certifications">
     <div class="container">
       <div class="section-title-wrap">
@@ -2414,7 +2450,7 @@
       <!-- Credly Feature Banner (Issue 21 Fix: Single consolidated CTA) -->
       <div style="background: linear-gradient(135deg, #13241b 0%, #111a24 100%); border: 1px solid rgba(0, 240, 80, 0.4); border-radius: 12px; padding: 28px 32px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; box-shadow: 0 10px 30px rgba(0, 240, 80, 0.08);">
         <div>
-          <span class="comm-tag" style="background: rgba(0, 240, 80, 0.15); border-color: hsl(var(--primary));">OFFICIAL CREDLY VERIFIED</span>
+          <span class="comm-tag" style="background: rgba(0, 240, 80, 0.15); border-color: hsl(var(--primary));">Official Credly Verified</span>
           <h3 style="font-family: var(--font-anton); font-size: 24px; color: #ffffff; margin-top: 4px; margin-bottom: 6px; letter-spacing: 0.5px;">
             Google AI Essentials &amp; Verified Digital Badges
           </h3>
@@ -2429,9 +2465,9 @@
       </div>
 
       <div class="community-grid">
-        <!-- Cert 1: DeepLearning.AI Prompt Engineering (Issue 22 Fix: Replaced duplicate Google AI Essentials) -->
+        <!-- Cert 1: DeepLearning.AI Prompt Engineering -->
         <div class="community-card">
-          <span class="comm-tag">DEEPLEARNING.AI</span>
+          <span class="comm-tag">DeepLearning.AI</span>
           <h3 class="comm-title">ChatGPT Prompt Engineering for Developers</h3>
           <p class="comm-desc">
             Instructed by Isa Fulford and Andrew Ng. Mastered chain-of-thought prompting, systematic test workflows, LLM API application integration, and structured JSON output formatting.
@@ -2443,7 +2479,7 @@
 
         <!-- Cert 2: Anthropic AI Fluency -->
         <div class="community-card">
-          <span class="comm-tag">ANTHROPIC VERIFIED</span>
+          <span class="comm-tag">Anthropic Verified</span>
           <h3 class="comm-title">Anthropic AI Fluency</h3>
           <p class="comm-desc">
             Completed <em>"AI Fluency: Framework &amp; Foundations"</em> by Anthropic, mastering model evaluation, prompt optimization, ethical alignment, and AI safety principles.
@@ -2455,7 +2491,7 @@
 
         <!-- Cert 3: Object-Oriented Design -->
         <div class="community-card">
-          <span class="comm-tag">LINKEDIN LEARNING</span>
+          <span class="comm-tag">LinkedIn Learning</span>
           <h3 class="comm-title">Object-Oriented Design</h3>
           <p class="comm-desc">
             Verified certificate in Object-Oriented Design (by Olivia Stone &amp; Barron Stone) and Generative AI, grounding architecture in SOLID principles and clean modular code.
@@ -2467,7 +2503,7 @@
 
         <!-- Cert 4: Generative AI for Developers -->
         <div class="community-card">
-          <span class="comm-tag">LINKEDIN LEARNING</span>
+          <span class="comm-tag">LinkedIn Learning</span>
           <h3 class="comm-title">Generative AI Essentials</h3>
           <p class="comm-desc">
             Verified certificate covering prompt engineering, LLM application architecture, and responsible AI deployment patterns.
@@ -2525,9 +2561,9 @@
   <!-- ==========================================================================
        CASE STUDY DETAIL MODAL CONTAINER
        ========================================================================== -->
-  <div class="case-study-modal" id="caseStudyModal">
+  <div class="case-study-modal" id="caseStudyModal" role="dialog" aria-modal="true" aria-label="Project Case Study Details">
     <div class="case-modal-box">
-      <button class="modal-close-btn" onclick="closeCaseModal()">&times;</button>
+      <button class="modal-close-btn" onclick="closeCaseModal()" aria-label="Close case study dialog">&times;</button>
       <div id="caseModalContent"></div>
     </div>
   </div>
@@ -2537,29 +2573,29 @@
        ========================================================================== -->
   <div class="floating-voice-widget">
     <!-- Floating Circular Button -->
-    <button class="voice-circle-btn" id="voiceCircleBtn" title="Call with Talha's AI Representative">
-      <span class="voice-circle-live-dot" id="voiceLiveDot"></span>
-      <span class="voice-circle-icon" id="heroVoiceIcon">🎙️</span>
+    <button class="voice-circle-btn" id="voiceCircleBtn" title="Call with Talha's AI Representative" aria-label="Open voice AI representative">
+      <span class="voice-circle-live-dot" id="voiceLiveDot" aria-hidden="true"></span>
+      <span class="voice-circle-icon" id="heroVoiceIcon" aria-hidden="true">🎙️</span>
     </button>
 
     <!-- Popup Card: "Call with Talha" -->
-    <div class="voice-popup-card" id="voicePopupCard">
+    <div class="voice-popup-card" id="voicePopupCard" role="dialog" aria-label="Voice conversation with Talha AI">
       <div class="popup-header">
         <div class="popup-agent-info">
-          <div class="popup-agent-avatar">🤖</div>
+          <div class="popup-agent-avatar" aria-hidden="true">🤖</div>
           <div>
-            <div class="popup-agent-name">TALHA'S AI AGENT</div>
+            <div class="popup-agent-name">Talha's AI Agent</div>
             <div class="popup-agent-status">
-              <span class="status-pulse-dot" style="width:6px;height:6px;"></span>
+              <span class="status-pulse-dot" style="width:6px;height:6px;" aria-hidden="true"></span>
               Online · Elliot Voice
             </div>
           </div>
         </div>
-        <button class="popup-close-btn" id="popupCloseBtn" aria-label="Close popup">&times;</button>
+        <button class="popup-close-btn" id="popupCloseBtn" aria-label="Close voice agent dialog">&times;</button>
       </div>
 
       <div class="popup-body">
-        <h4 class="popup-title">CALL WITH TALHA</h4>
+        <h4 class="popup-title">Call with Talha</h4>
         <p class="popup-subtitle" id="heroVoiceHint">
           Speak in real-time first-person voice with Talha's AI representative about his research, DSPD, AutismLens, or experience.
         </p>
@@ -3183,17 +3219,30 @@ You ARE speaking as Talha's portfolio representative. Always answer in first per
     }
     if (voiceCircleBtn) {
       voiceCircleBtn.addEventListener('click', (e) => {
-        if (isVoiceActive) {
-          // If in call, clicking circle ends call or toggles popup
-          toggleVoicePopup();
-        } else {
-          toggleVoicePopup();
-        }
+        toggleVoicePopup();
       });
     }
     if (popupCloseBtn) {
       popupCloseBtn.addEventListener('click', () => voicePopupCard.classList.remove('is-open'));
     }
+
+    // Dismiss Voice Popup & Modal on outside click or Escape key (Issue 6 & 10 Fix)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (voicePopupCard && voicePopupCard.classList.contains('is-open')) {
+          voicePopupCard.classList.remove('is-open');
+        }
+        closeCaseModal();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (voicePopupCard && voicePopupCard.classList.contains('is-open')) {
+        if (!voicePopupCard.contains(e.target) && !voiceCircleBtn.contains(e.target)) {
+          voicePopupCard.classList.remove('is-open');
+        }
+      }
+    });
 
     // Preload & Cache Natural English Voice
     function initVoices() {
