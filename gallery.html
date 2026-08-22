@@ -48,6 +48,16 @@
       --font-anton: 'Anton', sans-serif;
       --font-sans: 'Roboto Flex', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
+
+      /* Systematic Modular Type Scale */
+      --text-xs: 0.75rem;    /* 12px - Badges, metadata */
+      --text-sm: 0.875rem;   /* 14px - Captions, subtext */
+      --text-base: 1rem;     /* 16px - Standard body text */
+      --text-md: 1.125rem;   /* 18px - Lead paragraphs */
+      --text-lg: 1.375rem;   /* 22px - Subheadings, card titles */
+      --text-xl: 1.75rem;    /* 28px - Section sub-headers */
+      --text-2xl: clamp(2rem, 3.5vw, 2.75rem); /* 32px-44px */
+      --text-hero: clamp(2.5rem, 6.5vw, 5rem);   /* 40px-80px */
     }
 
     *, *::before, *::after {
@@ -277,12 +287,12 @@
       justify-content: center;
       gap: 10px;
       font-family: var(--font-anton);
-      font-size: 15px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-transform: none;
       text-decoration: none;
       padding: 0 28px;
-      height: 52px;
+      height: 50px;
       border-radius: 100px;
       overflow: hidden;
       cursor: pointer;
@@ -341,7 +351,7 @@
       align-items: center;
       gap: 8px;
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: var(--text-xs);
       font-weight: 600;
       color: hsl(var(--primary));
       background: rgba(0, 240, 80, 0.08);
@@ -349,8 +359,8 @@
       padding: 6px 16px;
       border-radius: 100px;
       margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      text-transform: none;
+      letter-spacing: 0.5px;
     }
 
     .gallery-lead-tag .dot {
@@ -369,10 +379,10 @@
 
     .gallery-hero-title {
       font-family: var(--font-anton);
-      font-size: clamp(44px, 7vw, 92px);
+      font-size: var(--text-hero);
       line-height: 0.98;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-transform: none;
       color: #ffffff;
       margin-bottom: 20px;
     }
@@ -382,7 +392,7 @@
     }
 
     .gallery-hero-desc {
-      font-size: 18px;
+      font-size: var(--text-md);
       color: hsl(var(--muted-foreground));
       max-width: 780px;
       line-height: 1.6;
@@ -398,70 +408,72 @@
     }
 
     .filter-tab-btn {
-      padding: 10px 22px;
-      border-radius: 100px;
-      background: #161616;
-      border: 1px solid #2e2e2e;
-      color: #b0b0b0;
-      font-family: var(--font-anton);
-      font-size: 14px;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: #181818;
+      border: 1px solid #282828;
+      color: hsl(var(--muted-foreground));
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      outline: none;
     }
 
     .filter-tab-btn:hover {
-      border-color: #4a4a4a;
+      border-color: #444;
       color: #ffffff;
-      transform: translateY(-2px);
+      background: #222;
     }
 
     .filter-tab-btn.is-active {
       background: hsl(var(--primary));
-      border-color: hsl(var(--primary));
       color: #000000;
+      border-color: hsl(var(--primary));
+      font-weight: 700;
       box-shadow: 0 0 20px rgba(0, 240, 80, 0.35);
     }
 
-    .filter-tab-btn .tab-count {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      padding: 2px 6px;
-      border-radius: 10px;
+    .filter-count {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 100px;
+      font-size: 10px;
       background: rgba(255, 255, 255, 0.1);
+      color: inherit;
     }
 
-    .filter-tab-btn.is-active .tab-count {
+    .filter-tab-btn.is-active .filter-count {
       background: rgba(0, 0, 0, 0.2);
-      color: #000000;
-      font-weight: 700;
     }
 
-    /* ================= PHOTO STACK GALLERY CARDS ================= */
+    /* ================= GALLERY CARDS GRID ================= */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 40px 32px;
-      margin-bottom: 100px;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 32px;
+      margin-bottom: 80px;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
     }
 
-    /* Photo Stack Container */
+    /* Individual Card (Interactive Photo Stack) */
+    /* Individual Card (Interactive Photo Stack) */
     .photo-stack-card {
       position: relative;
       cursor: pointer;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Stack Deck Visual Illusion Layers */
     .stack-layer-back-2 {
       position: absolute;
       top: -12px;
@@ -550,8 +562,8 @@
       top: 14px;
       left: 14px;
       font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 700;
+      font-size: var(--text-xs);
+      font-weight: 600;
       color: #ffffff;
       background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(8px);
@@ -559,7 +571,7 @@
       padding: 4px 10px;
       border-radius: 6px;
       letter-spacing: 0.5px;
-      text-transform: uppercase;
+      text-transform: none;
     }
 
     .card-stack-count-badge {
@@ -567,7 +579,7 @@
       bottom: 14px;
       right: 14px;
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: var(--text-xs);
       font-weight: 700;
       color: #000;
       background: hsl(var(--primary));
@@ -584,7 +596,7 @@
       top: 14px;
       right: 14px;
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: var(--text-xs);
       color: #b0b0b0;
       background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(8px);
@@ -602,19 +614,19 @@
 
     .card-role {
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: var(--text-xs);
       color: hsl(var(--primary));
       letter-spacing: 0.5px;
       margin-bottom: 6px;
-      text-transform: uppercase;
+      text-transform: none;
     }
 
     .card-title {
       font-family: var(--font-anton);
-      font-size: 26px;
+      font-size: var(--text-lg);
       line-height: 1.15;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-transform: none;
       color: #ffffff;
       margin-bottom: 12px;
       transition: color 0.2s ease;
@@ -625,7 +637,7 @@
     }
 
     .card-desc {
-      font-size: 14px;
+      font-size: var(--text-sm);
       color: hsl(var(--muted-foreground));
       line-height: 1.55;
       margin-bottom: 20px;
@@ -640,7 +652,7 @@
 
     .tech-chip {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: var(--text-xs);
       color: #a8a8a8;
       background: #1e1e1e;
       border: 1px solid #2e2e2e;
