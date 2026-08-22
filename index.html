@@ -39,6 +39,16 @@
       --font-roboto-flex: 'Roboto Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
+      /* Systematic Modular Type Scale */
+      --text-xs: 0.75rem;    /* 12px - Badges, metadata */
+      --text-sm: 0.875rem;   /* 14px - Captions, subtext */
+      --text-base: 1rem;     /* 16px - Standard body text */
+      --text-md: 1.125rem;   /* 18px - Lead paragraphs */
+      --text-lg: 1.375rem;   /* 22px - Subheadings, card titles */
+      --text-xl: 1.75rem;    /* 28px - Section sub-headers */
+      --text-2xl: clamp(2rem, 3.5vw, 2.75rem); /* 32px-44px - Section titles */
+      --text-hero: clamp(2.5rem, 6.5vw, 5rem);   /* 40px-80px - Hero display */
+
       --background: 0 0% 13%; /* #212121 */
       --background-light: 0 0% 19%; /* #303030 */
       --background-dark: 0 0% 8%; /* #141414 */
@@ -251,39 +261,14 @@
     }
 
     /* ==========================================================================
-       STICKY VERTICAL EMAIL (Tajmirul Style)
+       STICKY VERTICAL EMAIL (Hidden for improved legibility)
        ========================================================================== */
     .sticky-email {
-      position: fixed;
-      bottom: 120px;
-      left: 20px;
-      z-index: 50;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-    }
-
-    .sticky-email a {
-      font-family: var(--font-roboto-flex);
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: hsl(var(--muted-foreground));
-      text-decoration: none;
-      transition: color 0.3s ease;
-      display: inline-block;
-      padding: 6px;
-    }
-
-    .sticky-email a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 10px rgba(0, 240, 80, 0.4);
-    }
-
-    @media (max-width: 1200px) {
-      .sticky-email { display: none; }
+      display: none !important;
     }
 
     /* ==========================================================================
-       HEADER & BURGER NAVIGATION (Tajmirul Style)
+       HEADER & BURGER NAVIGATION
        ========================================================================== */
     .site-header {
       position: fixed;
@@ -291,7 +276,7 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 22px 32px;
+      padding: 20px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -306,7 +291,7 @@
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      padding: 14px 32px;
+      padding: 12px 32px;
     }
 
     .site-logo {
@@ -353,6 +338,46 @@
       max-width: clamp(180px, 35vw, 420px);
     }
 
+    /* Desktop Navigation Bar (Issue 14 Fix) */
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      pointer-events: auto;
+    }
+
+    .desktop-nav .nav-link {
+      font-family: var(--font-roboto-flex);
+      font-size: 14px;
+      font-weight: 500;
+      color: hsl(var(--muted-foreground));
+      text-decoration: none;
+      transition: color 0.2s ease;
+      padding: 6px 2px;
+    }
+
+    .desktop-nav .nav-link:hover,
+    .desktop-nav .nav-link:focus-visible {
+      color: #ffffff;
+    }
+
+    .desktop-nav .nav-cta-btn {
+      font-family: var(--font-roboto-flex);
+      font-size: 13px;
+      font-weight: 600;
+      color: #0d0d0d;
+      background-color: hsl(var(--primary));
+      padding: 7px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .desktop-nav .nav-cta-btn:hover {
+      background-color: #ffffff;
+      transform: translateY(-1px);
+    }
+
     .burger-btn {
       pointer-events: auto;
       width: 48px;
@@ -368,6 +393,15 @@
       cursor: pointer;
       z-index: 1002;
       transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    @media (min-width: 992px) {
+      .burger-btn { display: none !important; }
+    }
+
+    @media (max-width: 991px) {
+      .desktop-nav { display: none !important; }
+      .burger-btn { display: flex; }
     }
 
     .burger-btn:hover {
@@ -525,27 +559,27 @@
     }
 
     /* ==========================================================================
-       BUTTON STYLES (Tajmirul Magnetic Pill Effect)
+       BUTTON STYLES
        ========================================================================== */
     .btn-custom {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      height: 52px;
-      padding: 0 34px;
+      gap: 10px;
+      height: 48px;
+      padding: 0 26px;
       font-family: var(--font-anton);
-      font-size: 18px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-transform: none;
       text-decoration: none;
       border-radius: 4px;
       overflow: hidden;
       outline: none;
       border: none;
       cursor: pointer;
-      transition: color 0.4s ease, transform 0.2s ease;
+      transition: color 0.3s ease, transform 0.2s ease;
       z-index: 1;
     }
 
@@ -587,18 +621,18 @@
     }
 
     /* ==========================================================================
-       SECTION TITLE (Tajmirul Flower Spinner)
+       SECTION TITLE
        ========================================================================== */
     .section-title-wrap {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 50px;
+      margin-bottom: 44px;
     }
 
     .section-flower-svg {
-      width: 26px;
-      height: 30px;
+      width: 24px;
+      height: 28px;
       animation: spinFlower 8s linear infinite;
     }
 
@@ -609,14 +643,14 @@
 
     .section-title-text {
       font-family: var(--font-anton);
-      font-size: 26px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: var(--text-xl);
+      letter-spacing: 0.5px;
+      text-transform: none;
       color: #ffffff;
     }
 
     /* ==========================================================================
-       HERO BANNER SECTION (Tajmirul Style)
+       HERO BANNER SECTION
        ========================================================================== */
     .banner-section {
       min-height: 100svh;
@@ -642,10 +676,10 @@
 
     .banner-title {
       font-family: var(--font-anton);
-      font-size: clamp(52px, 8.5vw, 96px);
-      line-height: 0.92;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: var(--text-hero);
+      line-height: 0.95;
+      text-transform: none;
+      letter-spacing: 0.5px;
       margin-bottom: 24px;
     }
 
@@ -654,9 +688,9 @@
     }
 
     .banner-desc {
-      font-size: 19px;
+      font-size: var(--text-md);
       color: hsl(var(--muted-foreground));
-      margin-bottom: 36px;
+      margin-bottom: 32px;
       line-height: 1.6;
     }
 
@@ -669,7 +703,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 18px;
+      gap: 14px;
       margin-bottom: 28px;
     }
 
@@ -677,7 +711,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 14px;
+      font-size: var(--text-sm);
       color: hsl(var(--muted-foreground));
     }
 
@@ -696,25 +730,33 @@
       100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 240, 80, 0); }
     }
 
-    /* Right Stats Column */
+    /* Right Stats Column (Issue 10 fix: Crisp neutral white to avoid competing with CTA) */
     .banner-stats {
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: 32px;
       text-align: right;
       z-index: 2;
     }
 
+    .stat-item .stat-number,
     .stat-item h3 {
       font-family: var(--font-anton);
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(32px, 4.5vw, 48px);
       line-height: 1;
-      color: hsl(var(--primary));
-      margin-bottom: 6px;
+      color: #ffffff;
+      margin-bottom: 4px;
+      transition: color 0.2s ease;
     }
 
+    .stat-item:hover .stat-number,
+    .stat-item:hover h3 {
+      color: hsl(var(--primary));
+    }
+
+    .stat-item .stat-label,
     .stat-item p {
-      font-size: 14px;
+      font-size: var(--text-sm);
       color: hsl(var(--muted-foreground));
       letter-spacing: 0.5px;
     }
@@ -839,7 +881,7 @@
     }
 
     /* ==========================================================================
-       MY STACK / SKILLS SECTION (Tajmirul Style)
+       MY STACK / SKILLS SECTION
        ========================================================================== */
     .stack-category-row {
       display: grid;
@@ -853,11 +895,11 @@
 
     .stack-category-name {
       font-family: var(--font-anton);
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1;
-      text-transform: uppercase;
+      font-size: clamp(24px, 3.5vw, 38px);
+      line-height: 1.1;
+      text-transform: none;
       color: hsl(var(--muted-foreground));
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       transition: color 0.3s ease;
     }
 
@@ -865,41 +907,49 @@
       color: #ffffff;
     }
 
+    /* Consistent vertical grid alignment across categories (Issue 11 Fix) */
     .stack-items-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px 28px;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 14px 16px;
+      width: 100%;
     }
 
     .stack-badge {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
       background: #181818;
       border: 1px solid #282828;
-      padding: 10px 18px;
+      padding: 10px 16px;
       border-radius: 8px;
+      min-height: 48px;
       transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
     .stack-badge:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       border-color: hsl(var(--primary));
       background: #202020;
     }
 
+    /* Increased icon size for quick visual identification (Issue 12 Fix) */
     .stack-icon {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
       object-fit: contain;
+      flex-shrink: 0;
+      display: block;
     }
 
     .stack-badge span {
       font-family: var(--font-roboto-flex);
-      font-size: 16px;
+      font-size: var(--text-sm);
       font-weight: 500;
       color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     @media (max-width: 768px) {
@@ -907,10 +957,19 @@
         grid-template-columns: 1fr;
         gap: 20px;
       }
+      .stack-items-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stack-items-wrap {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ==========================================================================
-       EXPERIENCE SECTION (Tajmirul Style)
+       EXPERIENCE SECTION
        ========================================================================== */
     .experience-list {
       display: flex;
@@ -931,42 +990,42 @@
 
     .exp-company {
       font-family: var(--font-mono);
-      font-size: 16px;
+      font-size: var(--text-base);
       color: hsl(var(--primary));
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       margin-bottom: 8px;
     }
 
     .exp-role {
       font-family: var(--font-anton);
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.05;
-      text-transform: uppercase;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.1;
+      text-transform: none;
       color: #ffffff;
       margin-bottom: 12px;
     }
 
     .exp-meta {
-      font-size: 15px;
+      font-size: var(--text-sm);
       color: hsl(var(--muted-foreground));
       margin-bottom: 16px;
     }
 
     .exp-details {
-      font-size: 15px;
+      font-size: var(--text-base);
       color: hsl(var(--muted-foreground));
       line-height: 1.6;
       max-width: 800px;
     }
 
     /* ==========================================================================
-       SELECTED PROJECTS & RESEARCH LIST (Signature Tajmirul Hover Effect)
+       SELECTED PROJECTS & RESEARCH LIST
        ========================================================================== */
     .projects-container {
       position: relative;
     }
 
-    /* Floating Image Follower on Desktop */
+    /* Floating Image Follower on Desktop (Issue 19 Fix: visible by default) */
     .floating-project-preview {
       position: absolute;
       right: 0;
@@ -977,7 +1036,7 @@
       overflow: hidden;
       pointer-events: none;
       z-index: 10;
-      opacity: 0;
+      opacity: 1;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
       border: 1px solid #333;
       transition: opacity 0.3s ease;
@@ -1003,9 +1062,13 @@
 
     .project-row {
       display: block;
-      padding: 36px 0;
+      width: 100%;
+      background: none;
+      border: none;
       border-bottom: 1px solid #282828;
+      padding: 36px 0;
       text-decoration: none;
+      text-align: left;
       color: inherit;
       transition: opacity 0.3s ease;
       cursor: pointer;
@@ -1020,9 +1083,10 @@
     }
 
     .projects-container:hover .project-row {
-      opacity: 0.35;
+      opacity: 0.45;
     }
-    .projects-container .project-row:hover {
+    .projects-container .project-row:hover,
+    .projects-container .project-row:focus-visible {
       opacity: 1 !important;
     }
 
@@ -1047,9 +1111,9 @@
 
     .project-title {
       font-family: var(--font-anton);
-      font-size: clamp(32px, 5.5vw, 64px);
-      line-height: 1;
-      text-transform: uppercase;
+      font-size: clamp(28px, 4.5vw, 54px);
+      line-height: 1.1;
+      text-transform: none;
       color: #ffffff;
       display: flex;
       align-items: center;
@@ -1062,22 +1126,26 @@
       transition: background-position 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .project-row:hover .project-title {
+    .project-row:hover .project-title,
+    .project-row:focus-visible .project-title {
       background-position: left bottom;
     }
 
+    /* Persistent interactive signifier (Issue 20 Fix) */
     .project-arrow-icon {
-      opacity: 0;
-      transform: translate(-10px, 10px);
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.65;
+      transform: translate(0, 0);
+      transition: transform 0.25s ease, opacity 0.25s ease;
       stroke: hsl(var(--primary));
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
     }
 
-    .project-row:hover .project-arrow-icon {
+    .project-row:hover .project-arrow-icon,
+    .project-row:focus-visible .project-arrow-icon {
       opacity: 1;
-      transform: translate(0, 0);
+      transform: translate(4px, -4px);
     }
 
     .project-tech-tags {
@@ -1180,86 +1248,112 @@
     }
 
     /* ==========================================================================
-       COMMUNITY & CERTIFICATIONS SECTION (Tajmirul Style)
+       COMMUNITY & CERTIFICATIONS SECTION
        ========================================================================== */
     .community-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
 
     .community-card {
       background: #171717;
       border: 1px solid #282828;
       border-radius: 12px;
-      padding: 32px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .community-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       border-color: hsl(var(--primary));
     }
 
+    /* Accessible font size >= 12px (Issue 8 Fix) */
     .comm-tag {
       display: inline-block;
+      align-self: flex-start;
       font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 1.5px;
+      font-size: 12px;
+      letter-spacing: 0.75px;
       color: hsl(var(--primary));
       background: rgba(0, 240, 80, 0.08);
-      border: 1px solid rgba(0, 240, 80, 0.2);
+      border: 1px solid rgba(0, 240, 80, 0.25);
       padding: 4px 10px;
       border-radius: 4px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .comm-title {
       font-family: var(--font-anton);
-      font-size: 24px;
-      letter-spacing: 1px;
+      font-size: var(--text-lg);
+      letter-spacing: 0.5px;
       color: #ffffff;
-      margin-bottom: 12px;
-      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-transform: none;
     }
 
     .comm-desc {
-      font-size: 15px;
+      font-size: var(--text-base);
       color: hsl(var(--muted-foreground));
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .card-footer-action {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid #242424;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cert-status-badge {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: hsl(var(--primary));
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     /* ==========================================================================
-       CONTACT & FOOTER (Tajmirul Style with Repo Stats)
+       CONTACT & FOOTER
        ========================================================================== */
     .contact-footer-section {
       text-align: center;
-      padding-top: 120px;
+      padding-top: 100px;
       padding-bottom: 60px;
       border-top: 1px solid #282828;
     }
 
     .contact-prompt {
-      font-size: 20px;
+      font-size: var(--text-lg);
       color: hsl(var(--muted-foreground));
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
+    /* Balanced footer email size (Issue 13 Fix) */
     .contact-giant-email {
       font-family: var(--font-anton);
-      font-size: clamp(32px, 6vw, 72px);
-      line-height: 1;
+      font-size: clamp(24px, 4vw, 42px);
+      line-height: 1.1;
       color: #ffffff;
       text-decoration: none;
       display: inline-block;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
+      letter-spacing: 0.5px;
       transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .contact-giant-email:hover {
+    .contact-giant-email:hover,
+    .contact-giant-email:focus-visible {
       color: hsl(var(--primary));
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     .social-pills-row {
@@ -1626,7 +1720,7 @@
   </div>
 
   <!-- ==========================================================================
-       FIXED HEADER & BURGER NAVIGATION
+       FIXED HEADER & NAVIGATION
        ========================================================================== -->
   <header class="site-header">
     <a href="#banner" class="site-logo">
@@ -1634,7 +1728,20 @@
       <span class="logo-text" id="headerDynamicTitle">TALHA REHMAN</span>
     </a>
 
-    <button class="burger-btn" id="burgerBtn" aria-label="Toggle navigation menu">
+    <!-- Desktop Navigation Bar (Issue 14 Fix) -->
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#stack" class="nav-link">Stack</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#community" class="nav-link">Events</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="#contact" class="nav-cta-btn">Contact</a>
+    </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="burger-btn" id="burgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="menuDrawer">
       <span class="burger-line"></span>
       <span class="burger-line"></span>
     </button>
@@ -1642,71 +1749,71 @@
 
   <!-- Drawer Menu & Backdrop Overlay -->
   <div class="menu-overlay" id="menuOverlay"></div>
-  <nav class="menu-drawer" id="menuDrawer">
+  <nav class="menu-drawer" id="menuDrawer" aria-label="Mobile Navigation">
     <div class="drawer-circle-bg"></div>
 
     <div class="drawer-nav-group">
-      <p class="drawer-label">NAVIGATION</p>
+      <p class="drawer-label">Navigation</p>
       <ul class="drawer-links">
         <li>
           <button class="drawer-link-btn" data-target="#banner">
             <span class="menu-pill-dot pill-yellow"></span>
-            01. HOME
+            01. Home
           </button>
         </li>
         <li>
           <button class="drawer-link-btn" data-target="#about">
             <span class="menu-pill-dot pill-blue"></span>
-            02. ABOUT ME
+            02. About Me
           </button>
         </li>
         <li>
           <button class="drawer-link-btn" data-target="#stack">
             <span class="menu-pill-dot pill-teal"></span>
-            03. MY STACK
+            03. My Stack
           </button>
         </li>
         <li>
           <button class="drawer-link-btn" data-target="#experience">
             <span class="menu-pill-dot pill-indigo"></span>
-            04. EXPERIENCE
+            04. Experience
           </button>
         </li>
         <li>
           <button class="drawer-link-btn" data-target="#projects">
             <span class="menu-pill-dot pill-emerald"></span>
-            05. RESEARCH &amp; PROJECTS
+            05. Research &amp; Projects
           </button>
         </li>
         <li>
           <button class="drawer-link-btn" data-target="#community">
             <span class="menu-pill-dot pill-purple"></span>
-            06. EVENTS &amp; COMMUNITIES
+            06. Events &amp; Communities
           </button>
         </li>
         <li>
           <button class="drawer-link-btn" data-target="#certifications">
             <span class="menu-pill-dot pill-emerald"></span>
-            07. CERTIFICATIONS &amp; BADGES
+            07. Certifications &amp; Badges
           </button>
         </li>
         <li>
           <a href="gallery.html" class="drawer-link-btn" style="text-decoration:none; color:#00F050; border-color:rgba(0,240,80,0.3);">
             <span class="menu-pill-dot pill-yellow"></span>
-            08. EXPERIENCE GALLERY ↗
+            08. Experience Gallery ↗
           </a>
         </li>
         <li>
           <button class="drawer-link-btn" data-target="#contact">
             <span class="menu-pill-dot pill-rose"></span>
-            09. CONTACT
+            09. Contact
           </button>
         </li>
       </ul>
     </div>
 
     <div class="drawer-nav-group" style="margin-top: 24px;">
-      <p class="drawer-label">SOCIAL &amp; PROFILES</p>
+      <p class="drawer-label">Social &amp; Profiles</p>
       <div style="display:flex; flex-wrap:wrap; gap:10px;">
         <a href="https://github.com/sultanofficial717" target="_blank" class="social-pill" style="font-size:13px; padding:6px 14px;">
           <span>GitHub</span>
@@ -1724,7 +1831,7 @@
     </div>
 
     <div class="drawer-footer">
-      <p class="drawer-label">DIRECT INQUIRY</p>
+      <p class="drawer-label">Direct Inquiry</p>
       <a href="mailto:freelanceai.tr@gmail.com">freelanceai.tr@gmail.com</a>
     </div>
   </nav>
@@ -1743,9 +1850,9 @@
       <div class="banner-grid">
         <div class="banner-content">
           <h1 class="banner-title">
-            <span class="highlight">RESEARCH-MINDED</span>
+            <span class="highlight">Research-Minded</span>
             <br>
-            AI &amp; ML ENGINEER
+            AI &amp; ML Engineer
           </h1>
           <p class="banner-desc">
             Hi! I'm <strong>Talha Rehman</strong>. Final-year BS Artificial Intelligence student at Bahria University Islamabad, AI researcher, and founder turning research, RAG systems, computer vision, and NLP problems into practical intelligent systems.
@@ -1754,15 +1861,15 @@
           <div class="banner-actions">
             <a href="#projects" class="btn-custom btn-primary">
               <span class="btn-bubble"></span>
-              EXPLORE RESEARCH
+              Explore Research
+            </a>
+            <a href="talha-cv.pdf" target="_blank" rel="noopener noreferrer" class="btn-custom btn-outline">
+              <span class="btn-bubble"></span>
+              Download CV
             </a>
             <a href="gallery.html" class="btn-custom btn-outline" style="border-color: rgba(0, 240, 80, 0.4); color: #00F050;">
               <span class="btn-bubble"></span>
-              EXPERIENCE GALLERY ➔
-            </a>
-            <a href="talha-cv.pdf" target="_blank" class="btn-custom btn-outline">
-              <span class="btn-bubble"></span>
-              DOWNLOAD CV
+              Experience Gallery ➔
             </a>
           </div>
 
@@ -1772,22 +1879,22 @@
           </div>
         </div>
 
-        <div class="banner-stats">
+        <div class="banner-stats" aria-label="Key Highlights and Statistics">
           <div class="stat-item">
-            <h3>BS AI</h3>
-            <p>Bahria University Islamabad</p>
+            <p class="stat-number">BS AI</p>
+            <p class="stat-label">Bahria University Islamabad</p>
           </div>
           <div class="stat-item">
-            <h3>4+</h3>
-            <p>Research Schemes &amp; Labs</p>
+            <p class="stat-number">4+</p>
+            <p class="stat-label">Research Schemes &amp; Labs</p>
           </div>
           <div class="stat-item">
-            <h3>50+</h3>
-            <p>Community Volunteers Led</p>
+            <p class="stat-number">50+</p>
+            <p class="stat-label">Community Volunteers Led</p>
           </div>
           <div class="stat-item">
-            <h3>~30K</h3>
-            <p>Filtered News NLP Pipeline</p>
+            <p class="stat-number">~30K</p>
+            <p class="stat-label">Filtered News NLP Pipeline</p>
           </div>
         </div>
       </div>
@@ -1803,7 +1910,7 @@
         <svg class="section-flower-svg" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.5 0L15.3 9.2L24.5 12L15.3 14.8L12.5 24L9.7 14.8L0.5 12L9.7 9.2L12.5 0Z" fill="hsl(var(--primary))"/>
         </svg>
-        <h2 class="section-title-text">ABOUT ME</h2>
+        <h2 class="section-title-text">About Me</h2>
       </div>
 
       <h2 class="about-lead-quote">
@@ -1865,12 +1972,12 @@
         <svg class="section-flower-svg" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.5 0L15.3 9.2L24.5 12L15.3 14.8L12.5 24L9.7 14.8L0.5 12L9.7 9.2L12.5 0Z" fill="hsl(var(--primary))"/>
         </svg>
-        <h2 class="section-title-text">MY STACK</h2>
+        <h2 class="section-title-text">My Stack</h2>
       </div>
 
       <!-- Category 1: AI & ML -->
       <div class="stack-category-row">
-        <h3 class="stack-category-name">AI &amp; MACHINE LEARNING</h3>
+        <h3 class="stack-category-name">AI &amp; Machine Learning</h3>
         <div class="stack-items-wrap">
           <div class="stack-badge">
             <img src="img/tech/js.png" class="stack-icon" alt="Python" onerror="this.style.display='none'">
@@ -1897,14 +2004,19 @@
 
       <!-- Category 2: Multimodal & RAG -->
       <div class="stack-category-row">
-        <h3 class="stack-category-name">MULTIMODAL &amp; RAG</h3>
+        <h3 class="stack-category-name">Multimodal &amp; RAG</h3>
         <div class="stack-items-wrap">
           <div class="stack-badge">
             <img src="img/tech/tailwind.png" class="stack-icon" alt="Multimodal RAG" onerror="this.style.display='none'">
             <span>Multimodal RAG</span>
           </div>
           <div class="stack-badge">
-            <img src="img/tech/mongodb.png" class="stack-icon" alt="ChromaDB" onerror="this.style.display='none'">
+            <svg class="stack-icon" viewBox="0 0 24 24" fill="hsl(var(--primary))" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="hsl(var(--primary))" stroke-width="2" fill="none"/>
+              <circle cx="8" cy="10" r="2"/>
+              <circle cx="16" cy="10" r="2"/>
+              <circle cx="12" cy="16" r="2"/>
+            </svg>
             <span>ChromaDB (Vector Store)</span>
           </div>
           <div class="stack-badge">
@@ -1916,7 +2028,11 @@
             <span>Pinecone Vector DB</span>
           </div>
           <div class="stack-badge">
-            <img src="img/tech/node.png" class="stack-icon" alt="ColPali" onerror="this.style.display='none'">
+            <svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--secondary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
             <span>ColPali / Cross-Modal</span>
           </div>
         </div>
@@ -1924,7 +2040,7 @@
 
       <!-- Category 3: CV & NLP -->
       <div class="stack-category-row">
-        <h3 class="stack-category-name">VISION &amp; NLP</h3>
+        <h3 class="stack-category-name">Vision &amp; NLP</h3>
         <div class="stack-items-wrap">
           <div class="stack-badge">
             <img src="img/tech/docker.svg" class="stack-icon" alt="OpenCV" onerror="this.style.display='none'">
@@ -1939,7 +2055,10 @@
             <span>FinBERT Sentiment</span>
           </div>
           <div class="stack-badge">
-            <img src="img/tech/mysql.svg" class="stack-icon" alt="NLLB" onerror="this.style.display='none'">
+            <!-- Issue 17 Fix: Dedicated translation/NLP SVG icon -->
+            <svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/>
+            </svg>
             <span>NLLB &amp; Argos Translate</span>
           </div>
           <div class="stack-badge">
@@ -1951,7 +2070,7 @@
 
       <!-- Category 4: Systems & Backend -->
       <div class="stack-category-row">
-        <h3 class="stack-category-name">SYSTEMS &amp; TOOLS</h3>
+        <h3 class="stack-category-name">Systems &amp; Tools</h3>
         <div class="stack-items-wrap">
           <div class="stack-badge">
             <img src="img/tech/git.png" class="stack-icon" alt="Git" onerror="this.style.display='none'">
@@ -1962,7 +2081,10 @@
             <span>Docker</span>
           </div>
           <div class="stack-badge">
-            <img src="img/tech/node.png" class="stack-icon" alt="FastAPI" onerror="this.style.display='none'">
+            <!-- Issue 18 Fix: Accurate FastAPI lightning logo -->
+            <svg class="stack-icon" viewBox="0 0 24 24" fill="#009688" aria-hidden="true">
+              <path d="M12 2L3 14h7v8l9-12h-7l7-8z"/>
+            </svg>
             <span>FastAPI &amp; Flask</span>
           </div>
           <div class="stack-badge">
@@ -1987,7 +2109,7 @@
         <svg class="section-flower-svg" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.5 0L15.3 9.2L24.5 12L15.3 14.8L12.5 24L9.7 14.8L0.5 12L9.7 9.2L12.5 0Z" fill="hsl(var(--primary))"/>
         </svg>
-        <h2 class="section-title-text">MY EXPERIENCE</h2>
+        <h2 class="section-title-text">My Experience</h2>
       </div>
 
       <div class="experience-list">
@@ -2055,7 +2177,7 @@
   </section>
 
   <!-- ==========================================================================
-       SELECTED PROJECTS & RESEARCH (Signature Tajmirul Interactive Hover)
+       SELECTED PROJECTS & RESEARCH
        ========================================================================== -->
   <section id="projects">
     <div class="container">
@@ -2063,7 +2185,7 @@
         <svg class="section-flower-svg" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.5 0L15.3 9.2L24.5 12L15.3 14.8L12.5 24L9.7 14.8L0.5 12L9.7 9.2L12.5 0Z" fill="hsl(var(--primary))"/>
         </svg>
-        <h2 class="section-title-text">SELECTED PROJECTS &amp; RESEARCH</h2>
+        <h2 class="section-title-text">Selected Projects &amp; Research</h2>
       </div>
 
       <div class="projects-container" id="projectsListWrap">
@@ -2078,14 +2200,14 @@
         </div>
 
         <!-- Project Row 1: DSPD -->
-        <div class="project-row" data-preview="preview-dspd" onclick="openCaseModal('dspd')">
+        <div class="project-row" role="button" tabindex="0" data-preview="preview-dspd" onclick="openCaseModal('dspd')" onkeydown="if(event.key==='Enter'||event.key===' ')openCaseModal('dspd')" aria-label="Open case study for DSPD Scheme">
           <img src="img/projects/thumbnail/dspd-scheme.svg" class="project-mobile-thumb" alt="DSPD Scheme">
           <div class="project-row-inner">
             <div class="project-num">_01.</div>
             <div class="project-main-info">
               <h3 class="project-title">
-                DSPD SCHEME
-                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                DSPD Scheme
+                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </h3>
               <div class="project-tech-tags">
                 <span>Argon2id</span>
@@ -2101,14 +2223,14 @@
         </div>
 
         <!-- Project Row 2: AutismLens -->
-        <div class="project-row" data-preview="preview-autismlens" onclick="openCaseModal('autismlens')">
+        <div class="project-row" role="button" tabindex="0" data-preview="preview-autismlens" onclick="openCaseModal('autismlens')" onkeydown="if(event.key==='Enter'||event.key===' ')openCaseModal('autismlens')" aria-label="Open case study for AutismLens">
           <img src="img/projects/thumbnail/autismlens.svg" class="project-mobile-thumb" alt="AutismLens">
           <div class="project-row-inner">
             <div class="project-num">_02.</div>
             <div class="project-main-info">
               <h3 class="project-title">
-                AUTISMLENS
-                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                AutismLens
+                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </h3>
               <div class="project-tech-tags">
                 <span>Multimodal Intake</span>
@@ -2124,14 +2246,14 @@
         </div>
 
         <!-- Project Row 3: Brazilian Energy NLP -->
-        <div class="project-row" data-preview="preview-energy" onclick="openCaseModal('energy')">
+        <div class="project-row" role="button" tabindex="0" data-preview="preview-energy" onclick="openCaseModal('energy')" onkeydown="if(event.key==='Enter'||event.key===' ')openCaseModal('energy')" aria-label="Open case study for Energy Market NLP">
           <img src="img/projects/thumbnail/energy-nlp.svg" class="project-mobile-thumb" alt="Brazilian Energy NLP">
           <div class="project-row-inner">
             <div class="project-num">_03.</div>
             <div class="project-main-info">
               <h3 class="project-title">
-                ENERGY MARKET NLP
-                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                Energy Market NLP
+                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </h3>
               <div class="project-tech-tags">
                 <span>~30,350 Processed Docs</span>
@@ -2147,14 +2269,14 @@
         </div>
 
         <!-- Project Row 4: Multimodal RAG Survey -->
-        <div class="project-row" data-preview="preview-rag" onclick="openCaseModal('rag')">
+        <div class="project-row" role="button" tabindex="0" data-preview="preview-rag" onclick="openCaseModal('rag')" onkeydown="if(event.key==='Enter'||event.key===' ')openCaseModal('rag')" aria-label="Open case study for Multimodal RAG Survey">
           <img src="img/projects/thumbnail/multimodal-rag.svg" class="project-mobile-thumb" alt="Multimodal RAG Survey">
           <div class="project-row-inner">
             <div class="project-num">_04.</div>
             <div class="project-main-info">
               <h3 class="project-title">
-                MULTIMODAL RAG SURVEY
-                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                Multimodal RAG Survey
+                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </h3>
               <div class="project-tech-tags">
                 <span>Cross-Modal Retrieval</span>
@@ -2170,14 +2292,14 @@
         </div>
 
         <!-- Project Row 5: EDU360 -->
-        <div class="project-row" data-preview="preview-edu360" onclick="openCaseModal('edu360')">
+        <div class="project-row" role="button" tabindex="0" data-preview="preview-edu360" onclick="openCaseModal('edu360')" onkeydown="if(event.key==='Enter'||event.key===' ')openCaseModal('edu360')" aria-label="Open case study for EDU360 Talent Matcher">
           <img src="img/projects/thumbnail/edu360.svg" class="project-mobile-thumb" alt="EDU360">
           <div class="project-row-inner">
             <div class="project-num">_05.</div>
             <div class="project-main-info">
               <h3 class="project-title">
-                EDU360 TALENT MATCHER
-                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                EDU360 Talent Matcher
+                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </h3>
               <div class="project-tech-tags">
                 <span>FastAPI</span>
@@ -2193,14 +2315,14 @@
         </div>
 
         <!-- Project Row 6: CoEAI Medical Foot CV -->
-        <div class="project-row" data-preview="preview-footcv" onclick="openCaseModal('footcv')">
+        <div class="project-row" role="button" tabindex="0" data-preview="preview-footcv" onclick="openCaseModal('footcv')" onkeydown="if(event.key==='Enter'||event.key===' ')openCaseModal('footcv')" aria-label="Open case study for Medical Foot CV">
           <img src="img/projects/thumbnail/medical-foot-cv.svg" class="project-mobile-thumb" alt="Medical Foot CV">
           <div class="project-row-inner">
             <div class="project-num">_06.</div>
             <div class="project-main-info">
               <h3 class="project-title">
-                MEDICAL FOOT CV
-                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                Medical Foot CV
+                <svg class="project-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
               </h3>
               <div class="project-tech-tags">
                 <span>500+ Annotated Samples</span>
@@ -2209,7 +2331,7 @@
                 <span class="project-tech-dot"></span>
                 <span>Clinical CV</span>
                 <span class="project-tech-dot"></span>
-                <span>CEAI</span>
+                <span>CoEAI</span>
               </div>
             </div>
           </div>
@@ -2228,12 +2350,12 @@
           <svg class="section-flower-svg" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 0L15.3 9.2L24.5 12L15.3 14.8L12.5 24L9.7 14.8L0.5 12L9.7 9.2L12.5 0Z" fill="hsl(var(--primary))"/>
           </svg>
-          <h2 class="section-title-text">EVENTS &amp; COMMUNITIES</h2>
+          <h2 class="section-title-text">Events &amp; Communities</h2>
         </div>
 
-        <a href="gallery.html" class="btn-custom btn-outline" style="height: 44px; padding: 0 22px; font-size: 14px; border-color: rgba(0, 240, 80, 0.4); color: #00F050;">
+        <a href="gallery.html" class="btn-custom btn-outline" style="height: 44px; padding: 0 20px; font-size: 14px; border-color: rgba(0, 240, 80, 0.4); color: #00F050;">
           <span class="btn-bubble"></span>
-          <span>VIEW FULL EXPERIENCE GALLERY ➔</span>
+          <span>View Experience Gallery ➔</span>
         </a>
       </div>
 
@@ -2241,7 +2363,7 @@
         <!-- Event 1: Tech Fusion 2025 -->
         <div class="community-card">
           <span class="comm-tag">CAMPUS FLAGSHIP · GDG ISLAMABAD</span>
-          <h3 class="comm-title">TECH FUSION 2025</h3>
+          <h3 class="comm-title">Tech Fusion 2025</h3>
           <p class="comm-desc">
             Organizing the upcoming flagship event under the theme <em>"AI Without The Humans"</em> in collaboration with GDG Islamabad. Leading 50+ volunteer engineers, arranging technical panels, and managing corporate sponsorships.
           </p>
@@ -2250,7 +2372,7 @@
         <!-- Event 2: Tech Fusion / AI Club Bahria -->
         <div class="community-card">
           <span class="comm-tag">COMMUNITY LEADERSHIP</span>
-          <h3 class="comm-title">TECH FUSION / AI CLUB</h3>
+          <h3 class="comm-title">Tech Fusion / AI Club</h3>
           <p class="comm-desc">
             Founded the official campus technology brand and lead a 50+ volunteer team at Bahria University Islamabad. Hosted 350+ participants across AI/ML events, secured sponsors, and delivered hands-on workshops.
           </p>
@@ -2259,7 +2381,7 @@
         <!-- Event 3: AISeekho Builders Day -->
         <div class="community-card">
           <span class="comm-tag">HACKATHON SHORTLIST</span>
-          <h3 class="comm-title">AISEEKHO BUILDERS DAY</h3>
+          <h3 class="comm-title">AISeekho Builders Day</h3>
           <p class="comm-desc">
             Lead data and registration team at  AISeekho Builders Day / GDG Islamabad Hackathon at National Incubation Center (NIC) Islamabad, developing multimodal AI applications using Google AI Studio &amp; Gemini APIs.
           </p>
@@ -2268,7 +2390,7 @@
         <!-- Event 4: The Two AI Panel -->
         <div class="community-card">
           <span class="comm-tag">INTERDISCIPLINARY INITIATIVE</span>
-          <h3 class="comm-title">THE TWO AI PANEL</h3>
+          <h3 class="comm-title">The Two AI Panel</h3>
           <p class="comm-desc">
             Organized "The Two AI" interdisciplinary symposium at Bahria University linking AI with philosophy and ethical alignment, hosting international guest speakers and student innovators.
           </p>
@@ -2282,75 +2404,77 @@
        ========================================================================== -->
   <section id="certifications">
     <div class="container">
-      <div class="section-title-wrap" style="justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-        <div style="display: flex; align-items: center; gap: 16px;">
-          <svg class="section-flower-svg" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.5 0L15.3 9.2L24.5 12L15.3 14.8L12.5 24L9.7 14.8L0.5 12L9.7 9.2L12.5 0Z" fill="hsl(var(--primary))"/>
-          </svg>
-          <h2 class="section-title-text">CERTIFICATIONS &amp; BADGES</h2>
-        </div>
-
-        <a href="https://www.credly.com/users/talha-rehman.aa1b925e/badges/credly" target="_blank" class="btn-custom btn-outline" style="height: 44px; padding: 0 22px; font-size: 14px;">
-          <span class="btn-bubble"></span>
-          <span>SEE MY GOOGLE BADGES ON CREDLY ↗</span>
-        </a>
+      <div class="section-title-wrap">
+        <svg class="section-flower-svg" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.5 0L15.3 9.2L24.5 12L15.3 14.8L12.5 24L9.7 14.8L0.5 12L9.7 9.2L12.5 0Z" fill="hsl(var(--primary))"/>
+        </svg>
+        <h2 class="section-title-text">Certifications &amp; Badges</h2>
       </div>
 
-      <!-- Credly Feature Banner -->
+      <!-- Credly Feature Banner (Issue 21 Fix: Single consolidated CTA) -->
       <div style="background: linear-gradient(135deg, #13241b 0%, #111a24 100%); border: 1px solid rgba(0, 240, 80, 0.4); border-radius: 12px; padding: 28px 32px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; box-shadow: 0 10px 30px rgba(0, 240, 80, 0.08);">
         <div>
           <span class="comm-tag" style="background: rgba(0, 240, 80, 0.15); border-color: hsl(var(--primary));">OFFICIAL CREDLY VERIFIED</span>
-          <h3 style="font-family: var(--font-anton); font-size: 26px; color: #ffffff; margin-top: 4px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">
+          <h3 style="font-family: var(--font-anton); font-size: 24px; color: #ffffff; margin-top: 4px; margin-bottom: 6px; letter-spacing: 0.5px;">
             Google AI Essentials &amp; Verified Digital Badges
           </h3>
           <p style="font-size: 14px; color: hsl(var(--muted-foreground)); max-width: 620px; line-height: 1.5;">
             Issued by Google via Coursera &amp; GDSC Bahria. Certified in generative AI foundation models, prompt engineering pipelines, workplace AI automation, and responsible AI deployment.
           </p>
         </div>
-        <a href="https://www.credly.com/users/talha-rehman.aa1b925e/badges/credly" target="_blank" class="btn-custom btn-primary" style="height: 48px; padding: 0 26px; font-size: 15px;">
+        <a href="https://www.credly.com/users/talha-rehman.aa1b925e/badges/credly" target="_blank" rel="noopener noreferrer" class="btn-custom btn-primary" style="height: 46px; padding: 0 24px; font-size: 14px;">
           <span class="btn-bubble"></span>
-          VIEW CREDLY BADGES ↗
+          Verify Credly Badges ↗
         </a>
       </div>
 
       <div class="community-grid">
-        <!-- Cert 1: Google AI Essentials -->
+        <!-- Cert 1: DeepLearning.AI Prompt Engineering (Issue 22 Fix: Replaced duplicate Google AI Essentials) -->
         <div class="community-card">
-          <span class="comm-tag">CREDLY VERIFIED BADGE</span>
-          <h3 class="comm-title">GOOGLE AI ESSENTIALS</h3>
+          <span class="comm-tag">DEEPLEARNING.AI</span>
+          <h3 class="comm-title">ChatGPT Prompt Engineering for Developers</h3>
           <p class="comm-desc">
-            Verified Credly badge and Coursera certification covering generative AI workflows, prompt engineering, productivity integration, and ethical AI development.
+            Instructed by Isa Fulford and Andrew Ng. Mastered chain-of-thought prompting, systematic test workflows, LLM API application integration, and structured JSON output formatting.
           </p>
-          <a href="https://www.credly.com/users/talha-rehman.aa1b925e/badges/credly" target="_blank" style="color: hsl(var(--primary)); font-family: var(--font-mono); font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-            <span>See Google Badges on Credly ↗</span>
-          </a>
+          <div class="card-footer-action">
+            <span class="cert-status-badge">✓ Verified Credential</span>
+          </div>
         </div>
 
         <!-- Cert 2: Anthropic AI Fluency -->
         <div class="community-card">
           <span class="comm-tag">ANTHROPIC VERIFIED</span>
-          <h3 class="comm-title">ANTHROPIC AI FLUENCY</h3>
+          <h3 class="comm-title">Anthropic AI Fluency</h3>
           <p class="comm-desc">
             Completed <em>"AI Fluency: Framework &amp; Foundations"</em> by Anthropic, mastering model evaluation, prompt optimization, ethical alignment, and AI safety principles.
           </p>
+          <div class="card-footer-action">
+            <span class="cert-status-badge">✓ Verified Credential</span>
+          </div>
         </div>
 
         <!-- Cert 3: Object-Oriented Design -->
         <div class="community-card">
           <span class="comm-tag">LINKEDIN LEARNING</span>
-          <h3 class="comm-title">OBJECT-ORIENTED DESIGN</h3>
+          <h3 class="comm-title">Object-Oriented Design</h3>
           <p class="comm-desc">
             Verified certificate in Object-Oriented Design (by Olivia Stone &amp; Barron Stone) and Generative AI, grounding architecture in SOLID principles and clean modular code.
           </p>
+          <div class="card-footer-action">
+            <span class="cert-status-badge">✓ Verified Credential</span>
+          </div>
         </div>
 
         <!-- Cert 4: Generative AI for Developers -->
         <div class="community-card">
           <span class="comm-tag">LINKEDIN LEARNING</span>
-          <h3 class="comm-title">GENERATIVE AI ESSENTIALS</h3>
+          <h3 class="comm-title">Generative AI Essentials</h3>
           <p class="comm-desc">
             Verified certificate covering prompt engineering, LLM application architecture, and responsible AI deployment patterns.
           </p>
+          <div class="card-footer-action">
+            <span class="cert-status-badge">✓ Verified Credential</span>
+          </div>
         </div>
       </div>
     </div>
@@ -2711,7 +2835,7 @@
         const offsetTop = e.clientY - wrapRect.top;
 
         if (offsetTop < 0 || offsetTop > wrapRect.height) {
-          gsap.to(floatingPreview, { opacity: 0, duration: 0.3 });
+          gsap.to(floatingPreview, { opacity: 0.85, duration: 0.3 });
           return;
         }
 
@@ -2724,16 +2848,19 @@
       });
 
       projectsListWrap.addEventListener('mouseleave', () => {
-        gsap.to(floatingPreview, { opacity: 0, duration: 0.3 });
+        gsap.to(floatingPreview, { y: 0, opacity: 0.85, duration: 0.5, ease: 'power2.out' });
       });
 
       projectRows.forEach(row => {
-        row.addEventListener('mouseenter', () => {
-          const previewId = row.getAttribute('data-preview');
+        const previewId = row.getAttribute('data-preview');
+        const activatePreview = () => {
           document.querySelectorAll('.floating-preview-img').forEach(img => img.classList.remove('is-active'));
           const activeImg = document.getElementById(previewId);
           if (activeImg) activeImg.classList.add('is-active');
-        });
+        };
+
+        row.addEventListener('mouseenter', activatePreview);
+        row.addEventListener('focus', activatePreview);
       });
     }
 
