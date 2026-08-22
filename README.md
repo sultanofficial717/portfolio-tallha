@@ -6,11 +6,11 @@ This repository contains a high-performance single-page portfolio with an embedd
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 - **Interactive Personal AI Agent (`talha-portfolio-agent`)**: A retrieval-only client-side agent with strict zero-hallucination guardrails, first-person verified answers, suggested query chips, and factual citations.
 - **Overall Experience & Event Gallery (`gallery.html`)**: Dedicated standalone gallery page with category filtering (Events & Community, AI Research & Labs, Agency & Systems, Journey & Badges) and fullscreen interactive lightbox for milestones, hackathons, and certifications.
-- **Terminal Verification Log (`verification_log.sh`)**: Live animated terminal log verifying academic credentials (BS AI @ Bahria Univ), research manuscripts, internships, and community leadership.
+- **Terminal Verification Log (`verification_log.sh`)**: Live animated terminal log verifying academic credentials (BS AI @ Bahria University), research manuscripts, internships, and community leadership.
 - **Four Deep Research Case Studies**:
   1. *DSPD: Device-Bound Stateless Password Derivation Scheme* (Argon2id, HKDF-SHA256, Random Oracle Model, Elsevier Major Revision, PyPI Package)
   2. *AutismLens* (Multimodal AI System for Manual-Grounded Autism Assessment Interpretation, FYP-I Proposal)
