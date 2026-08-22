@@ -58,6 +58,13 @@
       --text-xl: 1.75rem;    /* 28px - Section sub-headers */
       --text-2xl: clamp(2rem, 3.5vw, 2.75rem); /* 32px-44px */
       --text-hero: clamp(2.5rem, 6.5vw, 5rem);   /* 40px-80px */
+
+      /* Unified Corner Radii System (Issue 1 Fix: 5 strict tokens) */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 18px;
+      --radius-xl: 20px;
+      --radius-full: 9999px;
     }
 
     *, *::before, *::after {
@@ -262,13 +269,13 @@
       align-items: center;
       gap: 8px;
       padding: 10px 20px;
-      border-radius: 100px;
+      border-radius: var(--radius-full);
       background: #181818;
       border: 1px solid #333;
       color: #ffffff;
       font-family: var(--font-anton);
       font-size: 14px;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-decoration: none;
       transition: all 0.3s ease;
     }
@@ -293,7 +300,7 @@
       text-decoration: none;
       padding: 0 28px;
       height: 50px;
-      border-radius: 100px;
+      border-radius: var(--radius-full);
       overflow: hidden;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -339,9 +346,9 @@
       transform: scale(2.5);
     }
 
-    /* ================= GALLERY HERO HEADER ================= */
+    /* ================= GALLERY HERO HEADER (Issue 9 Fix: tightened vertical whitespace) ================= */
     .gallery-hero {
-      padding: 150px 0 50px;
+      padding: 120px 0 24px;
       position: relative;
       border-bottom: 1px solid #282828;
     }
@@ -357,8 +364,8 @@
       background: rgba(0, 240, 80, 0.08);
       border: 1px solid rgba(0, 240, 80, 0.25);
       padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 20px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
       text-transform: none;
       letter-spacing: 0.5px;
     }
@@ -384,7 +391,7 @@
       letter-spacing: 0.5px;
       text-transform: none;
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .gallery-hero-title span.lime {
@@ -396,23 +403,23 @@
       color: hsl(var(--muted-foreground));
       max-width: 780px;
       line-height: 1.6;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
-    /* ================= FILTER TABS ================= */
+    /* ================= FILTER TABS (Issue 9 Fix: reduced margin) ================= */
     .filter-tabs-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 50px;
+      gap: 10px;
+      margin-bottom: 24px;
     }
 
     .filter-tab-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 22px;
-      border-radius: 100px;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
       background: #181818;
       border: 1px solid #282828;
       color: hsl(var(--muted-foreground));
@@ -441,7 +448,7 @@
     .filter-count {
       display: inline-block;
       padding: 2px 7px;
-      border-radius: 100px;
+      border-radius: var(--radius-full);
       font-size: 10px;
       background: rgba(255, 255, 255, 0.1);
       color: inherit;
@@ -660,29 +667,44 @@
       border-radius: 4px;
     }
 
+    /* Primary CTA Button (Issue 10 Fix: High affordance pill button) */
     .card-inspect-btn {
       display: inline-flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 8px;
       width: 100%;
-      padding-top: 14px;
-      border-top: 1px solid #242424;
+      margin-top: 14px;
+      padding: 10px 18px;
+      background: rgba(0, 240, 80, 0.08);
+      border: 1px solid rgba(0, 240, 80, 0.35);
+      border-radius: var(--radius-full);
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.5px;
       color: hsl(var(--primary));
-      font-weight: 600;
       text-decoration: none;
-      transition: opacity 0.2s ease;
+      cursor: pointer;
+      transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    /* ================= FULLSCREEN PICTURE SCROLL POPUP ================= */
+    .photo-stack-card:hover .card-inspect-btn {
+      background-color: hsl(var(--primary));
+      border-color: hsl(var(--primary));
+      color: #000000;
+      box-shadow: 0 0 16px rgba(0, 240, 80, 0.4);
+      transform: translateY(-1px);
+    }
+
+    /* ================= FULLSCREEN PICTURE SCROLL POPUP (Issue 12 Fix: prominent backdrop) ================= */
     .photo-scroll-modal {
       position: fixed;
       inset: 0;
       z-index: 10005;
-      background: rgba(0, 0, 0, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(0, 0, 0, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -700,7 +722,7 @@
     .photo-scroll-dialog {
       background: #151515;
       border: 1px solid #333;
-      border-radius: 20px;
+      border-radius: var(--radius-xl);
       max-width: 1040px;
       width: 100%;
       max-height: 92vh;
@@ -717,34 +739,7 @@
       transform: scale(1);
     }
 
-    /* Modal Cross Close Button */
-    .modal-close-cross-btn {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(30, 30, 30, 0.9);
-      border: 1px solid #444;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 20;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
-    }
-
-    .modal-close-cross-btn:hover {
-      background: #e11d48;
-      border-color: #e11d48;
-      transform: rotate(90deg) scale(1.08);
-    }
-
-    /* Picture Showcase Viewer */
+    /* Picture Showcase Viewer with Grouped Controls (Issue 8 Fix) */
     .modal-showcase-area {
       position: relative;
       width: 100%;
@@ -755,6 +750,35 @@
       justify-content: center;
       border-bottom: 1px solid #282828;
       overflow: hidden;
+    }
+
+    /* Modal Close Button (Anchored directly inside showcase corner) */
+    .modal-close-cross-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 25;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-close-cross-btn:hover,
+    .modal-close-cross-btn:focus-visible {
+      background: #e11d48;
+      border-color: #e11d48;
+      transform: scale(1.1);
+      outline: none;
     }
 
     .modal-active-img-wrap {
@@ -770,20 +794,20 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       transition: opacity 0.25s ease;
     }
 
-    /* Arrow Nav Buttons */
+    /* Arrow Navigation Buttons */
     .carousel-nav-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-full);
       background: rgba(18, 18, 18, 0.85);
-      border: 1px solid #444;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
       font-size: 18px;
       display: flex;
@@ -791,14 +815,16 @@
       justify-content: center;
       cursor: pointer;
       transition: all 0.2s ease;
-      z-index: 10;
+      z-index: 20;
     }
 
-    .carousel-nav-btn:hover {
+    .carousel-nav-btn:hover,
+    .carousel-nav-btn:focus-visible {
       background: hsl(var(--primary));
       color: #000;
       border-color: hsl(var(--primary));
       box-shadow: 0 0 16px var(--primary);
+      outline: none;
     }
 
     .carousel-nav-btn.prev-btn { left: 16px; }
@@ -930,11 +956,11 @@
       flex-wrap: wrap;
     }
 
-    /* ================= AI VOICE AGENT FLOATING WIDGET ================= */
+        /* ================= AI VOICE AGENT FLOATING WIDGET (Issue 11 Fix: safe placement) ================= */
     .voice-floating-widget {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 32px;
+      right: 32px;
       z-index: 9995;
       display: flex;
       flex-direction: column;
@@ -945,7 +971,7 @@
     .voice-circle-btn {
       width: 64px;
       height: 64px;
-      border-radius: 50%;
+      border-radius: var(--radius-full);
       background: linear-gradient(135deg, #18281e 0%, #111111 100%);
       border: 2px solid hsl(var(--primary));
       box-shadow: 0 0 24px rgba(0, 240, 80, 0.45), 0 8px 30px rgba(0, 0, 0, 0.7);
@@ -979,7 +1005,7 @@
     .voice-circle-pulse-ring {
       position: absolute;
       inset: -6px;
-      border-radius: 50%;
+      border-radius: var(--radius-full);
       border: 1.5px solid hsl(var(--primary));
       opacity: 0.4;
       animation: ringSpread 2.5s infinite;
@@ -997,7 +1023,7 @@
       right: 2px;
       width: 12px;
       height: 12px;
-      border-radius: 50%;
+      border-radius: var(--radius-full);
       background: hsl(var(--primary));
       border: 2px solid #111111;
       box-shadow: 0 0 8px hsl(var(--primary));
@@ -1008,7 +1034,7 @@
       max-width: calc(100vw - 40px);
       background: #161616;
       border: 1px solid #2f2f2f;
-      border-radius: 18px;
+      border-radius: var(--radius-lg);
       padding: 24px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 240, 80, 0.15);
       position: relative;
@@ -1045,7 +1071,7 @@
     .voice-avatar-circle {
       width: 38px;
       height: 38px;
-      border-radius: 50%;
+      border-radius: var(--radius-full);
       background: #00F050;
       color: #000;
       display: flex;
@@ -1059,21 +1085,22 @@
       font-family: var(--font-anton);
       font-size: 18px;
       letter-spacing: 0.5px;
+      text-transform: none;
       color: #ffffff;
       line-height: 1.1;
     }
 
     .voice-popup-status {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: var(--text-xs);
       color: hsl(var(--primary));
     }
 
     .voice-popup-close-btn {
       background: none;
       border: none;
-      color: #888888;
-      font-size: 20px;
+      color: #999;
+      font-size: 18px;
       cursor: pointer;
       padding: 4px;
       transition: color 0.2s;
@@ -1084,21 +1111,22 @@
     }
 
     .voice-popup-equalizer {
+      height: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
-      height: 36px;
-      background: #0e0e0e;
-      border-radius: 8px;
-      padding: 0 16px;
+      gap: 4px;
+      background: #0d0d0d;
+      border-radius: var(--radius-sm);
+      padding: 4px 12px;
+      border: 1px solid #222;
     }
 
     .equalizer-bar {
       width: 4px;
-      height: 6px;
+      height: 8px;
       background-color: hsl(var(--primary));
-      border-radius: 2px;
+      border-radius: var(--radius-sm);
       transition: height 0.15s ease;
     }
 
@@ -1121,12 +1149,12 @@
 
     .voice-prompt-chip {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: var(--text-xs);
       color: #b5b5b5;
       background: #202020;
       border: 1px solid #333;
-      padding: 5px 10px;
-      border-radius: 100px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
       cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -1136,10 +1164,10 @@
       color: hsl(var(--primary));
     }
 
-    /* ================= FOOTER ================= */
+    /* ================= FOOTER (Issue 11 Fix: 110px bottom padding for safe floating button zone) ================= */
     .gallery-footer {
       border-top: 1px solid #282828;
-      padding: 60px 0 40px;
+      padding: 60px 0 110px;
       text-align: center;
       background-color: #111111;
       position: relative;
@@ -1151,7 +1179,7 @@
       font-size: clamp(28px, 4.5vw, 54px);
       color: #ffffff;
       text-decoration: none;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       transition: color 0.3s ease;
       display: inline-block;
       margin-bottom: 24px;
@@ -1174,12 +1202,12 @@
       align-items: center;
       gap: 8px;
       padding: 8px 18px;
-      border-radius: 100px;
+      border-radius: var(--radius-full);
       background: #181818;
       border: 1px solid #2e2e2e;
       color: #b8b8b8;
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: var(--text-xs);
       text-decoration: none;
       transition: all 0.25s ease;
     }
@@ -1225,16 +1253,16 @@
   <header class="site-header" id="siteHeader">
     <a href="index.html" class="site-logo">
       <span class="logo-badge">TR</span>
-      <span class="logo-text">TALHA REHMAN</span>
+      <span class="logo-text">Talha Rehman</span>
     </a>
 
     <div class="nav-header-actions">
       <a href="index.html" class="back-btn-pill">
-        <span>← MAIN PORTFOLIO</span>
+        <span>← Main Portfolio</span>
       </a>
       <a href="index.html#contact" class="btn-custom btn-primary" style="height: 42px; padding: 0 20px; font-size: 13px;">
         <span class="btn-bubble"></span>
-        GET IN TOUCH
+        Get in Touch
       </a>
     </div>
   </header>
@@ -1246,12 +1274,12 @@
       <div class="container">
         <div class="gallery-lead-tag">
           <span class="dot"></span>
-          <span>INTERACTIVE PHOTO STACKS &amp; MILESTONE RECORDS</span>
+          <span>Interactive Photo Stacks &amp; Milestone Records</span>
         </div>
 
         <h1 class="gallery-hero-title">
-          OVERALL <span class="lime">EXPERIENCE</span> &amp;<br>
-          EVENT STACKS
+          Overall <span class="lime">Experience</span> &amp;<br>
+          Event Stacks
         </h1>
 
         <p class="gallery-hero-desc">
@@ -1261,32 +1289,33 @@
         <!-- Filter Tabs -->
         <div class="filter-tabs-row" id="filterTabs">
           <button class="filter-tab-btn is-active" data-filter="all">
-            <span>ALL MILESTONES</span>
+            <span>All Milestones</span>
             <span class="tab-count" id="count-all">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="event">
-            <span>EVENTS &amp; COMMUNITY</span>
+            <span>Events &amp; Community</span>
             <span class="tab-count" id="count-event">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="research">
-            <span>AI RESEARCH &amp; LABS</span>
+            <span>AI Research &amp; Labs</span>
             <span class="tab-count" id="count-research">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="agency">
-            <span>AGENCY &amp; SYSTEMS</span>
+            <span>Agency &amp; Systems</span>
             <span class="tab-count" id="count-agency">0</span>
           </button>
           <button class="filter-tab-btn" data-filter="credential">
-            <span>JOURNEY &amp; BADGES</span>
+            <span>Journey &amp; Badges</span>
             <span class="tab-count" id="count-credential">0</span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Grid of Photo Stacks -->
+    <!-- Gallery Grid of Photo Stacks (Issue 7 Fix: Valid heading outline) -->
     <section class="gallery-section">
       <div class="container">
+        <h2 class="sr-only">Milestone Gallery Collection</h2>
         <div class="gallery-grid" id="galleryGrid">
           <!-- Dynamically Injected Photo Stacks -->
         </div>
@@ -1294,14 +1323,14 @@
     </section>
   </main>
 
-  <!-- ================= FULLSCREEN PICTURE SCROLL POPUP ================= -->
-  <div class="photo-scroll-modal" id="photoScrollModal">
+  <!-- ================= FULLSCREEN PICTURE SCROLL POPUP (Issue 8 & 12 Fix) ================= -->
+  <div class="photo-scroll-modal" id="photoScrollModal" role="dialog" aria-modal="true" aria-label="Milestone Photo Showcase">
     <div class="photo-scroll-dialog">
-      <!-- Cross Button to Close Popup -->
-      <button class="modal-close-cross-btn" id="modalCloseCrossBtn" aria-label="Close photo popup" title="Close popup (Esc)">✕</button>
-      
-      <!-- Showcase Area -->
+      <!-- Showcase Area with Grouped Controls -->
       <div class="modal-showcase-area">
+        <!-- Close Button Anchored inside Showcase Corner -->
+        <button class="modal-close-cross-btn" id="modalCloseCrossBtn" aria-label="Close photo popup" title="Close popup (Esc)">✕</button>
+        
         <button class="carousel-nav-btn prev-btn" id="carouselPrevBtn" aria-label="Previous picture">←</button>
         
         <div class="modal-active-img-wrap" id="modalActiveImgWrap">
@@ -1319,12 +1348,12 @@
       <!-- Modal Body Details -->
       <div class="modal-body-content">
         <div class="modal-tag-row">
-          <span class="modal-tag-pill" id="modalTag">CATEGORY</span>
+          <span class="modal-tag-pill" id="modalTag">Category</span>
           <span style="font-family: var(--font-mono); font-size: 12px; color: #888;" id="modalYear">2026</span>
         </div>
 
-        <h2 class="modal-title" id="modalTitle">EVENT TITLE</h2>
-        <p class="modal-subtitle" id="modalSubtitle">SUBTITLE</p>
+        <h3 class="modal-title" id="modalTitle">Event Title</h3>
+        <p class="modal-subtitle" id="modalSubtitle">Subtitle</p>
         <p class="modal-desc" id="modalDesc">Detailed description...</p>
         
         <div class="modal-facts-grid" id="modalFacts">
@@ -1341,7 +1370,7 @@
   <!-- ================= FOOTER ================= -->
   <footer class="gallery-footer">
     <div class="container">
-      <p style="font-family: var(--font-mono); font-size: 13px; color: hsl(var(--primary)); margin-bottom: 8px;">DIRECT INQUIRY</p>
+      <p style="font-family: var(--font-mono); font-size: var(--text-xs); color: hsl(var(--primary)); margin-bottom: 8px;">Direct Inquiry</p>
       <a href="mailto:freelanceai.tr@gmail.com" class="footer-email-link">freelanceai.tr@gmail.com</a>
 
       <div class="footer-social-row">
@@ -1370,19 +1399,19 @@
 
   <!-- ================= AI VOICE AGENT FLOATING WIDGET ================= -->
   <div class="voice-floating-widget">
-    <div class="voice-popup-card" id="voicePopupCard">
+    <div class="voice-popup-card" id="voicePopupCard" role="dialog" aria-label="Voice conversation with Talha AI">
       <div class="voice-popup-header">
         <div class="voice-popup-agent-info">
-          <div class="voice-avatar-circle">TR</div>
+          <div class="voice-avatar-circle" aria-hidden="true">TR</div>
           <div>
-            <h4 class="voice-popup-title">TALHA'S VOICE AGENT</h4>
+            <h4 class="voice-popup-title">Talha's Voice Agent</h4>
             <p class="voice-popup-status" id="voiceStatusText">Voice Agent Ready (Live Voice AI)</p>
           </div>
         </div>
         <button class="voice-popup-close-btn" id="voicePopupCloseBtn" aria-label="Close voice popup">✕</button>
       </div>
 
-      <div class="voice-popup-equalizer" id="heroWaveBars">
+      <div class="voice-popup-equalizer" id="heroWaveBars" aria-hidden="true">
         <span class="equalizer-bar"></span>
         <span class="equalizer-bar"></span>
         <span class="equalizer-bar"></span>
@@ -1392,11 +1421,11 @@
 
       <button class="btn-custom btn-primary" id="heroVoiceBtn" style="width: 100%; height: 48px; font-size: 14px;">
         <span class="btn-bubble"></span>
-        <span id="heroVoiceBtnLabel">TALK TO TALHA (LIVE VOICE AI)</span>
+        <span id="heroVoiceBtnLabel">Talk to Talha (Live Voice AI)</span>
       </button>
 
       <div>
-        <p style="font-family: var(--font-mono); font-size: 11px; color: #777; margin-bottom: 6px;">SUGGESTED TOPICS:</p>
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); color: #777; margin-bottom: 6px;">Suggested Topics:</p>
         <div class="voice-prompt-chips">
           <button class="voice-prompt-chip" data-query="Tech Fusion 2026 event">Tech Fusion 2026</button>
           <button class="voice-prompt-chip" data-query="AISeekho Builders Day Hackathon">AISeekho Hackathon</button>
@@ -1595,6 +1624,16 @@
       document.getElementById('count-credential').textContent = counts.credential;
     }
 
+    function formatCategoryName(cat) {
+      const map = {
+        event: 'Event',
+        research: 'AI Research',
+        agency: 'Agency OS',
+        credential: 'Journey'
+      };
+      return map[cat] || (cat ? cat.charAt(0).toUpperCase() + cat.slice(1) : 'Milestone');
+    }
+
     function renderGalleryStacks() {
       updateTabCounts();
       galleryGrid.innerHTML = '';
@@ -1631,7 +1670,7 @@
           <div class="card-front">
             <div class="card-media-wrap">
               <img src="${coverImg}" alt="${ev.title}" loading="lazy" onerror="this.src='img/gallery/tech-fusion-event.svg'">
-              <span class="card-overlay-badge badge-${ev.category}">${(ev.category || 'EVENT').toUpperCase()}</span>
+              <span class="card-overlay-badge badge-${ev.category}">${formatCategoryName(ev.category)}</span>
               <span class="card-year-badge">${ev.year || '2026'}</span>
               <span class="card-stack-count-badge">📷 ${count} ${count === 1 ? 'Photo' : 'Photos Stack'}</span>
             </div>
@@ -1647,8 +1686,8 @@
               </div>
 
               <div class="card-inspect-btn">
-                <span>BROWSE PHOTO STACK</span>
-                <span>➔</span>
+                <span>Browse Photo Stack</span>
+                <span aria-hidden="true">➔</span>
               </div>
             </div>
           </div>
@@ -1695,7 +1734,7 @@
       currentModalEvent = eventData;
       currentPhotoIndex = 0;
 
-      modalTag.textContent = (eventData.category || 'EVENT').toUpperCase();
+      modalTag.textContent = formatCategoryName(eventData.category);
       modalYear.textContent = eventData.year || '2026';
       modalTitle.textContent = eventData.title;
       modalSubtitle.textContent = eventData.subtitle || '';
@@ -1708,6 +1747,7 @@
       images.forEach((imgSrc, idx) => {
         const thumb = document.createElement('button');
         thumb.className = `modal-thumb-btn ${idx === 0 ? 'is-active' : ''}`;
+        thumb.setAttribute('aria-label', `Thumbnail ${idx + 1} of ${images.length}`);
         thumb.innerHTML = `<img src="${imgSrc}" alt="Thumbnail ${idx + 1}" onerror="this.src='img/gallery/tech-fusion-event.svg'">`;
         thumb.addEventListener('click', () => {
           setActivePhoto(idx);
@@ -1725,8 +1765,8 @@
 
       // Render Facts Grid
       const facts = eventData.facts || [
-        { title: 'ROLE', value: eventData.role || 'Organizer' },
-        { title: 'TIMELINE', value: eventData.year || '2026' }
+        { title: 'Role', value: eventData.role || 'Organizer' },
+        { title: 'Timeline', value: eventData.year || '2026' }
       ];
       modalFacts.innerHTML = facts.map(f => `
         <div class="fact-box">
@@ -1737,7 +1777,7 @@
 
       // Render Actions
       const actions = eventData.actions || [
-        { label: 'BACK TO HOME PORTFOLIO', url: 'index.html#community', primary: true }
+        { label: 'Back to Home Portfolio', url: 'index.html#community', primary: true }
       ];
       modalActions.innerHTML = actions.map(a => `
         <a href="${a.url}" target="${a.url.startsWith('http') ? '_blank' : '_self'}" class="btn-custom ${a.primary ? 'btn-primary' : 'btn-outline'}" style="height: 44px; padding: 0 22px; font-size: 13px;">
